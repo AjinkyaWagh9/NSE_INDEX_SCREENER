@@ -41,6 +41,17 @@ def main():
     etf_source = load_etf_source(DATA / "09_trendlyne_etfs.csv", refresh=args.refresh)
     log.info("Trendlyne ETF source: %d symbol/ISIN keys", len(etf_source))
 
+    # NSE labels ETFs by their underlying index ("Nifty 50"); use Trendlyne's
+    # proper fund name ("Nippon India ETF Nifty 50 BeES") where available so the
+    # shortlist is readable.
+    def _better_name(row):
+        if row["kind"] == "ETF" and row["symbol"]:
+            rec = etf_source.get(str(row["symbol"]).upper())
+            if rec and rec.get("name"):
+                return rec["name"]
+        return row["name"]
+    universe["name"] = universe.apply(_better_name, axis=1)
+
     enriched = enrich_universe(universe, AggregatorClient(etf_source=etf_source),
                                DATA / "08_aum_ter.csv", refresh=args.refresh)
     resolved = int(enriched["resolved"].sum())
