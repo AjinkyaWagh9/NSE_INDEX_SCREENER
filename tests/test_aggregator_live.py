@@ -12,3 +12,16 @@ def test_fetch_niftybees_has_plausible_aum():
     assert hit is not None
     assert hit["aum_cr"] > 100          # NIFTYBEES AUM is in the thousands of cr
     assert hit["source"] in ("tickertape", "groww")
+
+
+def test_fetch_indexfund_does_not_cross_match_to_etf():
+    # UTI Nifty 50 Index Fund (direct growth plan ISIN). An open-ended
+    # index fund query must never resolve via Tickertape to the
+    # similarly-named UTINIFTETF ETF -- it must go through Groww instead.
+    hit = AggregatorClient().fetch(
+        "IndexFund", "", "INF789F01XA0", "UTI Nifty 50 Index Fund"
+    )
+    assert hit is not None
+    assert hit["source"] == "groww"
+    assert hit["matched_key"] != "UTINIFTETF"
+    assert hit["aum_cr"] > 100

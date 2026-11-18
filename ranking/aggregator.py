@@ -95,11 +95,15 @@ class AggregatorClient:
         if not query:
             return None
 
-        # --- Tickertape primary ---
-        hit = self._tickertape(kind, symbol, isin, name, query)
-        if hit:
-            return hit
-        time.sleep(REQUEST_PAUSE)
+        # --- Tickertape primary (ETFs only -- see module docstring: the
+        # discovery spike found Tickertape search never surfaces true
+        # open-ended mutual-fund results, only "etf"/"index" types, so for
+        # any other kind it can only cross-match to a same-named ETF) ---
+        if kind == "ETF":
+            hit = self._tickertape(kind, symbol, isin, name, query)
+            if hit:
+                return hit
+            time.sleep(REQUEST_PAUSE)
 
         # --- Groww fallback ---
         return self._groww(kind, symbol, isin, name, query)
@@ -119,9 +123,9 @@ class AggregatorClient:
             aum = _extract_tt_aum(detail)
             ter = _extract_tt_ter(detail)
         if aum is None:
-            # fall back to the (less reliable) search payload marketCap
-            aum = best.get("marketCap")
-        if aum is None:
+            # No marketCap fallback: the spike documented it as unreliable
+            # (swings far from true AUM), so a missing detail-AUM means we
+            # fall through to Groww instead of returning a bad number.
             return None
         return {"aum_cr": float(aum), "ter_pct": ter,
                 "matched_key": best.get("ticker") or sid, "source": "tickertape"}
@@ -153,7 +157,19 @@ def _best_tt_match(results, symbol, name):
     for r in results:
         if _norm(r.get("name")) == nn:
             return r
-    return results[0] if results and str(results[0].get("match")) == "EXACT" else None
+    # Weak fallback: Tickertape marks some results "EXACT" with no
+    # symbol/name match above. Only trust it if there's still some
+    # correlation to what we asked for, to avoid accepting an unrelated
+    # top hit.
+    if results and str(results[0].get("match")) == "EXACT":
+        top = results[0]
+        top_ticker = _norm(top.get("ticker"))
+        top_name = _norm(top.get("name"))
+        if symbol and top_ticker and (_norm(symbol) in top_ticker or top_ticker in _norm(symbol)):
+            return top
+        if nn and top_name and (nn in top_name or top_name in nn):
+            return top
+    return None
 
 def _best_groww_match(results, symbol, isin, name):
     for r in results:
