@@ -1,0 +1,441 @@
+Sr_No,Benchmark_Code,Benchmark_Name,Asset_Class
+1,NSE_E_63,Nifty 500,Equity
+2,NSE_E_59,Nifty 100,Equity
+3,NSE_E_438,Nifty Midcap 150,Equity
+4,NSE_E_416,Nifty Smallcap 250,Equity
+5,NSE_E_60,Nifty 50,Equity
+6,NSE_E_62,Nifty Next 50,Equity
+7,NSE_E_39,Nifty Midcap 50,Equity
+8,NSE_E_56,Nifty Midcap 100,Equity
+9,NSE_E_424,Nifty Smallcap 50,Equity
+10,NSE_E_204,Nifty Smallcap 100,Equity
+11,NSE_E_707,Nifty Smallcap 500,Equity
+12,NSE_E_224,Nifty 200,Equity
+13,NSE_E_472,Nifty LargeMidcap 250,Equity
+14,NSE_E_583,Nifty500 Multicap 50:25:25,Equity
+15,NSE_E_584,Nifty Microcap 250,Equity
+16,NSE_E_591,Nifty Total Market,Equity
+17,NSE_E_428,Nifty MidSmallcap 400,Equity
+18,NSE_E_710,Nifty MidSmallcap400 50:50,Equity
+19,NSE_E_589,Nifty Midcap Select,Equity
+20,NSE_E_667,Nifty500 LargeMidSmall Equal-Cap Weighted,Equity
+21,NSE_E_700,Nifty India FPI 150,Equity
+22,NSE_E_741,Nifty Next 100,Equity
+23,NSE_E_744,Nifty AI Catalysts,Equity
+24,NSE_E_217,Nifty Auto,Equity
+25,NSE_E_54,Nifty Bank,Equity
+26,NSE_E_712,Nifty Cement,Equity
+27,NSE_E_564,Nifty Consumer Durables,Equity
+28,NSE_E_227,Nifty Financial Services,Equity
+29,NSE_E_568,Nifty Financial Services 25/50,Equity
+30,NSE_E_606,Nifty Financial Services Ex-Bank,Equity
+31,NSE_E_30,Nifty FMCG,Equity
+32,NSE_E_581,Nifty Healthcare Index,Equity
+33,NSE_E_695,Nifty India Infrastructure & Logistics,Equity
+34,NSE_E_392,Nifty IT,Equity
+35,NSE_E_219,Nifty Media Sr. No. Benchmark Code Benchmark Name,Equity
+36,NSE_E_398,Nifty Metal,Equity
+37,NSE_E_621,Nifty MidSmall Financial Services,Equity
+38,NSE_E_622,Nifty MidSmall Healthcare,Equity
+39,NSE_E_624,Nifty MidSmall IT & Telecom,Equity
+40,NSE_E_563,Nifty Oil & Gas,Equity
+41,NSE_E_58,Nifty Pharma,Equity
+42,NSE_E_412,Nifty Private Bank,Equity
+43,NSE_E_38,Nifty PSU Bank,Equity
+44,NSE_E_185,Nifty Realty,Equity
+45,NSE_E_713,Nifty REITs & Realty,Equity
+46,NSE_E_697,Nifty500 Healthcare,Equity
+47,NSE_E_721,Nifty Capital Goods,Equity
+48,NSE_E_731,Nifty Commercial & Transport Services,Equity
+49,NSE_E_722,Nifty Construction,Equity
+50,NSE_E_718,Nifty Consumer Services,Equity
+51,NSE_E_724,Nifty Hospitals,Equity
+52,NSE_E_725,Nifty Housing Finance,Equity
+53,NSE_E_726,Nifty Insurance,Equity
+54,NSE_E_720,Nifty NBFC,Equity
+55,NSE_E_727,Nifty Power,Equity
+56,NSE_E_728,Nifty Retail,Equity
+57,NSE_E_730,Nifty Telecommunications,Equity
+58,NSE_E_258,Nifty Alpha 50,Equity
+59,NSE_E_461,Nifty Alpha Low-Volatility 30,Equity
+60,NSE_E_463,Nifty Alpha Quality Low-Volatility 30,Equity
+61,NSE_E_464,Nifty Alpha Quality Value Low-Volatility 30,Equity
+62,NSE_E_235,Nifty Dividend Opportunities 50,Equity
+63,NSE_E_745,Nifty High Dividend Yield 15,Equity
+64,NSE_E_367,Nifty Growth Sectors 15,Equity
+65,NSE_E_260,Nifty High Beta 50,Equity
+66,NSE_E_257,Nifty Low Volatility 50,Equity
+67,NSE_E_625,Nifty Midcap150 Momentum 50,Equity
+68,NSE_E_561,Nifty Midcap150 Quality 50,Equity
+69,NSE_E_657,Nifty MidSmallcap400 Momentum Quality 100,Equity
+70,NSE_E_462,Nifty Quality Low-Volatility 30,Equity
+71,NSE_E_650,Nifty Smallcap250 Momentum Quality 100,Equity
+72,NSE_E_636,Nifty Smallcap250 Quality 50,Equity
+73,NSE_E_674,Nifty Top 10 Equal Weight,Equity
+74,NSE_E_680,Nifty Top 15 Equal Weight,Equity
+75,NSE_E_681,Nifty Top 20 Equal Weight,Equity
+76,NSE_E_699,Nifty Total Market Momentum Quality 50 Sr. No. Benchmark Code Benchmark Name,Equity
+77,NSE_E_555,Nifty100 Alpha 30,Equity
+78,NSE_E_280,Nifty100 Equal Weight,Equity
+79,NSE_E_460,Nifty100 Low Volatility 30,Equity
+80,NSE_E_391,Nifty100 Quality 30,Equity
+81,NSE_E_620,Nifty200 Alpha 30,Equity
+82,NSE_E_580,Nifty200 Momentum 30,Equity
+83,NSE_E_483,Nifty200 Quality 30,Equity
+84,NSE_E_668,Nifty200 Value 30,Equity
+85,NSE_E_457,Nifty50 Equal Weight,Equity
+86,NSE_E_353,Nifty50 Value 20,Equity
+87,NSE_E_665,Nifty500 Equal Weight,Equity
+88,NSE_E_693,Nifty500 Flexicap Quality 30,Equity
+89,NSE_E_686,Nifty500 Low Volatility 50,Equity
+90,NSE_E_666,Nifty500 Momentum 50,Equity
+91,NSE_E_677,Nifty500 Multicap Momentum Quality 50,Equity
+92,NSE_E_689,Nifty500 Multifactor MQVLv 50,Equity
+93,NSE_E_685,Nifty500 Quality 50,Equity
+94,NSE_E_551,Nifty500 Value 50,Equity
+95,NSE_E_743,Nifty500 Growth 50,Equity
+96,NSE_E_678,Nifty Capital Markets,Equity
+97,NSE_E_692,Nifty Chemicals,Equity
+98,NSE_E_236,Nifty Commodities,Equity
+99,NSE_E_702,Nifty Conglomerate 50,Equity
+100,NSE_E_638,Nifty Core Housing,Equity
+101,NSE_E_349,Nifty CPSE,Equity
+102,NSE_E_57,Nifty Energy,Equity
+103,NSE_E_664,Nifty EV & New Age Automotive,Equity
+104,NSE_E_611,Nifty Housing,Equity
+105,NSE_E_237,Nifty India Consumption,Equity
+106,NSE_E_446,Nifty India Corporate Group Index - Aditya Birla Group,Equity
+107,NSE_E_401,Nifty India Corporate Group Index - Mahindra Group,Equity
+108,NSE_E_405,Nifty India Corporate Group Index - Tata Group,Equity
+109,NSE_E_407,Nifty India Corporate Group Index - Tata Group 25% Cap,Equity
+110,NSE_E_604,Nifty India Defence,Equity
+111,NSE_E_742,Nifty India Defence Equal Weight,Equity
+112,NSE_E_597,Nifty India Digital,Equity
+113,NSE_E_691,Nifty India Internet,Equity
+114,NSE_E_588,Nifty India Manufacturing,Equity
+115,NSE_E_682,Nifty India New Age Consumption,Equity
+116,NSE_E_684,Nifty India Railways PSU,Equity
+117,NSE_E_683,Nifty India Select 5 Corporate Groups (MAATR) Sr. No. Benchmark Code Benchmark Name,Equity
+118,NSE_E_671,Nifty India Tourism,Equity
+119,NSE_E_40,Nifty Infrastructure,Equity
+120,NSE_E_586,Nifty IPO,Equity
+121,NSE_E_360,Nifty Midcap Liquid 15,Equity
+122,NSE_E_626,Nifty MidSmall India Consumption,Equity
+123,NSE_E_147,Nifty MNC,Equity
+124,NSE_E_596,Nifty Mobility,Equity
+125,NSE_E_593,Nifty Non-Cyclical Consumer,Equity
+126,NSE_E_124,Nifty PSE,Equity
+127,NSE_E_637,Nifty REITs & InvITs,Equity
+128,NSE_E_740,Nifty REITs & InvITs 90:10,Equity
+129,NSE_E_676,Nifty Rural,Equity
+130,NSE_E_47,Nifty Services Sector,Equity
+131,NSE_E_363,Nifty Shariah 25,Equity
+132,NSE_E_473,Nifty SME EMERGE,Equity
+133,NSE_E_612,Nifty Transportation & Logistics,Equity
+134,NSE_E_694,Nifty Waves,Equity
+135,NSE_E_479,Nifty100 Enhanced ESG,Equity
+136,NSE_E_478,Nifty100 ESG,Equity
+137,NSE_E_576,Nifty100 ESG Sector Leaders,Equity
+138,NSE_E_286,Nifty100 Liquid 15,Equity
+139,NSE_E_43,Nifty50 Shariah,Equity
+140,NSE_E_739,Nifty500 Ahimsa,Equity
+141,NSE_E_662,Nifty500 Multicap India Manufacturing 50:30:20,Equity
+142,NSE_E_663,Nifty500 Multicap Infrastructure 50:30:20,Equity
+143,NSE_E_36,Nifty500 Shariah,Equity
+144,NSE_E_735,Nifty Small Finance Banks & Microfinance Institutions,Equity
+145,NSE_E_734,Nifty Sugar & Ethanol,Equity
+146,NSE_E_60,Nifty50 USD,Equity
+147,NSE_E_447,Nifty 50 Futures Index,Equity
+148,NSE_E_448,Nifty 50 Futures TR Index,Equity
+149,NSE_E_241,Nifty50 Dividend Points,Equity
+150,NSE_E_385,Nifty50 PR 1x Inverse,Equity
+151,NSE_E_386,Nifty50 PR 2x Leverage,Equity
+152,NSE_E_383,Nifty50 TR 1x Inverse,Equity
+153,NSE_E_384,Nifty50 TR 2x Leverage,Equity
+154,NSE_D_1,Nifty 8-13 yr G-Sec,Debt
+155,NSE_D_6,Nifty 4-8 yr G-Sec Index,Debt
+156,NSE_D_7,Nifty 11-15 yr G-Sec Index,Debt
+157,NSE_D_8,Nifty 15 yr and above G-Sec Index,Debt
+158,NSE_D_9,Nifty Composite G-sec Index Sr. No. Benchmark Code Benchmark Name,Debt
+159,NSE_D_19,Nifty 10 yr Benchmark G-Sec,Debt
+160,NSE_D_20,Nifty 10 yr Benchmark G-Sec (Clean Price),Debt
+161,NSE_D_364,Nifty 5yr Benchmark G-sec Index,Debt
+162,NSE_D_366,Nifty BHARAT Bond Index - April 2030,Debt
+163,NSE_D_381,Nifty BHARAT Bond Index - April 2031,Debt
+164,NSE_D_1026,Nifty BHARAT Bond Index - April 2032,Debt
+165,NSE_D_1415,Nifty BHARAT Bond Index - April 2033,Debt
+166,NSE_D_442,Nifty 1D rate index,Debt
+167,NSE_D_146,Nifty 1 Month CD Index,Debt
+168,NSE_D_1068,Nifty 1 Month CD Index - A,Debt
+169,NSE_D_1049,Nifty 1 Month CD Index - B,Debt
+170,NSE_D_1062,Nifty 1 Month CD Index - C,Debt
+171,NSE_D_64,Nifty 2 Month CD Index,Debt
+172,NSE_D_1071,Nifty 2 Month CD Index - A,Debt
+173,NSE_D_1050,Nifty 2 Month CD Index - B,Debt
+174,NSE_D_1072,Nifty 2 Month CD Index - C,Debt
+175,NSE_D_65,Nifty 3 Month CD Index,Debt
+176,NSE_D_1066,Nifty 3 Month CD Index - A,Debt
+177,NSE_D_1047,Nifty 3 Month CD Index - B,Debt
+178,NSE_D_1075,Nifty 3 Month CD Index - C,Debt
+179,NSE_D_66,Nifty 6 Month CD Index,Debt
+180,NSE_D_1067,Nifty 6 Month CD Index - A,Debt
+181,NSE_D_1048,Nifty 6 Month CD Index - B,Debt
+182,NSE_D_1081,Nifty 6 Month CD Index - C,Debt
+183,NSE_D_67,Nifty 1 Year CD Index,Debt
+184,NSE_D_1070,Nifty 1 Year CD Index - A,Debt
+185,NSE_D_1051,Nifty 1 Year CD Index - B,Debt
+186,NSE_D_1084,Nifty 1 Year CD Index - C,Debt
+187,NSE_D_149,Nifty All Maturity CD Index,Debt
+188,NSE_D_1107,Nifty All Maturity CD Index - A,Debt
+189,NSE_D_1054,Nifty All Maturity CD Index - B,Debt
+190,NSE_D_1101,Nifty All Maturity CD Index - C,Debt
+191,NSE_D_144,Nifty 1 Month CP Index,Debt
+192,NSE_D_1059,Nifty 1 Month CP Index - A,Debt
+193,NSE_D_1060,Nifty 1 Month CP Index - B,Debt
+194,NSE_D_1126,Nifty 1 Month CP Index - C,Debt
+195,NSE_D_68,Nifty 2 Month CP Index,Debt
+196,NSE_D_1058,Nifty 2 Month CP Index - A,Debt
+197,NSE_D_1064,Nifty 2 Month CP Index - B,Debt
+198,NSE_D_1122,Nifty 2 Month CP Index - C,Debt
+199,NSE_D_69,Nifty 3 Month CP Index Sr. No. Benchmark Code Benchmark Name,Debt
+200,NSE_D_1061,Nifty 3 Month CP Index - A,Debt
+201,NSE_D_1073,Nifty 3 Month CP Index - B,Debt
+202,NSE_D_1143,Nifty 3 Month CP Index - C,Debt
+203,NSE_D_97,Nifty 6 Month CP Index,Debt
+204,NSE_D_1063,Nifty 6 Month CP Index - A,Debt
+205,NSE_D_1078,Nifty 6 Month CP Index - B,Debt
+206,NSE_D_1144,Nifty 6 Month CP Index - C,Debt
+207,NSE_D_98,Nifty 1 Year CP Index,Debt
+208,NSE_D_1076,Nifty 1 Year CP Index - A,Debt
+209,NSE_D_1082,Nifty 1 Year CP Index - B,Debt
+210,NSE_D_1148,Nifty 1 Year CP Index - C,Debt
+211,NSE_D_152,Nifty All Maturity CP Index,Debt
+212,NSE_D_1094,Nifty All Maturity CP Index - A,Debt
+213,NSE_D_1099,Nifty All Maturity CP Index - B,Debt
+214,NSE_D_1161,Nifty All Maturity CP Index - C,Debt
+215,NSE_D_1466,Nifty 3 Year SDL Index,Debt
+216,NSE_D_1467,Nifty 5 Year SDL Index,Debt
+217,NSE_D_16,Nifty 10 Year SDL Index,Debt
+218,NSE_D_269,Nifty 30 Day T-Bill Index,Debt
+219,NSE_D_270,Nifty 60 Day T-Bill Index,Debt
+220,NSE_D_257,Nifty 91 Day T-Bill Index,Debt
+221,NSE_D_261,Nifty 182 Day T-Bill Index,Debt
+222,NSE_D_268,Nifty 1 Year T-Bill Index,Debt
+223,NSE_D_278,Nifty All Maturity T-Bill Index,Debt
+224,NSE_D_102,Nifty A Short-Term Bond Index,Debt
+225,NSE_D_103,Nifty A Long-Term Bond Index,Debt
+226,NSE_D_1014,Nifty India Government Fully Accessible Route (FAR) Select 7 Bonds Index (INR),Debt
+227,NSE_D_1015,Nifty India Government Fully Accessible Route (FAR) Select 7 Bonds Index (USD),Debt
+228,NSE_D_1439,Nifty India Sovereign Green Bond Jan 2028 Index,Debt
+229,NSE_D_1438,Nifty India Sovereign Green Bond Jan 2033 Index,Debt
+230,NSE_D_53,Nifty Ultra Short Duration G-Sec Index,Debt
+231,NSE_D_52,Nifty Low Duration G-Sec Index,Debt
+232,NSE_D_51,Nifty Short Duration G-Sec Index,Debt
+233,NSE_D_50,Nifty Medium Duration G-Sec Index,Debt
+234,NSE_D_48,Nifty Medium to Long Duration G-Sec Index,Debt
+235,NSE_D_49,Nifty Long Duration G-Sec Index,Debt
+236,NSE_D_207,Nifty All Duration G-Sec Index,Debt
+237,NSE_D_33,Nifty AAA Ultra Short Duration Bond Index,Debt
+238,NSE_D_32,Nifty AAA Low Duration Bond Index,Debt
+239,NSE_D_31,Nifty AAA Short Duration Bond Index,Debt
+240,NSE_D_30,Nifty AAA Medium Duration Bond Index Sr. No. Benchmark Code Benchmark Name,Debt
+241,NSE_D_54,Nifty AAA Medium to Long Duration Bond Index,Debt
+242,NSE_D_28,Nifty AAA Long duration Bond Index,Debt
+243,NSE_D_46,Nifty AA+ Ultra Short Duration Bond Index,Debt
+244,NSE_D_45,Nifty AA+ Low Duration Bond Index,Debt
+245,NSE_D_44,Nifty AA+ Short Duration Bond Index,Debt
+246,NSE_D_90,Nifty AA+ Medium Duration Bond Index,Debt
+247,NSE_D_42,Nifty AA+ Medium to Long Duration Bond Index,Debt
+248,NSE_D_41,Nifty AA+ Long Duration Bond Index,Debt
+249,NSE_D_76,Nifty AA Ultra Short Duration Bond Index,Debt
+250,NSE_D_75,Nifty AA Low Duration Bond Index,Debt
+251,NSE_D_72,Nifty AA Short Duration Bond Index,Debt
+252,NSE_D_74,Nifty AA Medium Duration Bond Index,Debt
+253,NSE_D_71,Nifty AA Medium to Long Duration Bond Index,Debt
+254,NSE_D_92,Nifty AA Long Duration Bond Index,Debt
+255,NSE_D_109,Nifty AA- Ultra Short Duration Bond Index,Debt
+256,NSE_D_93,Nifty AA- Low Duration Bond Index,Debt
+257,NSE_D_107,Nifty AA- Short Duration Bond Index,Debt
+258,NSE_D_79,Nifty AA- Medium Duration Bond Index,Debt
+259,NSE_D_108,Nifty AA- Medium to Long Duration Bond Index,Debt
+260,NSE_D_94,Nifty AA- Long Duration Bond Index,Debt
+261,NSE_D_156,Nifty AA Category Ultra Short Duration Bond Index,Debt
+262,NSE_D_158,Nifty AA Category Low Duration Bond Index,Debt
+263,NSE_D_159,Nifty AA Category Short Duration Bond Index,Debt
+264,NSE_D_154,Nifty AA Category Medium Duration Bond Index,Debt
+265,NSE_D_155,Nifty AA Category Medium to Long Duration Bond Index,Debt
+266,NSE_D_157,Nifty AA Category Long Duration Bond Index,Debt
+267,NSE_D_27,Nifty Banking & PSU Ultra Short Duration Bond Index,Debt
+268,NSE_D_1208,Nifty Banking & PSU Ultra Short Duration Bond Index - A,Debt
+269,NSE_D_1125,Nifty Banking & PSU Ultra Short Duration Bond Index - B,Debt
+270,NSE_D_1145,Nifty Banking & PSU Ultra Short Duration Bond Index - C,Debt
+271,NSE_D_26,Nifty Banking & PSU Low Duration Bond Index,Debt
+272,NSE_D_1216,Nifty Banking & PSU Low Duration Bond Index - A,Debt
+273,NSE_D_1119,Nifty Banking & PSU Low Duration Bond Index - B,Debt
+274,NSE_D_1147,Nifty Banking & PSU Low Duration Bond Index - C,Debt
+275,NSE_D_22,Nifty Banking & PSU Short Duration Bond Index,Debt
+276,NSE_D_1215,Nifty Banking & PSU Short Duration Bond Index - A,Debt
+277,NSE_D_1120,Nifty Banking & PSU Short Duration Bond Index - B,Debt
+278,NSE_D_1149,Nifty Banking & PSU Short Duration Bond Index - C,Debt
+279,NSE_D_23,Nifty Banking & PSU Medium Duration Bond Index,Debt
+280,NSE_D_1096,Nifty Banking & PSU Medium Duration Bond Index - A,Debt
+281,NSE_D_1118,Nifty Banking & PSU Medium Duration Bond Index - B Sr. No. Benchmark Code Benchmark Name,Debt
+282,NSE_D_1163,Nifty Banking & PSU Medium Duration Bond Index - C,Debt
+283,NSE_D_25,Nifty Banking & PSU Medium to Long Duration Bond Index,Debt
+284,NSE_D_1100,Nifty Banking & PSU Medium to Long Duration Bond Index - A,Debt
+285,NSE_D_1123,Nifty Banking & PSU Medium to Long Duration Bond Index - B,Debt
+286,NSE_D_1153,Nifty Banking & PSU Medium to Long Duration Bond Index - C,Debt
+287,NSE_D_24,Nifty Banking & PSU Long Duration Bond Index,Debt
+288,NSE_D_1104,Nifty Banking & PSU Long Duration Bond Index - A,Debt
+289,NSE_D_1127,Nifty Banking & PSU Long Duration Bond Index - B,Debt
+290,NSE_D_1150,Nifty Banking & PSU Long Duration Bond Index - C,Debt
+291,NSE_D_1472,Nifty AA & AA- Ultra Short to Medium to Long Residual (ex Pvt Financial Services) Index,Debt
+292,NSE_D_1474,Nifty Banking & PSU Ultra Short to Medium Residual (ex Financial Services) Index - A,Debt
+293,NSE_D_1473,Nifty AAA Ultra Short to Medium Residual (ex Pvt Financial Services) Index,Debt
+294,NSE_D_208,Nifty Ultra Short Duration Debt Index,Debt
+295,NSE_D_1274,Nifty Ultra Short Duration Debt Index A-I,Debt
+296,NSE_D_1312,Nifty Ultra Short Duration Debt Index A-II,Debt
+297,NSE_D_1320,Nifty Ultra Short Duration Debt Index A-III,Debt
+298,NSE_D_1276,Nifty Ultra Short Duration Debt Index B-I,Debt
+299,NSE_D_1290,Nifty Ultra Short Duration Debt Index B-II,Debt
+300,NSE_D_1305,Nifty Ultra Short Duration Debt Index B-III,Debt
+301,NSE_D_1277,Nifty Ultra Short Duration Debt Index C-I,Debt
+302,NSE_D_1316,Nifty Ultra Short Duration Debt Index C-II,Debt
+303,NSE_D_1400,Nifty Ultra Short Duration Debt Index C-III,Debt
+304,NSE_D_173,Nifty Low Duration Debt Index,Debt
+305,NSE_D_1265,Nifty Low Duration Debt Index A-I,Debt
+306,NSE_D_1294,Nifty Low Duration Debt Index A-II,Debt
+307,NSE_D_1297,Nifty Low Duration Debt Index A-III,Debt
+308,NSE_D_1280,Nifty Low Duration Debt Index B-I,Debt
+309,NSE_D_1295,Nifty Low Duration Debt Index B-II,Debt
+310,NSE_D_1298,Nifty Low Duration Debt Index B-III,Debt
+311,NSE_D_1288,Nifty Low Duration Debt Index C-I,Debt
+312,NSE_D_1296,Nifty Low Duration Debt Index C-II,Debt
+313,NSE_D_1300,Nifty Low Duration Debt Index C-III,Debt
+314,NSE_D_170,Nifty Short Duration Debt Index,Debt
+315,NSE_D_1395,Nifty Short Duration Debt Index A-II,Debt
+316,NSE_D_1344,Nifty Short Duration Debt Index A-III,Debt
+317,NSE_D_1363,Nifty Short Duration Debt Index B-II,Debt
+318,NSE_D_1330,Nifty Short Duration Debt Index B-III,Debt
+319,NSE_D_1356,Nifty Short Duration Debt Index C-II,Debt
+320,NSE_D_1348,Nifty Short Duration Debt Index C-III Sr. No. Benchmark Code Benchmark Name,Debt
+321,NSE_D_169,Nifty Medium Duration Debt Index,Debt
+322,NSE_D_1108,Nifty Medium Duration Debt Index A-III,Debt
+323,NSE_D_1117,Nifty Medium Duration Debt Index B-III,Debt
+324,NSE_D_1112,Nifty Medium Duration Debt Index C-III,Debt
+325,NSE_D_210,Nifty Medium to Long Duration Debt Index,Debt
+326,NSE_D_1113,Nifty Medium to Long Duration Debt Index A-III,Debt
+327,NSE_D_1124,Nifty Medium to Long Duration Debt Index B-III,Debt
+328,NSE_D_1130,Nifty Medium to Long Duration Debt Index C-III,Debt
+329,NSE_D_322,Nifty Long Duration Debt Index,Debt
+330,NSE_D_1128,Nifty Long Duration Debt Index A-III,Debt
+331,NSE_D_1326,Nifty Long Duration Debt Index B-III,Debt
+332,NSE_D_1393,Nifty Long Duration Debt Index C-III,Debt
+333,NSE_D_214,Nifty Composite Debt Index,Debt
+334,NSE_D_1267,Nifty Composite Debt Index A-III,Debt
+335,NSE_D_1396,Nifty Composite Debt Index B-III,Debt
+336,NSE_D_1271,Nifty Composite Debt Index C-III,Debt
+337,NSE_D_172,Nifty Banking & PSU Debt Index,Debt
+338,NSE_D_1379,Nifty Banking & PSU Debt Index - A,Debt
+339,NSE_D_1381,Nifty Banking & PSU Debt Index - B,Debt
+340,NSE_D_1382,Nifty Banking & PSU Debt Index - C,Debt
+341,NSE_D_1329,Nifty Banking & PSU Debt Index A-I,Debt
+342,NSE_D_1350,Nifty Banking & PSU Debt Index A-II,Debt
+343,NSE_D_1354,Nifty Banking & PSU Debt Index A-III,Debt
+344,NSE_D_1331,Nifty Banking & PSU Debt Index B-I,Debt
+345,NSE_D_1353,Nifty Banking & PSU Debt Index B-II,Debt
+346,NSE_D_1365,Nifty Banking & PSU Debt Index B-III,Debt
+347,NSE_D_1334,Nifty Banking & PSU Debt Index C-I,Debt
+348,NSE_D_1370,Nifty Banking & PSU Debt Index C-II,Debt
+349,NSE_D_1369,Nifty Banking & PSU Debt Index C-III,Debt
+350,NSE_D_177,Nifty Corporate Bond Index,Debt
+351,NSE_D_1200,Nifty Corporate Bond Index A-I,Debt
+352,NSE_D_1378,Nifty Corporate Bond Index A-II,Debt
+353,NSE_D_1384,Nifty Corporate Bond Index A-III,Debt
+354,NSE_D_1373,Nifty Corporate Bond Index B-I,Debt
+355,NSE_D_1323,Nifty Corporate Bond Index B-II,Debt
+356,NSE_D_1324,Nifty Corporate Bond Index B-III,Debt
+357,NSE_D_161,Nifty Credit Risk Bond Index,Debt
+358,NSE_D_1387,Nifty Credit Risk Bond Index B-I,Debt
+359,NSE_D_1385,Nifty Credit Risk Bond Index B-II,Debt
+360,NSE_D_1325,Nifty Credit Risk Bond Index B-III,Debt
+361,NSE_D_1394,Nifty Credit Risk Bond Index C-I Sr. No. Benchmark Code Benchmark Name,Debt
+362,NSE_D_1217,Nifty Credit Risk Bond Index C-II,Debt
+363,NSE_D_1386,Nifty Credit Risk Bond Index C-III,Debt
+364,NSE_D_345,Nifty Liquid Index,Debt
+365,NSE_D_1377,Nifty Liquid Index A-I,Debt
+366,NSE_D_1392,Nifty Liquid Index B-I,Debt
+367,NSE_D_1351,Nifty Liquid Index C-I,Debt
+368,NSE_D_310,Nifty Money Market Index,Debt
+369,NSE_D_1332,Nifty Money Market Index A-I,Debt
+370,NSE_D_1338,Nifty Money Market Index B-I,Debt
+371,NSE_D_1339,Nifty Money Market Index C-I,Debt
+372,NSE_D_1433,Nifty India Municipal Bond Index,Debt
+373,NSE_D_1021,Nifty AAA Bond Plus SDL Apr 2031 70:30 Index,Debt
+374,NSE_D_1045,Nifty AAA CPSE Bond Plus SDL Apr 2027 60:40 Index,Debt
+375,NSE_D_1406,Nifty AAA PSU Bond Plus SDL Sep 2026 50:50 Index,Debt
+376,NSE_D_1028,Nifty CPSE Bond Plus SDL Sep 2026 50:50 Index,Debt
+377,NSE_D_1434,Nifty G-Sec Apr 2029 Index,Debt
+378,NSE_D_1408,Nifty G-Sec Dec 2026 Index,Debt
+379,NSE_D_1419,Nifty G-Sec Dec 2029 Index,Debt
+380,NSE_D_1403,Nifty G-Sec Dec 2030 Index,Debt
+381,NSE_D_1399,Nifty G-Sec Index A-I,Debt
+382,NSE_D_1397,Nifty G-Sec Index A-II,Debt
+383,NSE_D_1390,Nifty G-Sec Index A-III,Debt
+384,NSE_D_1442,Nifty G-Sec Jul 2027 Index,Debt
+385,NSE_D_1409,Nifty G-Sec Jul 2031 Index,Debt
+386,NSE_D_1468,Nifty G-Sec Jul 2033 Index,Debt
+387,NSE_D_1040,Nifty G-Sec Jun 2027 Index,Debt
+388,NSE_D_1413,Nifty G-Sec Jun 2036 Index,Debt
+389,NSE_D_1437,Nifty G-Sec May 2029 Index,Debt
+390,NSE_D_1427,Nifty G-Sec Oct 2028 Index,Debt
+391,NSE_D_1412,Nifty G-Sec Sep 2027 Index,Debt
+392,NSE_D_1414,Nifty G-Sec Sep 2032 Index,Debt
+393,NSE_D_1019,Nifty PSU Bond Plus SDL Apr 2027 50:50 Index,Debt
+394,NSE_D_1018,Nifty PSU Bond Plus SDL Sep 2027 40:60 Index,Debt
+395,NSE_D_1029,Nifty SDL Apr 2027 Index,Debt
+396,NSE_D_1030,Nifty SDL Apr 2027 Top 12 Equal Weight Index,Debt
+397,NSE_D_1031,Nifty SDL Apr 2032 Top 12 Equal Weight Index,Debt
+398,NSE_D_1420,Nifty SDL Dec 2026 Index,Debt
+399,NSE_D_1402,Nifty SDL Dec 2028 Index,Debt
+400,NSE_D_1441,Nifty SDL Jul 2028 Index,Debt
+401,NSE_D_1426,Nifty SDL Jul 2033 Index,Debt
+402,NSE_D_1036,Nifty SDL Jun 2027 Index Sr. No. Benchmark Code Benchmark Name,Debt
+403,NSE_D_1443,Nifty SDL June 2028 Index,Debt
+404,NSE_D_1436,Nifty SDL Plus AAA PSU Bond Apr 2028 75:25 Index,Debt
+405,NSE_D_1035,Nifty SDL Plus AAA PSU Bond Dec 2027 60:40 Index,Debt
+406,NSE_D_1404,Nifty SDL Plus AAA PSU Bond Jul 2028 60:40 Index,Debt
+407,NSE_D_1407,Nifty SDL Plus AAA PSU Bond Jul 2033 60:40 Index,Debt
+408,NSE_D_1034,Nifty SDL Plus G-Sec Jun 2028 30:70 Index,Debt
+409,NSE_D_1410,Nifty SDL Plus G-Sec Jun 2028 70:30 Index,Debt
+410,NSE_D_1425,Nifty SDL Plus G-Sec Jun 2029 70:30 Index,Debt
+411,NSE_D_1440,Nifty SDL Plus G-Sec June 2027 40:60 Index,Debt
+412,NSE_D_1421,Nifty SDL Plus G-Sec Sep 2027 50:50 Index,Debt
+413,NSE_D_1017,Nifty SDL Plus PSU Bond Sep 2026 60:40 Index,Debt
+414,NSE_D_1411,Nifty SDL Sep 2026 Index,Debt
+415,NSE_D_1416,Nifty SDL Sep 2026 V1 Index,Debt
+416,NSE_D_1044,Nifty SDL Sep 2027 Index,Debt
+417,NSE_D_1480,Nifty AAA Bond Plus G-Sec Mar 2035 30:70 Index,Debt
+418,NSE_D_1481,Nifty AAA Financial Services Bond Mar 2028 Index,Debt
+419,NSE_D_1482,Nifty AAA Financial Services Bond Plus G-Sec Apr 2027 90:10 Index,Debt
+420,NSE_D_1483,Nifty AAA Financial Services Bond Plus G-Sec Apr 2028 90:10 Index,Debt
+421,NSE_D_1486,Nifty Financial Services 9 to 12 Months Debt Index,Debt
+422,NSE_D_1487,Nifty Financial Services 3 to 6 Months Debt Index,Debt
+423,NSE_H_449,Nifty 50 Arbitrage,Hybrid
+424,NSE_H_1038,Nifty 50 & Short Duration Debt - Dynamic P/B,Hybrid
+425,NSE_H_1039,Nifty 50 & Short Duration Debt - Dynamic P/E,Hybrid
+426,NSE_H_219,Nifty 50 Hybrid Composite Debt 70:30 Index,Hybrid
+427,NSE_H_376,Nifty Equity Savings Index,Hybrid
+428,NSE_H_215,Nifty 50 Hybrid Composite Debt 15:85 Index,Hybrid
+429,NSE_H_223,Nifty 50 Hybrid Composite Debt 65:35 Index,Hybrid
+430,NSE_H_228,Nifty 50 Hybrid Composite Debt 50:50 Index,Hybrid
+431,NSE_H_327,Nifty 50 Hybrid Short Duration Debt 40:60 Index,Hybrid
+432,NSE_H_329,Nifty 50 Hybrid Short Duration Debt 25:75 Index,Hybrid
+433,NSE_H_1043,Nifty AQLV 30 Plus 5yr G-Sec 70:30 Index,Hybrid
+434,NSE_H_1453,Nifty Multi Asset - Equity : Debt : Arbitrage : REITs/InvITs (50:20:20:10) Index,Hybrid
+435,NSE_H_1454,Nifty Multi Asset - Equity : Arbitrage : REITs/InvITs (50:40:10) Index,Hybrid
+436,NSE_D_1489,Nifty SDL Apr 2031 Top 20 Equal Weight HTM Index,Debt
+437,NSE_H_1490,Nifty LargeMidcap250 Plus 8-13 yr G-Sec 70:30 Index,Hybrid
+438,NSE_H_1491,Nifty Midcap150 Plus 8-13 yr G-Sec 70:30 Index,Hybrid
+439,NSE_H_1492,Nifty200 Momentum 30 Plus 8-13 yr G-Sec 50:50 Index,Hybrid
+440,NSE_H_1493,"Nifty200 Momentum 30 Plus 8-13 yr G-Sec 75:25 Index About NSE Indices Limited: NSE Indices Limited, a subsidiary of NSE, provides a variety of indices and index related services for the capital markets. The company focuses on the index as a core product. The company owns and manages a portfolio of indices under the Nifty brand of NSE, including the flagship index, the Nifty 50. Nifty equity indices comprises of broad-based benchmark indices, sectoral indices, strategy indices, thematic indices and customised indices. NSE Indices Limited also maintains fixed income indices based on Government of India securities, corporate bonds, money market instruments and hybrid indices. Many investment products based on Nifty indices have been developed within India and abroad. These include index based derivatives traded on NSE and NSE International Exchange IFSC Limited (NSE IX) and a number of index funds and exchange traded funds. The flagship 'Nifty 50' index is widely tracked and traded as the benchmark for Indian Capital. For more information, please visit: www.niftyindices.com Contact Us: NSE Indices Limited (Formerly known as India Index Services & Products Limited-IISL) Exchange Plaza, Plot no. C - 1, Block G, Bandra-Kurla Complex, Bandra (East), Mumbai - 400 051 (India). Telephone: (Direct) +91-22-2659 8386, (Board) +91-22-2659 8100. E-mail: indices@nseids.co.in",Hybrid
