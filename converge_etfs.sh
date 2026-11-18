@@ -17,8 +17,8 @@ MAX_RUNS=24           # safety cap on total runs
 
 cd "$REPO" || exit 1
 
-runs=$(grep -c '^RUN ' "$LOG" 2>/dev/null || echo 0)
-runs=$((runs + 1))
+runs=$(grep -c '^RUN ' "$LOG" 2>/dev/null)
+runs=$(( ${runs:-0} + 1 ))
 
 "$PY" run_ranking.py >> "$LOG" 2>&1
 
