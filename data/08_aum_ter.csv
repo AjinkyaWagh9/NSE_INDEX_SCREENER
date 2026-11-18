@@ -13,7 +13,6 @@ JUNIORBEES,8536.778199999999,0.26,tickertape,JUNIORBEES,True
 SBINIFTY50,,,,,False
 LIQUIDETF,539.5837,0.32,tickertape,LIQUIDETF,True
 MID150BEES,,,,,False
-MON100,,,,,False
 HDFCSML250,2668.1397,0.26,trendlyne,HDFCSML250,True
 HDFCNIFTY,5000.54,0.05,groww,hdfc-nifty-etf,True
 LIQUIDPLUS,903.9243,0.21,trendlyne,LIQUIDPLUS,True
@@ -39,11 +38,9 @@ BFSI,368.898,0.2,trendlyne,BFSI,True
 ABSL10BANK,368.2821,0.16,trendlyne,ABSL10BANK,True
 NEXT50IETF,2577.786228352,0.15,trendlyne,NEXT50IETF,True
 LOWVOLIETF,,,,,False
-MASPTOP50,1106.802,0.65,trendlyne,MASPTOP50,True
 SBINEXT50,,,,,False
 MIDCAPETF,1784.4001,0.12,trendlyne,MIDCAPETF,True
 BANKBETF,401.6835,0.15,trendlyne,BANKBETF,True
-HNGSNGBEES,991.2872,0.98,tickertape,HNGSNGBEES,True
 SBIBANKNIF,,,,,False
 BANKNIFTY1,,,,,False
 MOMENTUM50,392.5776,0.94,trendlyne,MOMENTUM50,True
@@ -55,7 +52,6 @@ NIFTYAXIS,1119.8616,0.17,trendlyne,NIFTYAXIS,True
 GROWWLIQID,114.5163916,0.38,trendlyne,GROWWLIQID,True
 GILT5YBEES,258.3285,0.1,trendlyne,GILT5YBEES,True
 SBILIQETF,153.7093,0.26,trendlyne,SBILIQETF,True
-ABSLLIQUID,43.3017,0.44,trendlyne,ABSLLIQUID,True
 GROWWCAPM,51.9055662,0.49,trendlyne,GROWWCAPM,True
 FINIETF,193.249630283,0.21,trendlyne,FINIETF,True
 LTGILTBEES,2326.4388,0.11,trendlyne,LTGILTBEES,True
@@ -81,7 +77,6 @@ MIDCAP,198.0927,0.35,trendlyne,MIDCAP,True
 MID150CASE,265.2152809,0.22,trendlyne,MID150CASE,True
 AUTOIETF,225.754673377,0.2,trendlyne,AUTOIETF,True
 SBIPSUBNK,115.616,0.26,trendlyne,SBIPSUBNK,True
-MAHKTECH,296.1721,0.64,trendlyne,MAHKTECH,True
 BANKETF,318.4621,0.16,trendlyne,BANKETF,True
 GROWWDEFNC,338.8554992,0.62,trendlyne,GROWWDEFNC,True
 SML100CASE,100.9095067,0.23,trendlyne,SML100CASE,True
@@ -187,7 +182,6 @@ SBIDEFETF,,,,,False
 CEMNTGROWW,9.3516435,1.53,trendlyne,CEMNTGROWW,True
 SNXT30BEES,7.109,0.2,trendlyne,SNXT30BEES,True
 GROWWCHEM,10.2743842,0.48,trendlyne,GROWWCHEM,True
-MSCIINDIA,2236.7893,0.24,trendlyne,MSCIINDIA,True
 MIDBANKADD,85.652,1.68,trendlyne,MIDBANKADD,True
 FMCGADD,6.9454,0.58,trendlyne,FMCGADD,True
 HEALTHADD,17.584,0.21,trendlyne,HEALTHADD,True
@@ -215,7 +209,6 @@ HEALTHCARE,15.5801,0.35,trendlyne,HEALTHCARE,True
 SBI10YGILT,,,,,False
 PVTBKGROWW,6.5705476,0.71,trendlyne,PVTBKGROWW,True
 EQUAL50,203.4882,0.38,trendlyne,EQUAL50,True
-HFTSEINDIA,,,,,False
 ABSLNN50ET,52.1851,0.14,trendlyne,ABSLNN50ET,True
 MOMETAL,1.4754,7.92,trendlyne,MOMETAL,True
 SMALLIETF,9.350159775,0.91,trendlyne,SMALLIETF,True
@@ -230,7 +223,6 @@ BIRLATOTAL,,,,,False
 AONETMMQ50,15.7011236,1.06,trendlyne,AONETMMQ50,True
 GROWWN200,16.2575638,0.42,trendlyne,GROWWN200,True
 INFRA,10.6971,0.34,trendlyne,INFRA,True
-MSCIADD,,,,,False
 NPBET,20.67842,0.37,trendlyne,NPBET,True
 GROWWMC150,6.0659969,0.27,trendlyne,GROWWMC150,True
 HDFCLOWVOL,11.9887,0.3,trendlyne,HDFCLOWVOL,True
@@ -262,10 +254,8 @@ MOIPO,5.7939,0.64,trendlyne,MOIPO,True
 GSEC10IETF,892.2325470620001,0.14,trendlyne,GSEC10IETF,True
 ESENSEX,14.25,0.12,trendlyne,ESENSEX,True
 SENSEXADD,3.9038,0.08,trendlyne,SENSEXADD,True
-MSCI360,6.4986393,0.97,trendlyne,MSCI360,True
 QUALITY30,3.0206,0.31,trendlyne,QUALITY30,True
 IVZSENSEX,4.5857,3.87,trendlyne,IVZSENSEX,True
-ABSLMSCIN,10.5412,0.22,trendlyne,ABSLMSCIN,True
 EMETAL,6.8,1.43,trendlyne,EMETAL,True
 GSEC10YEAR,77.8768,0.11,trendlyne,GSEC10YEAR,True
 SBIVALETF,50.7128,1.03,trendlyne,SBIVALETF,True
@@ -278,8 +268,6 @@ GILT10BETA,23.3514,0.3,trendlyne,GILT10BETA,True
 LICNFNHGP,704.9448,0.29,trendlyne,LICNFNHGP,True
 ITBETA,7.1368,0.3,trendlyne,ITBETA,True
 ENEXT50,7.64,0.54,trendlyne,ENEXT50,True
-GSEC10ABSL,31.6469,0.08,trendlyne,GSEC10ABSL,True
-ABGSEC,11.8257,0.08,trendlyne,ABGSEC,True
 GSEC10ADD,14.319,0.17,trendlyne,GSEC10ADD,True
 LIQUIDBETA,30.8657,0.23,trendlyne,LIQUIDBETA,True
 360 ONE Mutual Fund|360 ONE ELSS Tax Saver Nifty 50 Index Fund,65.76,0.39,groww,360-one-elss-tax-saver-nifty-50-index-fund-direct-growth,True
@@ -290,13 +278,6 @@ Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE 500 Momentum 50 Inde
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE 500 Quality 50 Index Fund,61.31,0.4,groww,aditya-birla-sun-life-bse-500-quality-50-index-fund-direct-growth,True
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE India Infrastructure Index Fund,29.03,0.56,groww,aditya-birla-sun-life-bse-india-infrastructure-index-fund-direct-growth,True
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE Total Market Index Fund,82.97,6.17,groww,aditya-birla-sun-life-bse-total-market-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life CRISIL IBX SDL Jun 2032 Index Fund,140.76,0.22,groww,aditya-birla-sun-life-crisil-ibx-sdl-jun-2032-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,416.34,0.19,groww,aditya-birla-sun-life-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 60:40 SDL+AAA PSU-APR 2027 Index Fund,1308.83,0.21,groww,aditya-birla-sun-life-crisil-ibx-60:40-sdl+aaa-psu-apr-2027-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt -Apr 2029 Index Fund,561.27,0.22,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2029-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt Apr 2028 Index Fund,20.89,0.52,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2028-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt April 2033 Index Fund,25.07,0.2,groww,aditya-birla-sun-life-crisil-ibx-gilt-april-2033-index-fund-direct-growth,True
-Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt June 2027 Index Fund,12.82,0.32,groww,aditya-birla-sun-life-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty 50 Equal Weight index Fund,527.03,0.41,groww,aditya-birla-sun-life-nifty-50-equal-weight-index-fund-direct-growth,True
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty 50 Index Fund,1481.6,0.23,groww,birla-sun-life-index-fund-direct-growth,True
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty India Defence Index Fund,1378.09,0.45,groww,aditya-birla-sun-life-nifty-india-defence-index-fund-direct-growth,True
@@ -308,9 +289,6 @@ Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty SDL SEP 2027 Index
 Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty Smallcap 50 Index Fund,325.1,0.67,groww,aditya-birla-sun-life-nifty-smallcap-50-index-fund-direct-growth,True
 Axis Mutual Fund|Axis BSE India Sector Leaders Index Fund,28.0,0.27,groww,axis-bse-india-sector-leaders-index-fund-direct-growth,True
 Axis Mutual Fund|Axis BSE Sensex Index Fund,52.93,0.2,groww,axis-bse-sensex-index-fund-direct-growth,True
-Axis Mutual Fund|Axis CRISIL IBX 50:50 Gilt Plus SDL June 2028 Index Fund,,,,,False
-Axis Mutual Fund|Axis CRISIL IBX SDL May 2027 Index Fund,1691.59,0.15,groww,axis-crisil-ibx-sdl-may-2027-index-fund-direct-growth,True
-Axis Mutual Fund|Axis Crisil IBX 50:50 Gilt Plus SDL September 2027 Index Fund,36.29,0.15,groww,axis-crisil-ibx-50:50-gilt-plus-sdl-september-2027-index-fund-direct-growth,True
 Axis Mutual Fund|Axis Nifty 100 Index Fund,2060.38,0.26,groww,axis-nifty-100-index-fund-direct-growth,True
 Axis Mutual Fund|Axis Nifty 50 Index Fund,1033.59,0.16,groww,axis-nifty-50-index-fund-direct-growth,True
 Axis Mutual Fund|Axis Nifty 500 Index Fund,318.65,0.17,groww,axis-nifty-500-index-fund-direct-growth,True
@@ -328,13 +306,6 @@ Axis Mutual Fund|Axis Nifty500 Low Volatility 50 Index Fund,24.04,1.9,groww,axis
 Axis Mutual Fund|Axis Nifty500 Momentum 50 Index Fund,171.62,0.53,groww,axis-nifty500-momentum-50-index-fund-direct-growth,True
 Axis Mutual Fund|Axis Nifty500 Quality 50 Index Fund,75.7,0.3,groww,axis-nifty500-quality-50-index-fund-direct-growth,True
 Axis Mutual Fund|Axis Nifty500 Value 50 Index Fund,230.34,0.36,groww,axis-nifty500-value-50-index-fund-directgrowth,True
-Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - APRIL 2032 INDEX FUND,374.17,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-april-2032-index-fund-direct-growth,True
-Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - NOV 2026 INDEX FUND,,,,,False
-Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - SEPTEMBER 2027 INDEX FUND,143.65,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-september-2027-index-fund-direct-growth,True
-Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2026 INDEX FUND,,,,,False
-Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2028 INDEX FUND,3327.73,0.2,groww,bandhan-crisil-ibx-gilt-april-2028-index-fund-direct-growth,True
-Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2032 INDEX FUND,404.36,0.2,groww,bandhan-crisil-ibx-gilt-april-2032-index-fund-direct-growth,True
-Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT JUNE 2027 INDEX FUND,5112.98,0.2,groww,bandhan-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
 Bandhan Mutual Fund|BANDHAN NIFTY 100 INDEX FUND,259.26,0.2,groww,bandhan-nifty-100-index-fund-direct-growth,True
 Bandhan Mutual Fund|BANDHAN NIFTY BANK INDEX FUND,22.8,0.34,groww,bandhan-nifty-bank-index-fund-direct-growth,True
 Bandhan Mutual Fund|BANDHAN NIFTY TOTAL MARKET INDEX FUND,42.34,0.67,groww,bandhan-nifty-total-market-index-fund-direct-growth,True
@@ -377,13 +348,6 @@ DSP Mutual Fund|DSP Nifty Smallcap 250 Index Fund,17.83,0.57,groww,dsp-nifty-sma
 DSP Mutual Fund|DSP Nifty Smallcap250 Quality 50 Index Fund,287.7,0.33,groww,dsp-nifty-smallcap250-quality-50-index-fund-direct-growth,True
 DSP Mutual Fund|DSP Nifty Top 10 Equal Weight Index Fund,1122.69,0.37,groww,dsp-nifty-top-10-equal-weight-index-fund-direct-growth,True
 DSP Mutual Fund|DSP Nifty500 Flexicap Quality 30 Index Fund,207.51,0.64,groww,dsp-nifty500-flexicap-quality-30-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL April 2037 Index Fund,871.56,0.21,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-april-2037-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL June 2027 Index Fund,87.68,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-june-2027-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Sep 2028 Index Fund,103.7,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-sep-2028-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Short Duration Index Fund,145.1,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-short-duration-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Bond NBFC HFC Jun 2027 Index Fund,82.06,0.13,groww,edelweiss-crisil-ibx-aaa-bond-nbfc-hfc-jun-2027-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Financial Services Bond - Jan 2028 Index Fund,103.11,0.16,groww,edelweiss-crisil-ibx-aaa-financial-services-bond-jan-2028-index-fund-direct-growth,True
-Edelweiss Mutual Fund|Edelweiss MSCI India Domestic & World Healthcare 45 Index Fund,202.88,0.56,groww,edelweiss-msci-india-domestic-world-healthcare-45-index-fund-direct-growth,True
 Edelweiss Mutual Fund|Edelweiss NIFTY PSU Bond Plus SDL Apr 2027 50:50 Index Fund,2081.13,0.25,groww,edelweiss-nifty-psu-bond-plus-sdl-apr-2027-50:50-index-fund-direct-growth,True
 Edelweiss Mutual Fund|Edelweiss Nifty 100 Quality 30 Index Fund,111.89,0.57,groww,edelweiss-nifty-100-quality-30-index-fund-direct-growth,True
 Edelweiss Mutual Fund|Edelweiss Nifty 50 Index Fund,300.02,0.14,groww,edelweiss-nifty-50-index-fund-direct-growth,True
@@ -435,12 +399,9 @@ HDFC Mutual Fund|HDFC Nifty LargeMidcap250 Plus 8-13 yr G-sec 70:30 Index Fund,2
 HDFC Mutual Fund|HDFC Nifty SDL Oct 2026 Index Fund,,,,,False
 HDFC Mutual Fund|HDFC Nifty Top 20 Equal Weight Index Fund,94.88,0.36,groww,hdfc-nifty-top-20-equal-weight-index-fund-direct-growth,True
 HDFC Mutual Fund|HDFC Nifty100 Quality 30 Index Fund,132.53,0.41,groww,hdfc-nifty100-quality-30-index-fund-direct-growth,True
-HSBC Mutual Fund|HSBC CRISIL IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,1734.45,0.19,groww,hsbc-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
-HSBC Mutual Fund|HSBC CRISIL IBX Gilt June 2027 Index Fund,172.2,0.15,groww,hsbc-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
 HSBC Mutual Fund|HSBC NIFTY 50 Index Fund,383.83,0.22,groww,hsbc-nifty-50-index-fund-direct-growth,True
 HSBC Mutual Fund|HSBC NIFTY NEXT 50 Index Fund,184.9,0.45,groww,hsbc-nifty-next-50-index-fund-direct-growth,True
 ICICI Prudential Mutual Fund|ICICI Prudential BSE Sensex Index Fund,1768.59,0.22,groww,icici-prudential-bse-sensex-index-fund-direct-growth,True
-ICICI Prudential Mutual Fund|ICICI Prudential NASDAQ 100 Index Fund,,,,,False
 ICICI Prudential Mutual Fund|ICICI Prudential Nifty 200 Momentum 30 Index Fund,488.92,0.67,groww,icici-prudential-nifty-200-momentum-30-index-fund-direct-growth,True
 ICICI Prudential Mutual Fund|ICICI Prudential Nifty 50 Index Fund,,,,,False
 ICICI Prudential Mutual Fund|ICICI Prudential Nifty 500 Index Fund,104.2,0.44,groww,icici-prudential-nifty-500-index-fund-direct-growth,True
@@ -507,7 +468,6 @@ Kotak Mahindra Mutual Fund|Kotak Nifty500 Momentum 50 Index Fund,27.46,0.6175,gr
 LIC Mutual Fund|LIC MF BSE Sensex Index Fund,89.18,0.66,groww,lic-mf-bse-sensex-index-fund-direct-growth,True
 LIC Mutual Fund|LIC MF Nifty 50 Index Fund,352.47,0.56,groww,lic-mf-index-fund-nifty-direct-growth,True
 LIC Mutual Fund|LIC MF Nifty Next 50 Index Fund,107.15,0.36,groww,lic-mf-nifty-next-50-index-fund-direct-growth,True
-Mirae Asset Mutual Fund|Mirae Asset CRISIL IBX Gilt Index - April 2033 Index Fund,187.19,0.18,groww,mirae-asset-crisil-ibx-gilt-index-april-2033-index-fund-direct-growth,True
 Mirae Asset Mutual Fund|Mirae Asset Nifty 50 Index Fund,72.23,0.23,groww,mirae-asset-nifty-50-index-fund-direct-growth,True
 Mirae Asset Mutual Fund|Mirae Asset Nifty LargeMidcap 250 Index Fund,34.21,0.42,groww,mirae-asset-nifty-largemidcap-250-index-fund-direct-growth,True
 Mirae Asset Mutual Fund|Mirae Asset Nifty SDL Jun 2027 Index Fund,470.46,0.24,groww,mirae-asset-nifty-sdl-jun-2027-index-fund-direct-growth,True
@@ -531,7 +491,6 @@ Motilal Oswal Mutual Fund|Motilal Oswal Nifty Midcap150 Plus 8-13 yr G-Sec 70:30
 Motilal Oswal Mutual Fund|Motilal Oswal Nifty Next 50 Index Fund,504.87,0.43,groww,motilal-oswal-nifty-next-50-index-fund-direct-growth,True
 Motilal Oswal Mutual Fund|Motilal Oswal Nifty REITs & Realty Index Fund,9.77,3.27,groww,motilal-oswal-nifty-reits-realty-index-fund-direct-growth,True
 Motilal Oswal Mutual Fund|Motilal Oswal Nifty Smallcap 250 Index Fund,1175.31,0.45,groww,motilal-oswal-nifty-smallcap-250-index-fund-direct-growth,True
-Motilal Oswal Mutual Fund|Motilal Oswal S&P 500 Index Fund,,,,,False
 Navi Mutual Fund|NAVI BSE SENSEX INDEX FUND,18.06,0.49,groww,navi-bse-sensex-index-fund-direct-growth,True
 Navi Mutual Fund|NAVI ELSS TAX SAVER NIFTY50 INDEX FUND,147.52,0.24,groww,navi-elss-tax-saver-nifty-50-index-fund-direct-growth,True
 Navi Mutual Fund|Navi Nifty 50 Index Fund,4055.01,0.1,groww,navi-nifty-50-index-fund-direct-growth,True
@@ -567,12 +526,8 @@ Nippon India Mutual Fund|Nippon India Nifty Realty Index Fund,53.73,0.57,groww,n
 Nippon India Mutual Fund|Nippon India Nifty SDL Plus G-Sec - Jun 2028 Maturity 70:30 Index Fund,326.09,0.2,groww,nippon-india-nifty-sdl-plus-g-sec-jun-2028-maturity-70:30-index-fund-direct-growth,True
 Nippon India Mutual Fund|Nippon India Nifty SDL Plus G-Sec - Jun 2029 Maturity 70:30 Index Fund,313.12,0.2,groww,nippon-india-nifty-sdl-plus-g-sec-jun-2029-maturity-70:30-index-fund-direct-growth,True
 Nippon India Mutual Fund|Nippon India Nifty Smallcap 250 Index Fund,3134.13,0.47,groww,nippon-india-nifty-smallcap-250-index-fund-direct-growth,True
-PGIM India Mutual Fund|PGIM India CRISIL IBX Gilt Index - Apr 2028 Fund,20.43,0.46,groww,pgim-india-crisil-ibx-gilt-index-apr-2028-fund-direct-growth,True
 SBI Mutual Fund|SBI BSE PSU BANK INDEX FUND,347.33,0.38,groww,sbi-bse-psu-bank-index-fund-direct-growth,True
 SBI Mutual Fund|SBI BSE Sensex Index Fund,299.06,0.23,groww,sbi-bse-sensex-index-fund-direct-growth,True
-SBI Mutual Fund|SBI CRISIL IBX Gilt Index - April 2029 Fund,1976.07,0.21,groww,sbi-crisil-ibx-gilt-index-april-2029-fund-direct-growth,True
-SBI Mutual Fund|SBI CRISIL IBX Gilt Index - June 2036 Fund,2613.6,0.28,groww,sbi-crisil-ibx-gilt-index-june-2036-fund-direct-growth,True
-SBI Mutual Fund|SBI CRISIL IBX SDL Index - September 2027 Fund,1982.84,0.24,groww,sbi-crisil-ibx-sdl-index-september-2027-fund-direct-growth,True
 SBI Mutual Fund|SBI Nifty 500 Index Fund,739.96,0.34,groww,sbi-nifty-500-index-fund-direct-growth,True
 SBI Mutual Fund|SBI Nifty Bank Index Fund,200.24,0.31,groww,sbi-nifty-bank-index-fund-direct-growth,True
 SBI Mutual Fund|SBI Nifty G-sec Jul 2031 Index Fund,18.42,0.2,groww,sbi-nifty-g-sec-jul-2031-index-fund-direct-growth,True
@@ -631,3 +586,48 @@ Zerodha CASE Mutual Fund|Zerodha CASE Nifty MidSmallcap400 50:50 Index Fund,20.0
 quant Mutual Fund|quant Nifty 100 Index Fund,9.86,10.79,groww,quant-nifty-100-index-fund-direct-growth,True
 quant Mutual Fund|quant Nifty 50 Index Fund,8.79,10.78,groww,quant-nifty-50-index-fund-direct-growth,True
 quant Mutual Fund|quant Nifty Midcap 150 Index Fund,8.11,10.9,groww,quant-nifty-midcap-150-index-fund-direct-growth,True
+MON100,,,,,False
+MASPTOP50,1106.802,0.65,trendlyne,MASPTOP50,True
+HNGSNGBEES,991.2872,0.98,tickertape,HNGSNGBEES,True
+ABSLLIQUID,43.3017,0.44,trendlyne,ABSLLIQUID,True
+MAHKTECH,296.1721,0.64,trendlyne,MAHKTECH,True
+MSCIINDIA,2236.7893,0.24,trendlyne,MSCIINDIA,True
+HFTSEINDIA,,,,,False
+MSCIADD,,,,,False
+MSCI360,6.4986393,0.97,trendlyne,MSCI360,True
+ABSLMSCIN,10.5412,0.22,trendlyne,ABSLMSCIN,True
+GSEC10ABSL,31.6469,0.08,trendlyne,GSEC10ABSL,True
+ABGSEC,11.8257,0.08,trendlyne,ABGSEC,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life CRISIL IBX SDL Jun 2032 Index Fund,140.76,0.22,groww,aditya-birla-sun-life-crisil-ibx-sdl-jun-2032-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,416.34,0.19,groww,aditya-birla-sun-life-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 60:40 SDL+AAA PSU-APR 2027 Index Fund,1308.83,0.21,groww,aditya-birla-sun-life-crisil-ibx-60:40-sdl+aaa-psu-apr-2027-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt -Apr 2029 Index Fund,561.27,0.22,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2029-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt Apr 2028 Index Fund,20.89,0.52,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2028-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt April 2033 Index Fund,25.07,0.2,groww,aditya-birla-sun-life-crisil-ibx-gilt-april-2033-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt June 2027 Index Fund,12.82,0.32,groww,aditya-birla-sun-life-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+Axis Mutual Fund|Axis CRISIL IBX 50:50 Gilt Plus SDL June 2028 Index Fund,,,,,False
+Axis Mutual Fund|Axis CRISIL IBX SDL May 2027 Index Fund,1691.59,0.15,groww,axis-crisil-ibx-sdl-may-2027-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Crisil IBX 50:50 Gilt Plus SDL September 2027 Index Fund,36.29,0.15,groww,axis-crisil-ibx-50:50-gilt-plus-sdl-september-2027-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - APRIL 2032 INDEX FUND,374.17,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-april-2032-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - NOV 2026 INDEX FUND,,,,,False
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - SEPTEMBER 2027 INDEX FUND,143.65,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-september-2027-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2026 INDEX FUND,,,,,False
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2028 INDEX FUND,3327.73,0.2,groww,bandhan-crisil-ibx-gilt-april-2028-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2032 INDEX FUND,404.36,0.2,groww,bandhan-crisil-ibx-gilt-april-2032-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT JUNE 2027 INDEX FUND,5112.98,0.2,groww,bandhan-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL April 2037 Index Fund,871.56,0.21,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-april-2037-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL June 2027 Index Fund,87.68,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-june-2027-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Sep 2028 Index Fund,103.7,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-sep-2028-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Short Duration Index Fund,145.1,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-short-duration-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Bond NBFC HFC Jun 2027 Index Fund,82.06,0.13,groww,edelweiss-crisil-ibx-aaa-bond-nbfc-hfc-jun-2027-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Financial Services Bond - Jan 2028 Index Fund,103.11,0.16,groww,edelweiss-crisil-ibx-aaa-financial-services-bond-jan-2028-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss MSCI India Domestic & World Healthcare 45 Index Fund,202.88,0.56,groww,edelweiss-msci-india-domestic-world-healthcare-45-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC CRISIL IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,1734.45,0.19,groww,hsbc-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC CRISIL IBX Gilt June 2027 Index Fund,172.2,0.15,groww,hsbc-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential NASDAQ 100 Index Fund,,,,,False
+Mirae Asset Mutual Fund|Mirae Asset CRISIL IBX Gilt Index - April 2033 Index Fund,187.19,0.18,groww,mirae-asset-crisil-ibx-gilt-index-april-2033-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal S&P 500 Index Fund,,,,,False
+PGIM India Mutual Fund|PGIM India CRISIL IBX Gilt Index - Apr 2028 Fund,20.43,0.46,groww,pgim-india-crisil-ibx-gilt-index-apr-2028-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX Gilt Index - April 2029 Fund,1976.07,0.21,groww,sbi-crisil-ibx-gilt-index-april-2029-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX Gilt Index - June 2036 Fund,2613.6,0.28,groww,sbi-crisil-ibx-gilt-index-june-2036-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX SDL Index - September 2027 Fund,1982.84,0.24,groww,sbi-crisil-ibx-sdl-index-september-2027-fund-direct-growth,True
