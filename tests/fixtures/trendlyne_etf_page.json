@@ -1,0 +1,506 @@
+{
+"head": {
+"sortBy": "FNA_AsOfOriginalReported",
+"order": "DESC",
+"isNextPage": true,
+"thisPageNumber": 1,
+"thisPageCount": 50,
+"status": "0",
+"statusDescription": "Success",
+"responseCode": null
+},
+"body": {
+"tableHeaders": [
+{
+"unique_name": "get_full_name",
+"type": "string",
+"name": "Stock Name"
+},
+{
+"unique_name": "NSEcode",
+"type": "string",
+"name": "NSE Symbol"
+},
+{
+"unique_name": "BSEcode",
+"type": "string",
+"name": "BSEcode"
+},
+{
+"name": "Stock ID",
+"type": "number",
+"unique_name": "stock_id"
+},
+{
+"name": "Page type",
+"type": "string",
+"unique_name": "page_type"
+},
+{
+"unique_name": "ISIN",
+"type": "string",
+"name": "isin"
+},
+{
+"name": "Durability Score",
+"type": "number",
+"unique_name": "d_value",
+"attr": "DURABILITY_METRIC_val"
+},
+{
+"name": "Valuation Score",
+"type": "number",
+"unique_name": "v_value",
+"attr": "VALUATION_METRIC_val"
+},
+{
+"name": "Momentum Score",
+"type": "number",
+"unique_name": "m_value",
+"attr": "MOMENTUM_METRIC_val"
+},
+{
+"name": "D color",
+"type": "string",
+"unique_name": "d_color"
+},
+{
+"name": "V color",
+"type": "string",
+"unique_name": "v_color"
+},
+{
+"name": "M color",
+"type": "string",
+"unique_name": "m_color"
+},
+{
+"name": "Current URL",
+"type": "string",
+"unique_name": "absolute_url"
+},
+{
+"unique_name": "FNA_AsOfOriginalReported",
+"type": "Cr",
+"name": "AUM Cr",
+"unit": "Cr",
+"val_from_mf": true,
+"sortable": true
+},
+{
+"unique_name": "currentPriceWithChangeP",
+"type": "priceP",
+"name": "Price",
+"sortable": true
+},
+{
+"unique_name": "broker_avg_target",
+"type": "Rs",
+"name": "iNAV",
+"tooltipTitle": "<div>Estimated value of the ETF\u2019s holdings. </div> <div> Compare it with the ETF price to see if the ETF is priced above or below its underlying value. </div>",
+"sortable": true
+},
+{
+"unique_name": "getPremium",
+"type": "%",
+"name": "iNAV Delta",
+"tooltipTitle": "<div>How much underlying value of holdings is higher than latest traded price. </div> <div> + means the iNAV is higher than latest price(good); \u2212 means the ltp is higher than underlying iNAV</div>",
+"sortable": true
+},
+{
+"unique_name": "vol_3m",
+"type": "number",
+"name": "3 Months Avg Volume",
+"sortable": true
+},
+{
+"unique_name": "get_liquidity_insight",
+"type": "string",
+"name": "Liquidity",
+"tooltipTitle": "<div>High if total traded value > 10 Million. </div> <div> Medium if total traded value > 5 Million. </div>",
+"sortable": true
+},
+{
+"unique_name": "ARF_InterimNetExpenseRatio",
+"type": "tracking_p",
+"name": "Expense ratio",
+"val_from_mf": true,
+"tooltipTitle": "The expense ratio measures how much of a fund's assets are used for administrative and other operating expenses.",
+"sortable": true
+},
+{
+"unique_name": "RMC_TrackingError1Yr",
+"type": "tracking_p",
+"name": "Tracking error",
+"val_from_mf": true,
+"tooltipTitle": "Tracking error is the divergence between the price behavior of a position or a portfolio and the price behavior of a benchmark. A +ve value indicates outperformance vs Benchmark.",
+"sortable": true
+},
+{
+"unique_name": "month_changeP",
+"type": "%",
+"name": "Month Change%",
+"sortable": true
+},
+{
+"unique_name": "month_benchmark_diff",
+"type": "%",
+"name": "Benchmark diff 1 Month%",
+"tooltipTitle": "Difference between ETF 1 Month price returns and benchmark price returns ie (ETF 1 Month price return - Benchmark 1 Month price return).",
+"sortable": true
+},
+{
+"unique_name": "qtr_changeP",
+"type": "%",
+"name": "Qtr Change%",
+"sortable": true
+},
+{
+"unique_name": "qtr_benchmark_diff",
+"type": "%",
+"name": "Benchmark diff 3 Months%",
+"tooltipTitle": "Difference between ETF Quarter price returns and benchmark price returns ie (ETF 3 Months price return - Benchmark 3 Months price return).",
+"sortable": true
+},
+{
+"unique_name": "year_changeP",
+"type": "%",
+"name": "Year Change%",
+"sortable": true
+},
+{
+"unique_name": "year_benchmark_diff",
+"type": "%",
+"name": "Benchmark diff 1 Year%",
+"tooltipTitle": "Difference between ETF year price returns and benchmark price returns ie (ETF year price return - Benchmark 1 year price return).",
+"sortable": true
+}
+],
+"tableData": [
+[
+"DSP Gold ETF",
+"GOLDADD",
+"543903",
+1435230,
+10,
+"INF740KA1ZP2",
+null,
+null,
+28.53,
+"invalid",
+"invalid",
+"negative",
+"https://trendlyne.com/equity/1435230/GOLDADD/dsp-gold-etf/",
+27855982000.0,
+[
+12.66,
+-2.24
+],
+12.7,
+0.315,
+12696301.0,
+"High",
+0.45,
+null,
+-10.4,
+null,
+-14.8,
+null,
+5.68,
+null
+],
+[
+"UTI Nifty Bank ETF",
+"BANKBETA",
+"543226",
+382149,
+10,
+"INF789F1AUV1",
+null,
+null,
+56.61,
+"invalid",
+"invalid",
+"neutral",
+"https://trendlyne.com/equity/382149/BANKBETA/uti-nifty-bank-etf/",
+27269538000.0,
+[
+64.11,
+-0.57
+],
+64.24,
+0.202,
+510905.0,
+"High",
+0.2,
+3.5,
+10.73,
+-0.36,
+7.26,
+-0.64,
+5.36,
+0.14
+],
+[
+"HDFC NIFTY Smallcap 250 ETF",
+"HDFCSML250",
+"543775",
+1375894,
+10,
+"INF179KC1FB2",
+null,
+null,
+60.77,
+"invalid",
+"invalid",
+"positive",
+"https://trendlyne.com/equity/1375894/HDFCSML250/hdfc-nifty-smallcap-250-etf/",
+26681397000.0,
+[
+177.7,
+-0.62
+],
+177.96,
+0.146,
+1719836.0,
+"High",
+0.26,
+0.15,
+0.01,
+-0.16,
+-4.05,
+-0.53,
+2.46,
+-0.27
+]
+],
+"stocksMetaData": {
+"1435230": {
+"flagData": []
+},
+"382149": {
+"flagData": []
+},
+"1375894": {
+"flagData": []
+},
+"1341540": {
+"flagData": []
+},
+"204259": {
+"flagData": []
+},
+"2107893": {
+"flagData": []
+},
+"1586": {
+"flagData": []
+},
+"382127": {
+"flagData": []
+},
+"789523": {
+"flagData": []
+},
+"25722": {
+"flagData": []
+},
+"3005236": {
+"flagData": []
+},
+"382150": {
+"flagData": []
+},
+"204260": {
+"flagData": []
+},
+"382131": {
+"flagData": []
+},
+"2185495": {
+"flagData": []
+},
+"3204156": {
+"flagData": []
+},
+"838042": {
+"flagData": []
+},
+"569629": {
+"flagData": []
+},
+"1027327": {
+"flagData": []
+},
+"1621": {
+"flagData": []
+},
+"1787891": {
+"flagData": []
+},
+"382133": {
+"flagData": []
+},
+"1806205": {
+"flagData": []
+},
+"382129": {
+"flagData": []
+},
+"1591998": {
+"flagData": []
+},
+"204265": {
+"flagData": []
+},
+"1610": {
+"flagData": []
+},
+"701609": {
+"flagData": []
+},
+"1439613": {
+"flagData": []
+},
+"2591540": {
+"flagData": []
+},
+"1007417": {
+"flagData": []
+},
+"3044230": {
+"flagData": []
+},
+"382151": {
+"flagData": []
+},
+"649294": {
+"flagData": []
+},
+"1486072": {
+"flagData": []
+},
+"1597": {
+"flagData": []
+},
+"3660631": {
+"flagData": []
+},
+"382128": {
+"flagData": []
+},
+"2790928": {
+"flagData": []
+},
+"2504970": {
+"flagData": []
+},
+"1245511": {
+"flagData": []
+},
+"2033689": {
+"flagData": []
+},
+"748068": {
+"flagData": []
+},
+"3221482": {
+"flagData": []
+},
+"1880": {
+"flagData": []
+},
+"1604": {
+"flagData": []
+},
+"600342": {
+"flagData": []
+},
+"1590": {
+"flagData": []
+},
+"1598": {
+"flagData": []
+},
+"204258": {
+"flagData": []
+}
+},
+"stockHeaders": [
+{
+"unique_name": "get_full_name",
+"type": "string",
+"name": "Stock Name"
+},
+{
+"unique_name": "NSEcode",
+"type": "string",
+"name": "NSE Symbol"
+},
+{
+"unique_name": "BSEcode",
+"type": "string",
+"name": "BSEcode"
+},
+{
+"name": "Stock ID",
+"type": "number",
+"unique_name": "stock_id"
+},
+{
+"name": "Page type",
+"type": "string",
+"unique_name": "page_type"
+},
+{
+"unique_name": "ISIN",
+"type": "string",
+"name": "isin"
+},
+{
+"name": "Durability Score",
+"type": "number",
+"unique_name": "d_value",
+"attr": "DURABILITY_METRIC_val"
+},
+{
+"name": "Valuation Score",
+"type": "number",
+"unique_name": "v_value",
+"attr": "VALUATION_METRIC_val"
+},
+{
+"name": "Momentum Score",
+"type": "number",
+"unique_name": "m_value",
+"attr": "MOMENTUM_METRIC_val"
+},
+{
+"name": "D color",
+"type": "string",
+"unique_name": "d_color"
+},
+{
+"name": "V color",
+"type": "string",
+"unique_name": "v_color"
+},
+{
+"name": "M color",
+"type": "string",
+"unique_name": "m_color"
+},
+{
+"name": "Current URL",
+"type": "string",
+"unique_name": "absolute_url"
+}
+],
+"sortBy": "FNA_AsOfOriginalReported",
+"order": "DESC",
+"isNextPage": true,
+"thisPageNumber": 1,
+"thisPageCount": 50,
+"totalResults": 356
+}
+}

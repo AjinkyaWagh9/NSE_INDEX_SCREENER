@@ -131,25 +131,48 @@ def groww_search(query):
 
 
 class AggregatorClient:
-    """Resolve AUM (cr) + TER (%) for a fund. Returns None when no confident match."""
+    """Resolve AUM (cr) + TER (%) for a fund. Returns None when no confident match.
+
+    `etf_source` is an optional symbol/ISIN -> record map (from
+    ranking.trendlyne.load_etf_source). When present it is the primary source
+    for ETFs — a bulk, non-rate-limited feed — with Tickertape as fallback for
+    ETFs it doesn't carry (the ~31 large funds Trendlyne omits).
+    """
+
+    def __init__(self, etf_source=None):
+        self.etf_source = etf_source or {}
 
     def fetch(self, kind, symbol, isin, name):
         query = symbol if (kind == "ETF" and symbol) else name
         if not query:
             return None
 
-        # --- Tickertape primary (ETFs only -- see module docstring: the
-        # discovery spike found Tickertape search never surfaces true
-        # open-ended mutual-fund results, only "etf"/"index" types, so for
-        # any other kind it can only cross-match to a same-named ETF) ---
         if kind == "ETF":
+            # --- Trendlyne bulk primary (ETFs) ---
+            hit = self._from_etf_source(symbol, isin)
+            if hit:
+                return hit
+            # --- Tickertape fallback (ETFs only -- see module docstring: the
+            # discovery spike found Tickertape search never surfaces true
+            # open-ended mutual-fund results, only "etf"/"index" types) ---
             hit = self._tickertape(kind, symbol, isin, name, query)
             if hit:
                 return hit
             time.sleep(REQUEST_PAUSE)
 
-        # --- Groww fallback ---
+        # --- Groww fallback (index funds + any ETF the above missed) ---
         return self._groww(kind, symbol, isin, name, query)
+
+    def _from_etf_source(self, symbol, isin):
+        rec = None
+        if symbol:
+            rec = self.etf_source.get(str(symbol).upper())
+        if rec is None and isin:
+            rec = self.etf_source.get(str(isin).upper())
+        if rec and rec.get("aum_cr") is not None:
+            return {"aum_cr": float(rec["aum_cr"]), "ter_pct": rec.get("ter_pct"),
+                    "matched_key": rec.get("symbol") or symbol, "source": "trendlyne"}
+        return None
 
     def _tickertape(self, kind, symbol, isin, name, query):
         if _TT_BLOCKED[0]:

@@ -15,6 +15,7 @@ import pandas as pd
 from ranking.dedup import build_universe
 from ranking.enrich import enrich_universe
 from ranking.aggregator import AggregatorClient
+from ranking.trendlyne import load_etf_source
 from ranking.rank import (split_by_aum, rank_by_aum, rank_composite,
                           top_n_per_index, COMPOSITE_WEIGHTS)
 from ranking.build_output import write_shortlist_xlsx
@@ -37,7 +38,10 @@ def main():
         universe = universe.head(args.limit)
     log.info("Universe: %d funds (%s)", len(universe), universe.kind.value_counts().to_dict())
 
-    enriched = enrich_universe(universe, AggregatorClient(),
+    etf_source = load_etf_source(DATA / "09_trendlyne_etfs.csv", refresh=args.refresh)
+    log.info("Trendlyne ETF source: %d symbol/ISIN keys", len(etf_source))
+
+    enriched = enrich_universe(universe, AggregatorClient(etf_source=etf_source),
                                DATA / "08_aum_ter.csv", refresh=args.refresh)
     resolved = int(enriched["resolved"].sum())
     log.info("Resolved AUM for %d/%d funds", resolved, len(enriched))
