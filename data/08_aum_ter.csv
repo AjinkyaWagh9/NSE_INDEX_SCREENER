@@ -1,0 +1,633 @@
+fund_id,aum_cr,ter_pct,aum_source,matched_key,resolved
+NIFTYBEES,68029.3812,0.05,tickertape,NIFTYBEES,True
+LIQUIDCASE,,,,,False
+BANKBEES,8002.7731,0.21,tickertape,BANKBEES,True
+LIQUIDADD,,,,,False
+LIQUIDIETF,,,,,False
+ITBEES,,,,,False
+PSUBNKBEES,3945.4468,0.51,tickertape,PSUBNKBEES,True
+NIFTYIETF,,,,,False
+LIQUID1,,,,,False
+PHARMABEES,,,,,False
+JUNIORBEES,8536.778199999999,0.26,tickertape,JUNIORBEES,True
+SBINIFTY50,,,,,False
+LIQUIDETF,539.5837,0.32,tickertape,LIQUIDETF,True
+MID150BEES,,,,,False
+MON100,,,,,False
+HDFCSML250,,,,,False
+HDFCNIFTY,5000.54,0.05,groww,hdfc-nifty-etf,True
+LIQUIDPLUS,,,,,False
+MOREALTY,,,,,False
+CASHIETF,,,,,False
+MODEFENCE,1211.35,0.58,groww,motilal-oswal-nifty-india-defence-etf,True
+LIQUID,539.5837,0.32,tickertape,LIQUIDETF,True
+FMCGIETF,,,,,False
+NETF,686.7964631929999,0.09,tickertape,NETF,True
+BANKIETF,,,,,False
+NIF100BEES,,,,,False
+PVTBANIETF,,,,,False
+ALPHA,,,,,False
+SMALLCAP,,,,,False
+NIFTY1,,,,,False
+METALIETF,,,,,False
+PSUBANK,,,,,False
+NIFTYETF,,,,,False
+PSUBANKADD,,,,,False
+LIQUIDBETF,,,,,False
+AUTOBEES,,,,,False
+BFSI,,,,,False
+ABSL10BANK,,,,,False
+NEXT50IETF,,,,,False
+LOWVOLIETF,,,,,False
+MASPTOP50,,,,,False
+SBINEXT50,,,,,False
+MIDCAPETF,,,,,False
+BANKBETF,,,,,False
+HNGSNGBEES,991.2872,0.98,tickertape,HNGSNGBEES,True
+SBIBANKNIF,,,,,False
+BANKNIFTY1,,,,,False
+MOMENTUM50,,,,,False
+OILIETF,,,,,False
+GROWWRAIL,,,,,False
+AONELIQUID,,,,,False
+NIFTYBETA,,,,,False
+NIFTYAXIS,,,,,False
+GROWWLIQID,,,,,False
+GILT5YBEES,,,,,False
+SBILIQETF,,,,,False
+ABSLLIQUID,,,,,False
+GROWWCAPM,,,,,False
+FINIETF,,,,,False
+LTGILTBEES,,,,,False
+PSUBNKIETF,,,,,False
+HDFCLIQUID,,,,,False
+HDFCPSUBK,,,,,False
+MOM30IETF,,,,,False
+TOP10ADD,,,,,False
+HDFCBSE500,,,,,False
+GROWWHOSPI,,,,,False
+INFRAIETF,,,,,False
+CONSUMBEES,,,,,False
+GROWWNIFTY,,,,,False
+MOM100,,,,,False
+ELIQUID,,,,,False
+NIFTYADD,,,,,False
+ALPL30IETF,,,,,False
+HEALTHIETF,,,,,False
+INSUREIETF,,,,,False
+GROWWPOWER,,,,,False
+ITIETF,,,,,False
+MIDCAP,,,,,False
+MID150CASE,,,,,False
+AUTOIETF,,,,,False
+SBIPSUBNK,,,,,False
+MAHKTECH,,,,,False
+BANKETF,,,,,False
+GROWWDEFNC,,,,,False
+SML100CASE,,,,,False
+NEXT50,,,,,False
+METAL,,,,,False
+NIF100IETF,,,,,False
+HDFCNIFBAN,,,,,False
+MOSMALL250,,,,,False
+NV20IETF,,,,,False
+BSLNIFTY,3170.9586,0.06,tickertape,BSLNIFTY,True
+HDFCPVTBAN,,,,,False
+MIDCAPIETF,,,,,False
+MIDSMALL,,,,,False
+IDFNIFTYET,21.5071,0.09,tickertape,IDFNIFTYET,True
+EVINDIA,,,,,False
+LOWVOL1,,,,,False
+MONIFTY500,,,,,False
+ALPHAETF,,,,,False
+ENERGY,,,,,False
+CHEMICAL,,,,,False
+ITADD,,,,,False
+BBETF0432,,,,,False
+HDFCMOMENT,,,,,False
+HDFCMID150,,,,,False
+SENSEXAXIS,,,,,False
+BANK10BETF,,,,,False
+DEFENCE,,,,,False
+HEALTHY,,,,,False
+VAL30IETF,,,,,False
+LIQUIDSBI,,,,,False
+BANKADD,,,,,False
+IT,,,,,False
+LICNETFGSC,1703.7363,0.17,tickertape,LICNETFGSC,True
+LTGILTCASE,,,,,False
+EVIETF,,,,,False
+CONSUMIETF,,,,,False
+MOTOUR,,,,,False
+HDFCNEXT50,,,,,False
+GROWWPSUBK,,,,,False
+TOP100CASE,,,,,False
+SBIEQLWT50,,,,,False
+ITETF,,,,,False
+DIVOPPBEES,,,,,False
+MID150,,,,,False
+SMALL250,,,,,False
+SENSEXETF,,,,,False
+LIQUIDSHRI,,,,,False
+BANKBETA,,,,,False
+HDFCGROWTH,,,,,False
+SBIPVTBNK,,,,,False
+NEXT50BETA,,,,,False
+SBIIT,,,,,False
+MOLOWVOL,,,,,False
+GROWWEV,,,,,False
+MAKEINDIA,,,,,False
+CONS,,,,,False
+LICNETFN50,815.5122,0.09,tickertape,LICNETFN50,True
+MOMOMENTUM,,,,,False
+MOENERGY,,,,,False
+TNIDETF,,,,,False
+EQUAL50ADD,,,,,False
+MOMIDMTM,,,,,False
+SBIQUALITY,,,,,False
+HDFCNIFIT,,,,,False
+QNIFTY,,,,,False
+BANKPSU,,,,,False
+BSE500IETF,,,,,False
+MULTICAP,,,,,False
+NV20,,,,,False
+AONENIFTY,,,,,False
+TOP15IETF,,,,,False
+PHARMAIETF,,,,,False
+QUAL30IETF,,,,,False
+TOP20,,,,,False
+MOBANK10,,,,,False
+SBIMIDMOM,,,,,False
+BANK10ADD,,,,,False
+HDFCNIF100,,,,,False
+COMMOIETF,,,,,False
+HDFCVALUE,,,,,False
+NV20BEES,,,,,False
+ABSLBANETF,,,,,False
+NEXT50ETF,,,,,False
+ECAPINSURE,,,,,False
+GROWWMETAL,,,,,False
+PVTBANKADD,,,,,False
+NIFTY100EW,,,,,False
+MOMMIDCAP,,,,,False
+ESG,,,,,False
+HDFCNIMEG,,,,,False
+ELM250,,,,,False
+MOMENTUM30,,,,,False
+MOM50,,,,,False
+MONIFTY100,,,,,False
+AONETOTAL,,,,,False
+FLEXIADD,,,,,False
+NIF500BETA,,,,,False
+SBICONS,,,,,False
+EQUAL200,,,,,False
+VALUEAXIS,,,,,False
+MOMENTUM,,,,,False
+SBIDEFETF,,,,,False
+CEMNTGROWW,,,,,False
+SNXT30BEES,,,,,False
+GROWWCHEM,,,,,False
+MSCIINDIA,,,,,False
+MIDBANKADD,,,,,False
+FMCGADD,,,,,False
+HEALTHADD,,,,,False
+MOINFRA,,,,,False
+SMALLGROWW,,,,,False
+GROWWSC250,,,,,False
+PVTBANK,,,,,False
+BANKCASE,,,,,False
+EMULTIMQ,,,,,False
+MNC,,,,,False
+BNKETFAXIS,,,,,False
+MON50EQUAL,,,,,False
+INSURADD,,,,,False
+MOALPHA50,,,,,False
+SELECTIPO,,,,,False
+EBANKNIFTY,,,,,False
+NIFTYBETF,,,,,False
+TECH,,,,,False
+HDFCQUAL,,,,,False
+GROWWMOM50,,,,,False
+MONEXT50,,,,,False
+MIDQ50ADD,,,,,False
+IVZBANKNF,,,,,False
+HEALTHCARE,,,,,False
+SBI10YGILT,,,,,False
+PVTBKGROWW,,,,,False
+EQUAL50,,,,,False
+HFTSEINDIA,,,,,False
+ABSLNN50ET,,,,,False
+MOMETAL,,,,,False
+SMALLIETF,,,,,False
+VALUE,,,,,False
+SNXT50BETA,,,,,False
+HEALTHAXIS,,,,,False
+LICNMID100,,,,,False
+NIFTYQLITY,,,,,False
+MOSERVICE,,,,,False
+BSLSENETFG,,,,,False
+BIRLATOTAL,,,,,False
+AONETMMQ50,,,,,False
+GROWWN200,,,,,False
+INFRA,,,,,False
+MSCIADD,,,,,False
+NPBET,,,,,False
+GROWWMC150,,,,,False
+HDFCLOWVOL,,,,,False
+SBISMLETF,,,,,False
+MOMGF,,,,,False
+CONSUMAXIS,,,,,False
+SMALLADD,,,,,False
+GROWWLOVOL,,,,,False
+NEXT50ADD,,,,,False
+SBIMID150,,,,,False
+MANUFGBEES,,,,,False
+MOGSEC,,,,,False
+MIDCAPBETA,,,,,False
+LARGEMID50,,,,,False
+MIDCAPADD,,,,,False
+MOOILGAS,,,,,False
+GILT5BETA,,,,,False
+ENERGYAXIS,,,,,False
+ITAXIS,,,,,False
+DIVIDEND,,,,,False
+POWERIETF,,,,,False
+ENIFTY,,,,,False
+IVZINNIFTY,,,,,False
+NEXT30ADD,,,,,False
+EBANK10,,,,,False
+BBNPNBETF,,,,,False
+GSEC5IETF,,,,,False
+MOIPO,,,,,False
+GSEC10IETF,,,,,False
+ESENSEX,,,,,False
+SENSEXADD,,,,,False
+MSCI360,,,,,False
+QUALITY30,,,,,False
+IVZSENSEX,,,,,False
+ABSLMSCIN,,,,,False
+EMETAL,,,,,False
+GSEC10YEAR,,,,,False
+SBIVALETF,,,,,False
+MOMNC,,,,,False
+HYBRIDETF,,,,,False
+ELMDIV,,,,,False
+LOWVOL,,,,,False
+SECLEDBETA,,,,,False
+GILT10BETA,,,,,False
+LICNFNHGP,,,,,False
+ITBETA,,,,,False
+ENEXT50,,,,,False
+GSEC10ABSL,,,,,False
+ABGSEC,,,,,False
+GSEC10ADD,,,,,False
+LIQUIDBETA,,,,,False
+360 ONE Mutual Fund|360 ONE ELSS Tax Saver Nifty 50 Index Fund,65.76,0.39,groww,360-one-elss-tax-saver-nifty-50-index-fund-direct-growth,True
+Angel One Mutual Fund|ANGEL ONE NIFTY 50 INDEX FUND,32.22,0.24,groww,angel-one-nifty-50-index-fund-direct-growth,True
+Angel One Mutual Fund|ANGEL ONE NIFTY TOTAL MARKET INDEX FUND,59.47,0.32,groww,angel-one-nifty-total-market-index-fund-direct-growth,True
+Angel One Mutual Fund|ANGEL ONE NIFTY TOTAL MARKET MOMENTUM QUALITY 50 INDEX FUND,34.99,0.63,groww,angel-one-nifty-total-market-momentum-quality-50-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE 500 Momentum 50 Index Fund,108.41,0.76,groww,aditya-birla-sun-life-bse-500-momentum-50-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE 500 Quality 50 Index Fund,61.31,0.4,groww,aditya-birla-sun-life-bse-500-quality-50-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE India Infrastructure Index Fund,29.03,0.56,groww,aditya-birla-sun-life-bse-india-infrastructure-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life BSE Total Market Index Fund,82.97,6.17,groww,aditya-birla-sun-life-bse-total-market-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life CRISIL IBX SDL Jun 2032 Index Fund,140.76,0.22,groww,aditya-birla-sun-life-crisil-ibx-sdl-jun-2032-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,416.34,0.19,groww,aditya-birla-sun-life-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX 60:40 SDL+AAA PSU-APR 2027 Index Fund,1308.83,0.21,groww,aditya-birla-sun-life-crisil-ibx-60:40-sdl+aaa-psu-apr-2027-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt -Apr 2029 Index Fund,561.27,0.22,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2029-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt Apr 2028 Index Fund,20.89,0.52,groww,aditya-birla-sun-life-crisil-ibx-gilt-apr-2028-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt April 2033 Index Fund,25.07,0.2,groww,aditya-birla-sun-life-crisil-ibx-gilt-april-2033-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Crisil IBX Gilt June 2027 Index Fund,12.82,0.32,groww,aditya-birla-sun-life-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty 50 Equal Weight index Fund,527.03,0.41,groww,aditya-birla-sun-life-nifty-50-equal-weight-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty 50 Index Fund,1481.6,0.23,groww,birla-sun-life-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty India Defence Index Fund,1378.09,0.45,groww,aditya-birla-sun-life-nifty-india-defence-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty Midcap 150 Index Fund,450.15,0.48,groww,aditya-birla-sun-life-nifty-midcap-150-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty Next 50 Index Fund,262.34,0.47,groww,aditya-birla-sun-life-nifty-next-50-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty SDL Apr 2027 Index Fund,3165.54,0.21,groww,aditya-birla-sun-life-nifty-sdl-apr-2027-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty SDL Plus PSU Bond SEP 2026 60:40 Index Fund,,,,,False
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty SDL SEP 2027 Index Fund,43.27,0.18,groww,aditya-birla-sun-life-nifty-sdl-sep-2027-index-fund-direct-growth,True
+Aditya Birla Sun Life Mutual Fund|Aditya Birla Sun Life Nifty Smallcap 50 Index Fund,325.1,0.67,groww,aditya-birla-sun-life-nifty-smallcap-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis BSE India Sector Leaders Index Fund,28.0,0.27,groww,axis-bse-india-sector-leaders-index-fund-direct-growth,True
+Axis Mutual Fund|Axis BSE Sensex Index Fund,52.93,0.2,groww,axis-bse-sensex-index-fund-direct-growth,True
+Axis Mutual Fund|Axis CRISIL IBX 50:50 Gilt Plus SDL June 2028 Index Fund,,,,,False
+Axis Mutual Fund|Axis CRISIL IBX SDL May 2027 Index Fund,1691.59,0.15,groww,axis-crisil-ibx-sdl-may-2027-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Crisil IBX 50:50 Gilt Plus SDL September 2027 Index Fund,36.29,0.15,groww,axis-crisil-ibx-50:50-gilt-plus-sdl-september-2027-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty 100 Index Fund,2060.38,0.26,groww,axis-nifty-100-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty 50 Index Fund,1033.59,0.16,groww,axis-nifty-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty 500 Index Fund,318.65,0.17,groww,axis-nifty-500-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty Bank Index Fund,177.78,0.23,groww,axis-nifty-bank-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty Capital Markets Index Fund,131.29,0.68,groww,axis-nifty-capital-markets-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty EV & New Age Automotive Index Fund,,,,,False
+Axis Mutual Fund|Axis Nifty Energy Index Fund,86.37,1.12,groww,axis-nifty-energy-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty IT Index Fund,143.33,0.42,groww,axis-nifty-it-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty India Defence Index Fund,377.62,0.6,groww,axis-nifty-india-defence-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty Midcap 50 Index Fund,721.72,0.35,groww,axis-nifty-midcap-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty Next 50 Index Fund,541.1,0.25,groww,axis-nifty-next-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty Smallcap 50 Index Fund,726.17,0.44,groww,axis-nifty-smallcap-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty50 Equal Weight Index Fund,88.48,0.98,groww,axis-nifty50-equal-weight-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty500 Low Volatility 50 Index Fund,24.04,1.9,groww,axis-nifty500-low-volatility-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty500 Momentum 50 Index Fund,171.62,0.53,groww,axis-nifty500-momentum-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty500 Quality 50 Index Fund,75.7,0.3,groww,axis-nifty500-quality-50-index-fund-direct-growth,True
+Axis Mutual Fund|Axis Nifty500 Value 50 Index Fund,230.34,0.36,groww,axis-nifty500-value-50-index-fund-directgrowth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - APRIL 2032 INDEX FUND,374.17,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-april-2032-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - NOV 2026 INDEX FUND,,,,,False
+Bandhan Mutual Fund|BANDHAN CRISIL IBX 90:10 SDL PLUS GILT - SEPTEMBER 2027 INDEX FUND,143.65,0.09,groww,bandhan-crisil-ibx-90:10-sdl-plus-gilt-september-2027-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2026 INDEX FUND,,,,,False
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2028 INDEX FUND,3327.73,0.2,groww,bandhan-crisil-ibx-gilt-april-2028-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT APRIL 2032 INDEX FUND,404.36,0.2,groww,bandhan-crisil-ibx-gilt-april-2032-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN CRISIL IBX GILT JUNE 2027 INDEX FUND,5112.98,0.2,groww,bandhan-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN NIFTY 100 INDEX FUND,259.26,0.2,groww,bandhan-nifty-100-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN NIFTY BANK INDEX FUND,22.8,0.34,groww,bandhan-nifty-bank-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN NIFTY TOTAL MARKET INDEX FUND,42.34,0.67,groww,bandhan-nifty-total-market-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN NIFTY200 MOMENTUM 30 INDEX FUND,111.53,0.77,groww,bandhan-nifty200-momentum-30-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN Nifty 50 Index Fund,2772.89,0.14,groww,idfc-nifty-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN Nifty Smallcap 250 Index Fund,104.88,0.37,groww,bandhan-nifty-smallcap-250-index-fund-direct-growth,True
+Bandhan Mutual Fund|BANDHAN Nifty100 Low Volatility 30 Index Fund,1444.27,0.49,groww,bandhan-nifty100-low-volatility-30-index-fund-direct-growth,True
+Bajaj Finserv Mutual Fund|Bajaj Finserv Nifty 50 Index Fund,35.77,0.33,groww,bajaj-finserv-nifty-50-index-fund-direct-growth,True
+Bajaj Finserv Mutual Fund|Bajaj Finserv Nifty Next 50 Index Fund,29.07,0.46,groww,bajaj-finserv-nifty-next-50-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan BSE India Sector Leaders Index Fund,22.95,0.37,groww,bandhan-bse-india-sector-leaders-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty 200 Quality 30 Index Fund,16.11,0.53,groww,bandhan-nifty-200-quality-30-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty 500 Momentum 50 Index Fund,41.56,0.77,groww,bandhan-nifty-500-momentum-50-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty 500 Value 50 Index Fund,44.07,0.66,groww,bandhan-nifty-500-value-50-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty Alpha 50 Index Fund,576.06,0.72,groww,bandhan-nifty-alpha-50-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty Alpha Low Volatility 30 Index Fund,8.99,0.51,groww,bandhan-nifty-alpha-low-volatility-30-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty IT Index Fund,36.54,0.53,groww,bandhan-nifty-it-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty Midcap 150 Index Fund,72.17,0.63,groww,bandhan-nifty-midcap-150-index-fund-direct-growth,True
+Bandhan Mutual Fund|Bandhan Nifty Next 50 Index Fund,45.49,0.48,groww,bandhan-nifty-next-50-index-fund-direct-growth,True
+Baroda BNP Paribas Mutual Fund|Baroda BNP Paribas NIFTY SDL December 2028 Index Fund,101.58,0.22,groww,baroda-bnp-paribas-nifty-sdl-december-2028-index-fund-direct-growth,True
+Baroda BNP Paribas Mutual Fund|Baroda BNP Paribas Nifty 50 Index Fund,51.3,0.47,groww,baroda-bnp-paribas-nifty-50-index-fund-direct-growth,True
+Baroda BNP Paribas Mutual Fund|Baroda BNP Paribas Nifty Midcap 150 Index Fund,10.08,0.58,groww,baroda-bnp-paribas-nifty-midcap-150-index-fund-direct-growth,True
+Baroda BNP Paribas Mutual Fund|Baroda BNP Paribas Nifty SDL December 2026 Index Fund,,,,,False
+Baroda BNP Paribas Mutual Fund|Baroda BNP Paribas Nifty200 Momentum 30 Index Fund,20.08,0.97,groww,baroda-bnp-paribas-nifty200-momentum-30-index-fund-direct-growth,True
+Choice Mutual Fund|Choice Nifty 50 Index Fund,15.01,0.61,groww,choice-nifty-50-index-fund-direct-growth,True
+Choice Mutual Fund|Choice Nifty Next 50 Index Fund,19.35,0.57,groww,choice-nifty-next-50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP BSE SENSEX Next 30 Index Fund,28.2,0.4,groww,dsp-bse-sensex-next-30-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty 50 Equal Weight Index Fund,2553.76,0.48,groww,dsp-nifty-50-equal-weight-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty 50 Index Fund,1030.99,0.24,groww,dsp-nifty-50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty 500 Index Fund,17.07,0.32,groww,dsp-nifty-500-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Bank Index Fund,62.51,0.27,groww,dsp-nifty-bank-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Healthcare Index Fund,26.37,0.39,groww,dsp-nifty-healthcare-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty IT Index Fund,119.76,0.43,groww,dsp-nifty-it-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Midcap 150 Index Fund,17.58,0.43,groww,dsp-nifty-midcap-150-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Midcap 150 Quality 50 Index Fund,386.0,0.43,groww,dsp-nifty-midcap-150-quality-50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Next 50 Index Fund,1336.16,0.38,groww,dsp-nifty-next-50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Private Bank Index Fund,109.49,0.47,groww,dsp-nifty-private-bank-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty SDL Plus G-Sec Jun 2028 30:70 Index Fund,1638.05,0.16,groww,dsp-nifty-sdl-plus-g-sec-jun-2028-30:70-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty SDL Plus G-Sec Sep 2027 50:50 Index Fund,83.73,0.16,groww,dsp-nifty-sdl-plus-g-sec-sep-2027-50:50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Smallcap 250 Index Fund,17.83,0.57,groww,dsp-nifty-smallcap-250-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Smallcap250 Quality 50 Index Fund,287.7,0.33,groww,dsp-nifty-smallcap250-quality-50-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty Top 10 Equal Weight Index Fund,1122.69,0.37,groww,dsp-nifty-top-10-equal-weight-index-fund-direct-growth,True
+DSP Mutual Fund|DSP Nifty500 Flexicap Quality 30 Index Fund,207.51,0.64,groww,dsp-nifty500-flexicap-quality-30-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL April 2037 Index Fund,871.56,0.21,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-april-2037-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL June 2027 Index Fund,87.68,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-june-2027-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Sep 2028 Index Fund,103.7,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-sep-2028-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX 50:50 Gilt Plus SDL Short Duration Index Fund,145.1,0.2,groww,edelweiss-crisil-ibx-50:50-gilt-plus-sdl-short-duration-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Bond NBFC HFC Jun 2027 Index Fund,82.06,0.13,groww,edelweiss-crisil-ibx-aaa-bond-nbfc-hfc-jun-2027-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss CRISIL IBX AAA Financial Services Bond - Jan 2028 Index Fund,103.11,0.16,groww,edelweiss-crisil-ibx-aaa-financial-services-bond-jan-2028-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss MSCI India Domestic & World Healthcare 45 Index Fund,202.88,0.56,groww,edelweiss-msci-india-domestic-world-healthcare-45-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss NIFTY PSU Bond Plus SDL Apr 2027 50:50 Index Fund,2081.13,0.25,groww,edelweiss-nifty-psu-bond-plus-sdl-apr-2027-50:50-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty 100 Quality 30 Index Fund,111.89,0.57,groww,edelweiss-nifty-100-quality-30-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty 50 Index Fund,300.02,0.14,groww,edelweiss-nifty-50-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty Alpha Low Volatility 30 Index Fund,77.86,0.54,groww,edelweiss-nifty-alpha-low-volatility-30-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty LargeMidcap250 Plus 8-13yr G-Sec 70:30 Index Fund,48.94,0.56,groww,edelweiss-nifty-largemidcap250-plus-8-13-yr-g-sec-70:30-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty Midcap150 Momentum 50 Index Fund,1682.09,0.74,groww,edelweiss-nifty-midcap150-momentum-50-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty Next 50 Index Fund,300.48,0.24,groww,edelweiss-nifty-next-50-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty PSU Bond Plus SDL Apr 2026 50:50 Index Fund,,,,,False
+Edelweiss Mutual Fund|Edelweiss Nifty REITs & Realty Index Fund,178.55,1.31,groww,edelweiss-nifty-reits-realty-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty Smallcap 250 Index Fund,266.94,0.42,groww,edelweiss-nifty-smallcap-250-index-fund-direct-growth,True
+Edelweiss Mutual Fund|Edelweiss Nifty500 Multicap Momentum Quality 50 Index Fund,593.23,0.68,groww,edelweiss-nifty500-multicap-momentum-quality-50-index-fund-direct-growth,True
+Franklin Templeton Mutual Fund|Franklin India NSE Nifty 50 Index Fund,,,,,False
+Groww Mutual Fund|Groww Nifty 50 Index Fund,28.29,0.45,groww,groww-nifty-50-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty India Railways PSU Index Fund,62.01,0.72,groww,groww-nifty-india-railways-psu-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Midcap 150 Index Fund,14.67,0.52,groww,groww-nifty-midcap-150-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Next 50 Index Fund,10.72,0.51,groww,groww-nifty-next-50-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Non-Cyclical Consumer Index Fund,38.34,0.65,groww,groww-nifty-non-cyclical-consumer-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty PSU Bank Index Fund,5.65,1.24,groww,groww-nifty-psu-bank-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Private Bank Index Fund,5.58,0.98,groww,groww-nifty-private-bank-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Smallcap 250 Index Fund,129.05,0.63,groww,groww-nifty-smallcap-250-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Smallcap 250 Momentum Quality 100 Index Fund,9.32,1.18,groww,groww-nifty-smallcap-250-momentum-quality-100-index-fund-direct-growth,True
+Groww Mutual Fund|Groww Nifty Total Market Index Fund,354.35,0.66,groww,groww-nifty-total-market-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC BSE 500 Index Fund,320.5,0.35,groww,hdfc-bse-500-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC BSE India Sector Leaders Index Fund,160.83,0.3,groww,hdfc-bse-india-sector-leaders-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC BSE Sensex Index Fund,8216.9,0.23,groww,hdfc-bse-sensex-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY 100 Equal Weight Index Fund,478.91,0.57,groww,hdfc-nifty-100-equal-weight-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY 100 Index Fund,468.18,0.35,groww,hdfc-nifty-100-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY LargeMidcap 250 Index Fund,466.84,0.27,groww,hdfc-nifty-largemidcap-250-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY Midcap 150 Index Fund,693.55,0.39,groww,hdfc-nifty-midcap-150-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY Next 50 index Fund,2554.0,0.38,groww,hdfc-nifty-next-50-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY Realty Index Fund,171.06,0.5,groww,hdfc-nifty-realty-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY SDL Plus G-Sec Jun 2027 40:60 Index Fund,48.76,0.21,groww,hdfc-nifty-sdl-plus-g-sec-jun-2027-40:60-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY Smallcap 250 Index Fund,726.72,0.4,groww,hdfc-nifty-smallcap-250-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY100 Low Volatility 30 Index Fund,201.26,0.52,groww,hdfc-nifty100-low-volatility-30-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY200 Momentum 30 Index Fund,543.47,0.71,groww,hdfc-nifty200-momentum-30-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY50 Equal Weight Index Fund,1661.41,0.46,groww,hdfc-nifty50-equal-weight-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC NIFTY500 Multicap 50:25:25 Index Fund,510.2,0.34,groww,hdfc-nifty500-multicap-50:25:25-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty 50 Index Fund,22727.99,0.29,groww,hdfc-nifty-50-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty Auto Index Fund,142.32,0.8,groww,hdfc-nifty-auto-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty G-Sec Apr 2029 Index Fund,151.63,0.21,groww,hdfc-nifty-g-sec-apr-2029-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty G-Sec Dec 2026 Index Fund,,,,,False
+HDFC Mutual Fund|HDFC Nifty G-Sec July 2031 Index Fund,,,,,False
+HDFC Mutual Fund|HDFC Nifty G-Sec Jun 2027 Index Fund,,,,,False
+HDFC Mutual Fund|HDFC Nifty G-Sec Jun 2036 Index Fund,827.51,0.2,groww,hdfc-nifty-g-sec-jun-2036-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty G-Sec Sep 2032 Index Fund,,,,,False
+HDFC Mutual Fund|HDFC Nifty India Consumption Index Fund,104.48,0.43,groww,hdfc-nifty-india-consumption-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty India Digital Index Fund,151.26,0.41,groww,hdfc-nifty-india-digital-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty LargeMidcap250 Plus 8-13 yr G-sec 70:30 Index Fund,21.23,3.89,groww,hdfc-nifty-largemidcap250-plus-8-13-yr-g-sec-70-30-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty SDL Oct 2026 Index Fund,,,,,False
+HDFC Mutual Fund|HDFC Nifty Top 20 Equal Weight Index Fund,94.88,0.36,groww,hdfc-nifty-top-20-equal-weight-index-fund-direct-growth,True
+HDFC Mutual Fund|HDFC Nifty100 Quality 30 Index Fund,132.53,0.41,groww,hdfc-nifty100-quality-30-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC CRISIL IBX 50:50 Gilt Plus SDL Apr 2028 Index Fund,1734.45,0.19,groww,hsbc-crisil-ibx-50:50-gilt-plus-sdl-apr-2028-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC CRISIL IBX Gilt June 2027 Index Fund,172.2,0.15,groww,hsbc-crisil-ibx-gilt-june-2027-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC NIFTY 50 Index Fund,383.83,0.22,groww,hsbc-nifty-50-index-fund-direct-growth,True
+HSBC Mutual Fund|HSBC NIFTY NEXT 50 Index Fund,184.9,0.45,groww,hsbc-nifty-next-50-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential BSE Sensex Index Fund,1768.59,0.22,groww,icici-prudential-bse-sensex-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential NASDAQ 100 Index Fund,,,,,False
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty 200 Momentum 30 Index Fund,488.92,0.67,groww,icici-prudential-nifty-200-momentum-30-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty 50 Index Fund,,,,,False
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty 500 Index Fund,104.2,0.44,groww,icici-prudential-nifty-500-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Auto Index Fund,230.8,0.36,groww,icici-prudential-nifty-auto-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Bank Index Fund,703.99,0.22,groww,icici-prudential-nifty-bank-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty G-Sec Dec 2030 Index Fund,790.54,0.2,groww,icici-prudential-nifty-g-sec-dec-2030-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty IT Index Fund,483.25,0.39,groww,icici-prudential-nifty-it-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty LargeMidcap 250 Index Fund,292.77,0.32,groww,icici-prudential-nifty-largemidcap-250-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Midcap 150 Index Fund,1201.84,0.39,groww,icici-prudential-nifty-midcap-150-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Next 50 Index Fund,,,,,False
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty PSU Bond Plus SDL Sep 2027 40:60 Index Fund,6901.6,0.2,groww,icici-prudential-nifty-psu-bond-plus-sdl-sep-2027-40:60-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Pharma Index Fund,177.33,0.51,groww,icici-prudential-nifty-pharma-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Private Bank Index Fund,62.04,0.63,groww,icici-prudential-nifty-private-bank-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty SDL Dec 2028 Index Fund,814.19,0.19,groww,icici-prudential-nifty-sdl-dec-2028-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty SDL Sep 2026 Index Fund,,,,,False
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty SDL Sep 2027 Index Fund,1239.8,0.18,groww,icici-prudential-nifty-sdl-sep-2027-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Smallcap 250 Index Fund,740.1,0.43,groww,icici-prudential-nifty-smallcap-250-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty Top 15 Equal Weight Index Fund,40.71,0.5,groww,icici-prudential-nifty-top-15-equal-weight-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty200 Quality 30 Index Fund,24.87,0.47,groww,icici-prudential-nifty200-quality-30-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty200 Value 30 Index Fund,186.71,0.57,groww,icici-prudential-nifty200-value-30-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty50 Equal Weight Index Fund-,248.68,0.4,groww,icici-prudential-nifty50-equal-weight-index-fund-direct-growth,True
+ICICI Prudential Mutual Fund|ICICI Prudential Nifty50 Value 20 Index Fund,97.54,0.46,groww,icici-prudential-nifty50-value-20-index-fund-direct-growth,True
+Invesco Mutual Fund|Invesco India BSE Sensex Index Fund,14.3,0.7,groww,invesco-india-bse-sensex-index-fund-direct-growth,True
+Invesco Mutual Fund|Invesco India Nifty Bank Index Fund,28.14,0.61,groww,invesco-india-nifty-bank-index-fund-direct-growth,True
+Invesco Mutual Fund|Invesco India Nifty G-sec Jul 2027 Index Fund,81.22,0.14,groww,invesco-india-nifty-g-sec-jul-2027-index-fund-direct-growth,True
+Invesco Mutual Fund|Invesco India Nifty G-sec Sep 2032 Index Fund,52.17,0.14,groww,invesco-india-nifty-g-sec-sep-2032-index-fund-direct-growth,True
+Invesco Mutual Fund|Invesco India Nifty India Defence Index Fund,36.96,2.29,groww,invesco-india-nifty-india-defence-index-fund-direct-growth,True
+Jio BlackRock Mutual Fund|JioBlackRock Nifty 50 Index Fund,281.52,0.21,groww,jioblackrock-nifty-50-index-fund-direct-growth,True
+Jio BlackRock Mutual Fund|JioBlackRock Nifty 8-13 yr G-Sec Index Fund,25.63,0.12,groww,jioblackrock-nifty-8-13-yr-g-sec-index-fund-direct-growth,True
+Jio BlackRock Mutual Fund|JioBlackRock Nifty Midcap 150 Index Fund,265.16,0.38,groww,jioblackrock-nifty-midcap-150-index-fund-direct-growth,True
+Jio BlackRock Mutual Fund|JioBlackRock Nifty Next 50 Index Fund,220.96,0.39,groww,jioblackrock-nifty-next-50-index-fund-direct-growth,True
+Jio BlackRock Mutual Fund|JioBlackRock Nifty Smallcap 250 Index Fund,380.2,0.39,groww,jioblackrock-nifty-smallcap-250-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|KOTAK NIFTY 200 QUALITY 30 INDEX FUND,16.82,0.3287,groww,kotak-nifty-200-quality-30-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak BSE Sensex Index Fund,26.0,0.286,groww,kotak-bse-sensex-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak NIFTY 100 Low Volatility 30 Index Fund,100.22,0.3899,groww,kotak-nifty-100-low-volatility-30-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty 100 Equal Weight Index Fund,50.29,0.3841,groww,kotak-nifty-100-equal-weight-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty 200 Momentum 30 Index Fund,554.49,0.6185,groww,kotak-nifty-200-momentum-30-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty 50 Equal Weight Index Fund,75.94,0.4759,groww,kotak-nifty-50-equal-weight-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty 50 Index Fund,1111.56,0.1278,groww,kotak-nifty-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty 500 Index Fund,7.06,7.9191,groww,kotak-nifty-500-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty AAA Bond Financial Services Mar 2028 Index Fund,290.52,0.1414,groww,kotak-nifty-aaa-bond-financial-services-mar-2028-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Alpha 50 Index Fund,61.25,1.0068,groww,kotak-nifty-alpha-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Alpha Low Volatility 30 Index Fund,7.24,0.8385,groww,kotak-nifty-alpha-low-volatility-30-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Bank Index Fund,7.75,0.9861,groww,kotak-nifty-bank-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Capital Markets Index Fund,8.22,2.2466,groww,kotak-nifty-capital-markets-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Commodities Index Fund,274.78,0.2922,groww,kotak-nifty-commodities-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Financial Services Ex-Bank Index Fund,88.09,0.3049,groww,kotak-nifty-financial-services-ex-bank-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty G-Sec July 2033 Index Fund,21.58,0.1403,groww,kotak-nifty-g-sec-july-2033-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty India Tourism Index Fund,36.55,0.5401,groww,kotak-nifty-india-tourism-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Midcap 150 Index Fund,47.06,0.4026,groww,kotak-nifty-midcap-150-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Midcap 150 Momentum 50 Index Fund,456.05,0.6148,groww,kotak-nifty-midcap-150-momentum-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Midcap 50 Index Fund,81.67,0.4491,groww,kotak-nifty-midcap-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Next 50 Index Fund,1369.83,0.2749,groww,kotak-nifty-next-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty SDL Apr 2027 Top 12 Equal Weight Index Fund,6080.81,0.2012,groww,kotak-nifty-sdl-apr-2027-top-12-equal-weight-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty SDL Apr 2032 Top 12 Equal Weight Index Fund,3046.08,0.2006,groww,kotak-nifty-sdl-apr-2032-top-12-equal-weight-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty SDL Jul 2026 Index Fund,,,,,False
+Kotak Mahindra Mutual Fund|Kotak Nifty SDL Jul 2033 Index Fund,170.8,0.2109,groww,kotak-nifty-sdl-jul-2033-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty SDL Plus AAA PSU Bond Jul 2028 60 - 40 Index Fund,492.57,0.2103,groww,kotak-nifty-sdl-plus-aaa-psu-bond-jul-2028-60:40-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty SmallCap 250 Index Fund,84.31,0.4142,groww,kotak-nifty-smallcap-250-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Smallcap 50 Index Fund,255.91,0.4687,groww,kotak-nifty-smallcap-50-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty Top 10 Equal Weight Index Fund,41.91,0.3908,groww,kotak-nifty-top-10-equal-weight-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty200 Value 30 Index Fund,13.41,0.9742,groww,kotak-nifty200-value-30-index-fund-direct-growth,True
+Kotak Mahindra Mutual Fund|Kotak Nifty500 Momentum 50 Index Fund,27.46,0.6175,groww,kotak-nifty500-momentum-50-index-fund-direct-growth,True
+LIC Mutual Fund|LIC MF BSE Sensex Index Fund,89.18,0.66,groww,lic-mf-bse-sensex-index-fund-direct-growth,True
+LIC Mutual Fund|LIC MF Nifty 50 Index Fund,352.47,0.56,groww,lic-mf-index-fund-nifty-direct-growth,True
+LIC Mutual Fund|LIC MF Nifty Next 50 Index Fund,107.15,0.36,groww,lic-mf-nifty-next-50-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset CRISIL IBX Gilt Index - April 2033 Index Fund,187.19,0.18,groww,mirae-asset-crisil-ibx-gilt-index-april-2033-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty 50 Index Fund,72.23,0.23,groww,mirae-asset-nifty-50-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty LargeMidcap 250 Index Fund,34.21,0.42,groww,mirae-asset-nifty-largemidcap-250-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty SDL Jun 2027 Index Fund,470.46,0.24,groww,mirae-asset-nifty-sdl-jun-2027-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty SDL June 2028 Index Fund,79.74,0.19,groww,mirae-asset-nifty-sdl-june-2028-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty Total Market Index Fund,35.26,0.42,groww,mirae-asset-nifty-total-market-index-fund-direct-growth,True
+Mirae Asset Mutual Fund|Mirae Asset Nifty200 Momentum 30 Plus 8-13yr G-Sec 75:25 Index Fund,5.14,0.95,groww,mirae-asset-nifty200-momentum-30-plus-8-13yr-g-sec-75:25-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal BSE Midcap 150 Momentum 30 Index Fund,178.98,1.33,groww,motilal-oswal-bse-midcap-150-momentum-30-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty 200 Momentum 30 Index Fund,851.55,0.71,groww,motilal-oswal-nifty-200-momentum-30-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty 50 Index Fund,877.94,0.23,groww,motilal-oswal-nifty-50-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty 500 Index Fund,3126.28,0.23,groww,motilal-oswal-nifty-500-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty 500 Momentum 50 Index Fund,771.55,0.74,groww,motilal-oswal-nifty-500-momentum-50-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Bank Index Fund,620.26,0.32,groww,motilal-oswal-nifty-bank-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty India Defence Index Fund,5184.13,0.56,groww,motilal-oswal-nifty-india-defence-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Microcap 250 Index Fund,,,,,False
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty MidSmall Financial Services Index Fund,113.59,0.87,groww,motilal-oswal-nifty-midsmall-financial-services-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty MidSmall Healthcare Index Fund,56.08,0.78,groww,motilal-oswal-nifty-midsmall-healthcare-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty MidSmall IT and Telecom Index Fund,56.27,0.93,groww,motilal-oswal-nifty-midsmall-it-and-tel-com-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty MidSmall India Consumption Index Fund,22.01,0.79,groww,motilal-oswal-nifty-midsmall-india-consumption-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Midcap 150 Index Fund,3942.95,0.39,groww,motilal-oswal-nifty-midcap-150-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Midcap150 Plus 8-13 yr G-Sec 70:30 Index Fund,12.92,0.29,groww,motilal-oswal-nifty-midcap150-plus-8-13-yr-g-sec-70:30-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Next 50 Index Fund,504.87,0.43,groww,motilal-oswal-nifty-next-50-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty REITs & Realty Index Fund,9.77,3.27,groww,motilal-oswal-nifty-reits-realty-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal Nifty Smallcap 250 Index Fund,1175.31,0.45,groww,motilal-oswal-nifty-smallcap-250-index-fund-direct-growth,True
+Motilal Oswal Mutual Fund|Motilal Oswal S&P 500 Index Fund,,,,,False
+Navi Mutual Fund|NAVI BSE SENSEX INDEX FUND,18.06,0.49,groww,navi-bse-sensex-index-fund-direct-growth,True
+Navi Mutual Fund|NAVI ELSS TAX SAVER NIFTY50 INDEX FUND,147.52,0.24,groww,navi-elss-tax-saver-nifty-50-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty 50 Index Fund,4055.01,0.1,groww,navi-nifty-50-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty 500 Multicap 50:25:25 Index Fund,27.73,0.49,groww,navi-nifty-500-multicap-50:25:25-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Bank Index Fund,611.26,0.23,groww,navi-nifty-bank-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty India Manufacturing Index Fund,81.43,0.57,groww,navi-nifty-india-manufacturing-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Midcap 150 Index Fund,369.93,0.37,groww,navi-nifty-midcap-150-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Midsmallcap 400 Index Fund,13.21,0.54,groww,navi-nifty-midsmallcap-400-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Next 50 Index Fund,1250.45,0.28,groww,navi-nifty-next-50-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Reits & Realty Index fund,13.18,1.98,groww,navi-nifty-reits-realty-index-fund-direct-growth,True
+Navi Mutual Fund|Navi Nifty Smallcap250 Momentum Quality 100 Index Fund,41.56,0.74,groww,navi-nifty-smallcap250-momentum-quality-100-index-fund-direct-growth,True
+Navi Mutual Fund|Navi NiftyIT Index Fund,24.11,0.55,groww,navi-nifty-it-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India BSE Sensex Next 30 Index Fund,86.39,0.39,groww,nippon-india-bse-sensex-next-30-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Index Fund - BSE Sensex Plan,,,,,False
+Nippon India Mutual Fund|Nippon India Index Fund - Nifty 50 Plan,,,,,False
+Nippon India Mutual Fund|Nippon India Nifty 50 Value 20 Index Fund,717.8,0.49,groww,nippon-india-nifty-50-value-20-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty 500 Equal Weight Index Fund,430.73,0.53,groww,nippon-india-nifty-500-equal-weight-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty 500 Low Volatility 50 Index Fund,29.08,0.59,groww,nippon-india-nifty-500-low-volatility-50-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty 500 Momentum 50 Index Fund,1253.55,0.55,groww,nippon-india-nifty-500-momentum-50-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty 500 Quality 50 Index Fund,39.59,0.53,groww,nippon-india-nifty-500-quality-50-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty AAA CPSE Bond Plus SDL - Apr 2027 Maturity 60:40 Index Fund,2901.28,0.15,groww,nippon-india-nifty-aaa-cpse-bond-plus-sdl-apr-2027-maturity-60:40-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty AAA PSU Bond Plus SDL - Sep 2026 Maturity 50:50 Index Fund,,,,,False
+Nippon India Mutual Fund|Nippon India Nifty Alpha Low Volatility 30 Index Fund,1100.42,0.53,groww,nippon-india-nifty-alpha-low-volatility-30-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty Auto Index Fund,45.16,0.52,groww,nippon-india-nifty-auto-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty Bank Index Fund,209.16,0.31,groww,nippon-india-nifty-bank-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty G-Sec Jun 2036 Maturity Index Fund,663.14,0.2,groww,nippon-india-nifty-g-sec-jun-2036-maturity-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty G-Sec Oct 2028 Maturity Index Fund,126.11,0.2,groww,nippon-india-nifty-g-sec-oct-2028-maturity-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty G-Sec Sep 2027 Maturity Index Fund,352.76,0.2,groww,nippon-india-nifty-g-sec-sep-2027-maturity-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty IT Index Fund,293.95,0.4,groww,nippon-india-nifty-it-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty India Manufacturing Index Fund,39.91,0.35,groww,nippon-india-nifty-india-manufacturing-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty Midcap 150 Index Fund,2619.45,0.41,groww,nippon-india-nifty-midcap-150-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty Realty Index Fund,53.73,0.57,groww,nippon-india-nifty-realty-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty SDL Plus G-Sec - Jun 2028 Maturity 70:30 Index Fund,326.09,0.2,groww,nippon-india-nifty-sdl-plus-g-sec-jun-2028-maturity-70:30-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty SDL Plus G-Sec - Jun 2029 Maturity 70:30 Index Fund,313.12,0.2,groww,nippon-india-nifty-sdl-plus-g-sec-jun-2029-maturity-70:30-index-fund-direct-growth,True
+Nippon India Mutual Fund|Nippon India Nifty Smallcap 250 Index Fund,3134.13,0.47,groww,nippon-india-nifty-smallcap-250-index-fund-direct-growth,True
+PGIM India Mutual Fund|PGIM India CRISIL IBX Gilt Index - Apr 2028 Fund,20.43,0.46,groww,pgim-india-crisil-ibx-gilt-index-apr-2028-fund-direct-growth,True
+SBI Mutual Fund|SBI BSE PSU BANK INDEX FUND,347.33,0.38,groww,sbi-bse-psu-bank-index-fund-direct-growth,True
+SBI Mutual Fund|SBI BSE Sensex Index Fund,299.06,0.23,groww,sbi-bse-sensex-index-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX Gilt Index - April 2029 Fund,1976.07,0.21,groww,sbi-crisil-ibx-gilt-index-april-2029-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX Gilt Index - June 2036 Fund,2613.6,0.28,groww,sbi-crisil-ibx-gilt-index-june-2036-fund-direct-growth,True
+SBI Mutual Fund|SBI CRISIL IBX SDL Index - September 2027 Fund,1982.84,0.24,groww,sbi-crisil-ibx-sdl-index-september-2027-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty 500 Index Fund,739.96,0.34,groww,sbi-nifty-500-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty Bank Index Fund,200.24,0.31,groww,sbi-nifty-bank-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty G-sec Jul 2031 Index Fund,18.42,0.2,groww,sbi-nifty-g-sec-jul-2031-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty IT Index Fund,142.75,0.49,groww,sbi-nifty-it-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty India Consumption Index Fund,239.31,0.44,groww,sbi-nifty-india-consumption-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty Midcap 150 Index Fund,1225.45,0.5,groww,sbi-nifty-midcap-150-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty Next 50 Index Fund,2306.91,0.42,groww,sbi-nifty-next-50-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty Smallcap 250 Index Fund,1667.74,0.5,groww,sbi-nifty-smallcap-250-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty100 Low Volatility 30 Index Fund,51.9,0.51,groww,sbi-nifty100-low-volatility-30-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty200 Momentum 30 Index Fund,111.32,0.8,groww,sbi-nifty200-momentum-30-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty200 Quality 30 Index Fund,306.78,0.42,groww,sbi-nifty200-quality-30-index-fund-direct-growth,True
+SBI Mutual Fund|SBI Nifty50 Equal Weight Index Fund,937.84,0.5,groww,sbi-nifty50-equal-weight-index-fund-direct-growth,True
+Sundaram Mutual Fund|Sundaram Nifty 100 Equal Weight Fund (Formerly Known as Principal Nifty 100 Equal Weight Fund),,,,,False
+Tata Mutual Fund|Tata BSE Sensex Index Fund,,,,,False
+Tata Mutual Fund|Tata Nifty 50 Index Fund,,,,,False
+Tata Mutual Fund|Tata Nifty Auto Index Fund,104.55,0.54,groww,tata-nifty-auto-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Capital Markets Index Fund,1007.7,0.61,groww,tata-nifty-capital-markets-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Financial Services Index Fund,78.01,0.56,groww,tata-nifty-financial-services-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty G-Sec Dec 2026 Index Fund,,,,,False
+Tata Mutual Fund|Tata Nifty G-Sec Dec 2029 Index Fund,130.07,0.18,groww,tata-nifty-g-sec-dec-2029-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty India Tourism Index Fund,249.48,0.54,groww,tata-nifty-india-tourism-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty MidSmall Healthcare Index Fund,240.84,0.59,groww,tata-nifty-midsmall-healthcare-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Midcap 150 Index Fund,336.52,0.29,groww,tata-nifty-midcap-150-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Midcap 150 Momentum 50 Index Fund,1200.98,0.73,groww,tata-nifty-midcap-150-momentum-50-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Next 50 Index Fund,132.42,0.37,groww,tata-nifty-next-50-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty Realty Index Fund,68.75,0.59,groww,tata-nifty-realty-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty SDL Plus AAA PSU Bond Dec 2027 60 40 Index Fund,636.94,0.24,groww,tata-nifty-sdl-plus-aaa-psu-bond-dec-2027-60:40-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty200 Alpha 30 Index Fund,193.86,0.78,groww,tata-nifty200-alpha-30-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty500 Multicap India Manufacturing 50:30:20 Index Fund,137.25,0.58,groww,tata-nifty500-multicap-india-manufacturing-50:30:20-index-fund-direct-growth,True
+Tata Mutual Fund|Tata Nifty500 Multicap Infrastructure 50:30:20 Index Fund,64.29,0.62,groww,tata-nifty500-multicap-infrastructure-50:30:20-index-fund-direct-growth,True
+Taurus Mutual Fund|Taurus Nifty 50 Index Fund,6.25,0.86,groww,taurus-nifty-index-fund-direct-growth,True
+UTI Mutual Fund|UTI - Nifty Next 50 Index Fund,7198.82,0.47,groww,uti-nifty-next-50-index-fund-direct-growth,True
+UTI Mutual Fund|UTI BSE India Sector Leaders Index Fund,38.17,1.4,groww,uti-bse-india-sector-leaders-index-fund-direct-growth,True
+UTI Mutual Fund|UTI BSE Sensex Index Fund,189.2,0.23,groww,uti-bse-sensex-index-fund-direct-growth,True
+UTI Mutual Fund|UTI NIFTY SDL Plus AAA PSU Bond Apr 2026 75:25 Index Fund,,,,,False
+UTI Mutual Fund|UTI NIFTY SDL Plus AAA PSU Bond Apr 2028- 75:25 Index Fund,32.19,0.27,groww,uti-nifty-sdl-plus-aaa-psu-bond-apr-2028-75:25-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty 200 Momentum 30 Index Fund,7583.21,0.79,groww,uti-nifty200-momentum-30-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty 200 Quality 30 Index Fund,498.5,0.67,groww,uti-nifty200-quality-30-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty 50 Index Fund,28984.58,0.25,groww,uti-nifty-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty 500 Index Fund,103.72,1.03,groww,uti-nifty-500-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty 500 Value 50 Index Fund,827.9,0.69,groww,uti-nifty-500-value-50-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty Alpha Low-Volatility 30 Index Fund,62.52,0.76,groww,uti-nifty-alpha-low-volatility-30-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty India Manufacturing Index Fund,29.85,0.72,groww,uti-nifty-india-manufacturing-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty Midcap 150 Index Fund,74.91,0.7,groww,uti-nifty-midcap-150-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty Midcap 150 Quality 50 Index Fund,243.62,0.65,groww,uti-nifty-midcap-150-quality-50-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty Midsmallcap 400 Momentum Quality 100 Index Fund,131.93,0.75,groww,uti-nifty-midsmallcap-400-momentum-quality-100-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty Private Bank Index Fund,229.68,0.55,groww,uti-nifty-private-bank-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty50 Equal Weight Index Fund,155.31,0.45,groww,uti-nifty50-equal-weight-index-fund-direct-growth,True
+UTI Mutual Fund|UTI Nifty500 Shariah Index Fund,93.77,0.74,groww,uti-nifty500-shariah-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE BSE SENSEX Index Fund,20.57,0.45,groww,zerodha-case-bse-sensex-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE ELSS Tax Saver Nifty LargeMidcap 250 Index Fund,279.5,0.35,groww,zerodha-case-elss-tax-saver-nifty-large-midcap-250-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE Nifty 50 Index Fund,82.92,0.27,groww,zerodha-case-nifty-50-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE Nifty LargeMidcap 250 Index Fund,1593.72,0.37,groww,zerodha-case-nifty-large-midcap-250-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE Nifty LargeMidcap250 Plus 8-13 Yr G-Sec 70:30 Index Fund,14.64,0.75,groww,zerodha-case-nifty-largemidcap250-plus-8-13-yr-g-sec-70:30-index-fund-direct-growth,True
+Zerodha CASE Mutual Fund|Zerodha CASE Nifty MidSmallcap400 50:50 Index Fund,20.01,0.77,groww,zerodha-case-nifty-midsmallcap400-50:50-index-fund-direct-growth,True
+quant Mutual Fund|quant Nifty 100 Index Fund,9.86,10.79,groww,quant-nifty-100-index-fund-direct-growth,True
+quant Mutual Fund|quant Nifty 50 Index Fund,8.79,10.78,groww,quant-nifty-50-index-fund-direct-growth,True
+quant Mutual Fund|quant Nifty Midcap 150 Index Fund,8.11,10.9,groww,quant-nifty-midcap-150-index-fund-direct-growth,True
