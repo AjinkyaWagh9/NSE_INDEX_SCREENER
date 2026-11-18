@@ -45,7 +45,7 @@ def main():
     # proper fund name ("Nippon India ETF Nifty 50 BeES") where available so the
     # shortlist is readable.
     def _better_name(row):
-        if row["kind"] == "ETF" and row["symbol"]:
+        if row["kind"] == "ETF" and pd.notna(row["symbol"]) and row["symbol"]:
             rec = etf_source.get(str(row["symbol"]).upper())
             if rec and rec.get("name"):
                 return rec["name"]

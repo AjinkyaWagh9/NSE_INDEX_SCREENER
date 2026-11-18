@@ -54,12 +54,21 @@ def _num(v):
 
 
 def fetch_etf_rows(getter=requests.get):
-    """Paginate the Trendlyne ETF dashboard, returning the raw tableData rows."""
+    """Paginate the Trendlyne ETF dashboard, returning the raw tableData rows.
+
+    Returns whatever pages were fetched before any error. A transient outage or
+    non-JSON/403 response ends pagination gracefully (returning rows so far, or
+    [] on a first-page failure) rather than raising, so the caller can fall back
+    to the per-ETF Tickertape path instead of crashing the whole run.
+    """
     rows = []
     page = 1
     while page <= MAX_PAGES:
-        resp = getter(API_URL, params={"pageNumber": page}, headers=HEADERS, timeout=TIMEOUT)
-        body = resp.json().get("body", {})
+        try:
+            resp = getter(API_URL, params={"pageNumber": page}, headers=HEADERS, timeout=TIMEOUT)
+            body = resp.json().get("body", {})
+        except (requests.RequestException, ValueError):
+            break
         page_rows = body.get("tableData") or []
         rows.extend(page_rows)
         if not body.get("isNextPage"):

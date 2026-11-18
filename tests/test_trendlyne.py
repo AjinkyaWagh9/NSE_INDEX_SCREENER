@@ -51,6 +51,28 @@ def test_fetch_etf_rows_paginates_until_isNextPage_false():
     assert rows[0][1] == "SYMA" and rows[1][1] == "SYMB"
 
 
+def test_rows_to_records_skips_short_rows_and_null_aum():
+    good = ["Full ETF", "FULLSYM", "x", 0, 0, "INF1", 0, 0, 0, 0, 0, 0, 0,
+            1e9, 0, 0, 0, 100, "High", 0.3, None]   # 21 cols, AUM present
+    short = ["Truncated", "SHORTSYM", "x"]            # fewer than 21 cols -> skipped
+    null_aum = ["No AUM", "NOAUM", "x", 0, 0, "INF2", 0, 0, 0, 0, 0, 0, 0,
+                None, 0, 0, 0, 0, "Low", 0.5, None]  # AUM None -> aum_cr None
+    recs = rows_to_records([good, short, null_aum])
+    syms = {r["symbol"]: r for r in recs}
+    assert "SHORTSYM" not in syms                     # short row dropped
+    assert syms["FULLSYM"]["aum_cr"] == 100.0         # 1e9 / 1e7
+    assert syms["NOAUM"]["aum_cr"] is None            # not coerced to 0
+
+
+def test_fetch_etf_rows_degrades_on_network_error():
+    import requests as _rq
+
+    def boom(*a, **k):
+        raise _rq.RequestException("down")
+
+    assert fetch_etf_rows(getter=boom) == []          # returns [], does not raise
+
+
 def test_load_etf_source_uses_cache_without_network(tmp_path):
     cache = tmp_path / "tl.csv"
     page = {"body": {"tableData": _fixture_rows(), "isNextPage": False}}
