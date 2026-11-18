@@ -43,3 +43,49 @@ def test_refresh_forces_refetch(tmp_path):
     c1 = FakeClient(); enrich_universe(_universe(), c1, cache)
     c2 = FakeClient(); enrich_universe(_universe(), c2, cache, refresh=True)
     assert "NIFTYBEES" in c2.calls
+
+def test_cache_merge_preserves_fund_ids_not_in_smaller_run(tmp_path):
+    cache = tmp_path/"08.csv"
+    full = _universe()
+    c1 = FakeClient()
+    enrich_universe(full, c1, cache, refresh=False)
+
+    # second run with a SMALLER universe (only the first row)
+    smaller = full.head(1)
+    c2 = FakeClient()
+    enrich_universe(smaller, c2, cache, refresh=False)
+
+    on_disk = pd.read_csv(cache)
+    fund_ids = set(on_disk["fund_id"])
+    # fund_ids resolved/seen in the first (full) run must still be present
+    assert "NIFTYBEES" in fund_ids
+    assert "Navi|GOOD INDEX FUND" in fund_ids
+    assert "X|UNKNOWN FUND" in fund_ids
+
+class EmptySourceClient:
+    """Resolves a fund but with empty-string aum_source/matched_key, to exercise
+    the CSV round-trip (empty string -> NaN on read -> must not become "nan")."""
+    def __init__(self):
+        self.calls = []
+    def fetch(self, kind, symbol, isin, name):
+        self.calls.append(symbol or name)
+        return {"aum_cr": 10.0, "ter_pct": 0.1, "matched_key": "", "source": ""}
+
+def _single_fund_universe():
+    return pd.DataFrame([
+        {"fund_id":"EMPTYSRC","name":"Empty Source Fund","kind":"ETF","isin":"","symbol":"EMPTYSRC","amc":"","matched_index":"NIFTY 50","liquidity":1.0e9,"nav":100.0},
+    ])
+
+def test_empty_string_aum_source_roundtrips_as_empty(tmp_path):
+    cache = tmp_path/"08.csv"
+    c1 = EmptySourceClient()
+    enrich_universe(_single_fund_universe(), c1, cache, refresh=False)
+
+    # second run: served from cache (resolved=True), where aum_source/matched_key
+    # were persisted as "" and round-tripped through CSV as NaN on read.
+    c2 = EmptySourceClient()
+    out = enrich_universe(_single_fund_universe(), c2, cache, refresh=False)
+    assert "EMPTYSRC" not in c2.calls  # confirms it was served from cache
+    row = out[out.fund_id == "EMPTYSRC"].iloc[0]
+    assert row.aum_source == ""
+    assert row.matched_key == ""
