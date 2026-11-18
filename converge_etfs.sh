@@ -26,7 +26,8 @@ runs=$(( ${runs:-0} + 1 ))
 unresolved=$("$PY" - <<'PY'
 import pandas as pd
 from ranking.dedup import build_universe
-u = build_universe(pd.read_csv("data/06_mapped_funds.csv"))
+u = build_universe(pd.read_csv("data/06_mapped_funds.csv"),
+                   exclude_providers={"International", "CRISIL"})
 etf = u[u.kind == "ETF"]
 cache = pd.read_csv("data/08_aum_ter.csv")
 m = etf.merge(cache, on="fund_id", how="left")

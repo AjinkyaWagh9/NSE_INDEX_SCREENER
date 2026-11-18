@@ -6,6 +6,20 @@ EXCLUDED_INDICES = {"", "COMMODITY (Gold/Silver)", "INTERNATIONAL INDEX"}
 OUT_COLUMNS = ["fund_id","name","kind","isin","symbol","amc","matched_index","liquidity","nav"]
 
 
+def index_provider(index_name: str) -> str:
+    """Classify a matched index by its provider: NSE, BSE, International, CRISIL, Other."""
+    u = str(index_name).upper()
+    if u.startswith("S&P BSE") or u.startswith("BSE"):
+        return "BSE"
+    if u.startswith("NIFTY"):
+        return "NSE"
+    if "CRISIL" in u:
+        return "CRISIL"
+    if any(k in u for k in ("NASDAQ", "S&P 500", "MSCI", "FTSE", "HANG SENG")):
+        return "International"
+    return "Other"
+
+
 def _to_float(x):
     try:
         return float(x)
@@ -23,10 +37,18 @@ def _pick_canonical(group: pd.DataFrame) -> pd.Series:
     return (growth if len(growth) else use).iloc[0]
 
 
-def build_universe(df: pd.DataFrame) -> pd.DataFrame:
+def build_universe(df: pd.DataFrame, exclude_providers=()) -> pd.DataFrame:
+    """Build the canonical passive-fund universe.
+
+    exclude_providers: provider labels (see index_provider) to drop, e.g.
+    {"International", "CRISIL"} to keep only NSE + BSE Indian equity indices.
+    """
     df = df.copy()
     df["Matched_Index"] = df["Matched_Index"].fillna("")
     df = df[~df["Matched_Index"].isin(EXCLUDED_INDICES)]
+    if exclude_providers:
+        drop = {p for p in exclude_providers}
+        df = df[~df["Matched_Index"].map(index_provider).isin(drop)]
 
     # --- ETFs: NSE-listed rows only ---
     nse = df[df["Source"] == "NSE_ETF"]

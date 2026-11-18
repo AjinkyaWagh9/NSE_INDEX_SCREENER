@@ -32,8 +32,12 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
 
+    # Keep NSE/Nifty + BSE Indian-equity indices; drop foreign (Nasdaq/MSCI/
+    # S&P 500/HangSeng/FTSE) and CRISIL debt indices.
+    EXCLUDE_PROVIDERS = {"International", "CRISIL"}
+
     mapped = pd.read_csv(DATA / "06_mapped_funds.csv")
-    universe = build_universe(mapped)
+    universe = build_universe(mapped, exclude_providers=EXCLUDE_PROVIDERS)
     if args.limit:
         universe = universe.head(args.limit)
     log.info("Universe: %d funds (%s)", len(universe), universe.kind.value_counts().to_dict())

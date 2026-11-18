@@ -49,3 +49,26 @@ def test_excludes_commodity_unmapped_and_amfi_etf():
 def test_output_columns_exact():
     u = build_universe(_mapped_df())
     assert list(u.columns) == ["fund_id","name","kind","isin","symbol","amc","matched_index","liquidity","nav"]
+
+
+def test_index_provider_classification():
+    from ranking.dedup import index_provider
+    assert index_provider("NIFTY 50") == "NSE"
+    assert index_provider("S&P BSE SENSEX") == "BSE"
+    assert index_provider("BSE INDIA DEFENCE") == "BSE"
+    assert index_provider("NASDAQ 100") == "International"
+    assert index_provider("MSCI INDEX") == "International"
+    assert index_provider("S&P 500") == "International"
+    assert index_provider("CRISIL 10 YEAR GILT") == "CRISIL"
+
+
+def test_exclude_providers_drops_intl_and_crisil():
+    rows = [
+        {"Scheme_Name":"X Nifty 50 ETF","ISIN":None,"Plan":None,"Option":None,"AMC":None,"Scheme_Type":"ETF (NSE Listed)","Matched_Index":"NIFTY 50","Source":"NSE_ETF","Symbol":"XN50","Traded_Value":"1","NAV":"1"},
+        {"Scheme_Name":"Y Sensex ETF","ISIN":None,"Plan":None,"Option":None,"AMC":None,"Scheme_Type":"ETF (NSE Listed)","Matched_Index":"S&P BSE SENSEX","Source":"NSE_ETF","Symbol":"YSX","Traded_Value":"1","NAV":"1"},
+        {"Scheme_Name":"Z Nasdaq ETF","ISIN":None,"Plan":None,"Option":None,"AMC":None,"Scheme_Type":"ETF (NSE Listed)","Matched_Index":"NASDAQ 100","Source":"NSE_ETF","Symbol":"ZNQ","Traded_Value":"1","NAV":"1"},
+        {"Scheme_Name":"W Gilt ETF","ISIN":None,"Plan":None,"Option":None,"AMC":None,"Scheme_Type":"ETF (NSE Listed)","Matched_Index":"CRISIL 10 YEAR GILT","Source":"NSE_ETF","Symbol":"WGL","Traded_Value":"1","NAV":"1"},
+    ]
+    u = build_universe(pd.DataFrame(rows), exclude_providers={"International", "CRISIL"})
+    kept = set(u["matched_index"])
+    assert kept == {"NIFTY 50", "S&P BSE SENSEX"}   # intl + CRISIL dropped
