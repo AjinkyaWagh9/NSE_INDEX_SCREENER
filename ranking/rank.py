@@ -28,6 +28,7 @@ def _minmax(series, higher_better=True):
     s = series.astype(float)
     lo, hi = s.min(), s.max()
     if np.isclose(hi, lo):
+        # All values equal (including tied non-single-fund groups): score everyone 1.0.
         return pd.Series(1.0, index=s.index)
     norm = (s - lo) / (hi - lo)
     return norm if higher_better else 1.0 - norm
@@ -60,7 +61,8 @@ def _score_group(g, weights):
 
 def rank_composite(qualifying, weights=COMPOSITE_WEIGHTS):
     df = qualifying.copy()
-    out = df.groupby("matched_index", group_keys=False).apply(lambda g: _score_group(g, weights))
+    scored = [_score_group(g, weights) for _, g in df.groupby("matched_index")]
+    out = pd.concat(scored)
     return out.sort_values(["matched_index", "rank_composite"]).reset_index(drop=True)
 
 
