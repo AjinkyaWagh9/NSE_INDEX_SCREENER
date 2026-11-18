@@ -60,13 +60,56 @@ GROWW_DETAIL_URL = "https://groww.in/v1/api/data/mf/web/v1/scheme/search/{sid}"
 REQUEST_PAUSE = 0.3
 TIMEOUT = 15
 
+# --- Tickertape rate-limit handling -------------------------------------------
+# Tickertape's public API caps requests aggressively and replies 403
+# {"message":"REQUEST_LIMIT_EXCEEDED"} once the cap is hit. ETF AUM is only
+# available from Tickertape (Groww returns aum=None for ETFs), so we must be a
+# polite client: enforce a minimum interval between Tickertape calls, and on a
+# 403 back off and retry a few times to ride out a short (per-minute) window.
+# If 403s persist, `_TT_BLOCKED` latches True for the rest of the process so we
+# stop hammering a blocked endpoint — the affected ETFs are left unresolved and
+# picked up on a later run (the enrichment cache only retries unresolved funds),
+# so coverage converges across runs once the limit resets.
+TT_MIN_INTERVAL = 2.0      # seconds between Tickertape requests
+TT_BACKOFF_SECONDS = 60    # on 403, wait this long before retrying
+TT_BACKOFF_RETRIES = 2     # number of 403 backoff attempts before latching blocked
 
-def _get(url, params=None, retries=2):
+_tt_last_call = [0.0]
+_TT_BLOCKED = [False]
+
+
+def tt_is_blocked():
+    """True once Tickertape has latched a persistent rate-limit block this run."""
+    return _TT_BLOCKED[0]
+
+
+def _tt_throttle():
+    wait = TT_MIN_INTERVAL - (time.time() - _tt_last_call[0])
+    if wait > 0:
+        time.sleep(wait)
+    _tt_last_call[0] = time.time()
+
+
+def _get(url, params=None, retries=2, is_tickertape=False):
+    tt_attempts = 0
     for attempt in range(retries + 1):
         try:
+            if is_tickertape:
+                if _TT_BLOCKED[0]:
+                    return None
+                _tt_throttle()
             r = requests.get(url, params=params, headers=HEADERS, timeout=TIMEOUT)
             if r.status_code == 200:
                 return r.json()
+            if r.status_code == 403 and is_tickertape:
+                # Rate-limited: back off and retry a bounded number of times to
+                # survive a short window; latch blocked if it won't clear.
+                if tt_attempts < TT_BACKOFF_RETRIES:
+                    tt_attempts += 1
+                    time.sleep(TT_BACKOFF_SECONDS)
+                    continue
+                _TT_BLOCKED[0] = True
+                return None
         except (requests.RequestException, ValueError):
             pass
         time.sleep(0.5 * (attempt + 1))
@@ -74,7 +117,7 @@ def _get(url, params=None, retries=2):
 
 
 def tickertape_search(text):
-    data = _get(TT_SEARCH_URL, {"text": text, "types": "etf,mutualfund"})
+    data = _get(TT_SEARCH_URL, {"text": text, "types": "etf,mutualfund"}, is_tickertape=True)
     if not data or not data.get("success"):
         return []
     return data.get("data", {}).get("stocks", [])
@@ -109,6 +152,8 @@ class AggregatorClient:
         return self._groww(kind, symbol, isin, name, query)
 
     def _tickertape(self, kind, symbol, isin, name, query):
+        if _TT_BLOCKED[0]:
+            return None
         results = tickertape_search(query)
         if not results:
             return None
@@ -119,7 +164,7 @@ class AggregatorClient:
         ter = None
         aum = None
         if sid:
-            detail = _get(TT_DETAIL_URL.format(sid=sid))
+            detail = _get(TT_DETAIL_URL.format(sid=sid), is_tickertape=True)
             aum = _extract_tt_aum(detail)
             ter = _extract_tt_ter(detail)
         if aum is None:
