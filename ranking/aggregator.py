@@ -139,11 +139,21 @@ class AggregatorClient:
     ETFs it doesn't carry (the ~31 large funds Trendlyne omits).
     """
 
-    def __init__(self, etf_source=None):
+    def __init__(self, etf_source=None, manual_source=None):
         self.etf_source = etf_source or {}
+        self.manual_source = manual_source or {}
 
     def fetch(self, kind, symbol, isin, name):
         query = symbol if (kind == "ETF" and symbol) else name
+
+        if kind == "ETF":
+            # --- Manual overrides (highest priority) ---
+            if symbol:
+                rec = self.manual_source.get(str(symbol).upper())
+                if rec and rec.get("aum_cr") is not None:
+                    return {"aum_cr": float(rec["aum_cr"]), "ter_pct": rec.get("ter_pct"),
+                            "matched_key": symbol, "source": "manual"}
+
         if not query:
             return None
 
