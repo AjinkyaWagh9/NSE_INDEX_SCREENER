@@ -146,13 +146,13 @@ class AggregatorClient:
     def fetch(self, kind, symbol, isin, name):
         query = symbol if (kind == "ETF" and symbol) else name
 
-        if kind == "ETF":
-            # --- Manual overrides (highest priority) ---
-            if symbol:
-                rec = self.manual_source.get(str(symbol).upper())
-                if rec and rec.get("aum_cr") is not None:
-                    return {"aum_cr": float(rec["aum_cr"]), "ter_pct": rec.get("ter_pct"),
-                            "matched_key": symbol, "source": "manual"}
+        # --- Manual overrides (highest priority): ETFs by symbol, index funds by ISIN ---
+        for key in ([str(symbol).upper()] if symbol else []) + \
+                   ([f"ISIN:{str(isin).upper()}"] if isin else []):
+            rec = self.manual_source.get(key)
+            if rec and rec.get("aum_cr") is not None:
+                return {"aum_cr": float(rec["aum_cr"]), "ter_pct": rec.get("ter_pct"),
+                        "matched_key": key, "source": "manual"}
 
         if not query:
             return None

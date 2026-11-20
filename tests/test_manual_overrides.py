@@ -36,3 +36,23 @@ def test_non_override_etf_still_uses_etf_source():
     c = AggregatorClient(etf_source=etf, manual_source={})
     hit = c.fetch("ETF", "OTHERETF", "", "x")
     assert hit["source"] == "trendlyne" and hit["aum_cr"] == 500.0
+
+
+def test_index_fund_override_by_isin(tmp_path):
+    from ranking.manual_overrides import load_manual_etf_overrides
+    from ranking.aggregator import AggregatorClient
+    p = tmp_path / "m.csv"
+    p.write_text("symbol,aum_cr,ter_pct,name,note,isin\n,123.4,0.3,X Fund,,INF000000001\n")
+    src = load_manual_etf_overrides(p)
+    hit = AggregatorClient(manual_source=src).fetch("IndexFund", "", "INF000000001", "X Fund")
+    assert hit["aum_cr"] == 123.4 and hit["source"] == "manual"
+
+
+def test_matures_soon():
+    from datetime import date
+    from run_ranking import _matures_soon
+    t = date(2026, 11, 20)
+    assert _matures_soon("NIFTY SDL SEP 2026", t)
+    assert _matures_soon("NIFTY G-SEC DEC 2026", t)
+    assert not _matures_soon("NIFTY G-SEC JUN 2027", t)
+    assert not _matures_soon("NIFTY 50", t)

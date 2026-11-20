@@ -4,6 +4,9 @@ import pandas as pd
 
 AUM_THRESHOLD = 10.0
 COMPOSITE_WEIGHTS = {"aum": 0.5, "ter": 0.3, "liq": 0.2}
+# SEBI caps TER for index funds / ETFs at 1.00%; anything above is a scraping
+# error (e.g. regular-plan or wrong field) and must not drive the composite.
+TER_MAX_PLAUSIBLE = 1.0
 
 
 def split_by_aum(df, threshold=AUM_THRESHOLD):
@@ -38,7 +41,7 @@ def _score_group(g, weights):
     g = g.copy()
     g["aum_norm"] = _minmax(g["aum_cr"], higher_better=True)
     # TER: lower better; missing -> NaN norm (term dropped per-row)
-    ter_present = g["ter_pct"].notna()
+    ter_present = g["ter_pct"].notna() & (g["ter_pct"] <= TER_MAX_PLAUSIBLE)
     g["ter_norm"] = np.nan
     if ter_present.any():
         g.loc[ter_present, "ter_norm"] = _minmax(g.loc[ter_present, "ter_pct"], higher_better=False)

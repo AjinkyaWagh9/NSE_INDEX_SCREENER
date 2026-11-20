@@ -20,11 +20,31 @@ from ranking.manual_overrides import load_manual_etf_overrides
 from ranking.rank import (split_by_aum, rank_by_aum, rank_composite,
                           top_n_per_index, COMPOSITE_WEIGHTS)
 from ranking.build_output import write_shortlist_xlsx
+from fetch_etf_index_data import match_index
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)
 
 DATA = Path(__file__).parent / "data"
+
+# ETFs whose AUM came from Tickertape (no fund name) and that NSE labels only by
+# the underlying index, so they would otherwise show as e.g. "Nifty 50".
+ETF_NAME_FIXES = {
+    "NIFTYBEES": "Nippon India ETF Nifty 50 BeES",
+    "HDFCNIFTY": "HDFC Nifty 50 ETF",
+    "BSLNIFTY": "Aditya Birla Sun Life Nifty 50 ETF",
+    "BANKBEES": "Nippon India ETF Nifty Bank BeES",
+    "PSUBNKBEES": "Nippon India ETF Nifty PSU Bank BeES",
+    "CPSEETF": "Nippon India ETF Nifty CPSE",
+    "ICICIB22": "ICICI Prudential BSE Bharat 22 ETF",
+    "SENSEXIETF": "ICICI Prudential BSE Sensex ETF",
+    "SENSEXBETA": "UTI BSE Sensex ETF",
+    "LIQUIDBEES": "Nippon India ETF Nifty 1D Rate Liquid BeES",
+    "EBBETF0430": "Bharat Bond ETF - April 2030",
+    "EBBETF0431": "Bharat Bond ETF - April 2031",
+    "EBBETF0433": "Bharat Bond ETF - April 2033",
+    "NXT100CASE": "Zerodha Nifty Next 100 ETF",
+}
 
 
 def main():
@@ -33,20 +53,29 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     args = ap.parse_args()
 
-    # Keep NSE/Nifty + BSE Indian-equity indices; drop foreign (Nasdaq/MSCI/
+    # NSE (Nifty) indices only. Drop BSE, foreign (Nasdaq/MSCI/
     # S&P 500/HangSeng/FTSE) and CRISIL debt indices.
-    EXCLUDE_PROVIDERS = {"International", "CRISIL"}
-
-    mapped = pd.read_csv(DATA / "06_mapped_funds.csv")
-    universe = build_universe(mapped, exclude_providers=EXCLUDE_PROVIDERS)
-    if args.limit:
-        universe = universe.head(args.limit)
-    log.info("Universe: %d funds (%s)", len(universe), universe.kind.value_counts().to_dict())
+    EXCLUDE_PROVIDERS = {"International", "CRISIL", "BSE", "Other"}
 
     etf_source = load_etf_source(DATA / "09_trendlyne_etfs.csv", refresh=args.refresh)
     manual_source = load_manual_etf_overrides(DATA / "manual_etf_overrides.csv")
     log.info("Trendlyne ETF source: %d keys | manual overrides: %d",
              len(etf_source), len(manual_source))
+
+    mapped = pd.read_csv(DATA / "06_mapped_funds.csv")
+    mapped["Matched_Index"] = mapped.apply(
+        lambda r: _remap_index(r, manual_source, etf_source), axis=1)
+    universe = build_universe(mapped, exclude_providers=EXCLUDE_PROVIDERS)
+    # NSE's ETF feed occasionally lists a symbol twice.
+    universe = universe.drop_duplicates("fund_id").reset_index(drop=True)
+    matured = universe["matched_index"].map(_matures_soon)
+    if matured.any():
+        log.info("Dropping %d target-maturity funds matured/maturing within %d days",
+                 int(matured.sum()), MATURITY_BUFFER_DAYS)
+    universe = universe[~matured].reset_index(drop=True)
+    if args.limit:
+        universe = universe.head(args.limit)
+    log.info("Universe: %d funds (%s)", len(universe), universe.kind.value_counts().to_dict())
 
     # NSE labels ETFs by their underlying index ("Nifty 50"); use the proper fund
     # name ("SBI Nifty 50 ETF") from the manual override or Trendlyne where
@@ -54,6 +83,8 @@ def main():
     def _better_name(row):
         if row["kind"] == "ETF" and pd.notna(row["symbol"]) and row["symbol"]:
             sym = str(row["symbol"]).upper()
+            if sym in ETF_NAME_FIXES:
+                return ETF_NAME_FIXES[sym]
             rec = manual_source.get(sym) or etf_source.get(sym)
             if rec and rec.get("name"):
                 return rec["name"]
@@ -81,6 +112,43 @@ def main():
                          weights=COMPOSITE_WEIGHTS)
     log.info("Wrote %s  (qualifying=%d, unresolved=%d, below=%d)",
              out, len(qualifying), len(unresolved), len(below))
+
+
+MATURITY_BUFFER_DAYS = 90
+_MONTHS = {m: i for i, m in enumerate(
+    ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"], 1)}
+
+
+def _matures_soon(index_name, today=None):
+    """True for a target-maturity index whose maturity month has passed or is
+    within MATURITY_BUFFER_DAYS -- those funds are closed or about to close."""
+    import re
+    from datetime import date, timedelta
+    m = re.search(r"\b(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[A-Z]*\s*(20\d\d)\b",
+                  str(index_name).upper())
+    if not m:
+        return False
+    y, mo = int(m.group(2)), _MONTHS[m.group(1)]
+    month_end = date(y + (mo == 12), mo % 12 + 1, 1) - timedelta(days=1)
+    return month_end < (today or date.today()) + timedelta(days=MATURITY_BUFFER_DAYS)
+
+
+def _remap_index(row, manual_source, etf_source):
+    """Re-derive the tracked index with the current (most-specific) matcher.
+
+    NSE labels ETFs only by a terse underlying ("SENSEX", "Index"), so for ETFs
+    try the proper fund name from the manual/Trendlyne source first.
+    """
+    if row.get("Source") == "NSE_ETF":
+        sym = str(row.get("Symbol", "")).upper()
+        rec = manual_source.get(sym) or etf_source.get(sym)
+        name = ETF_NAME_FIXES.get(sym) or (rec or {}).get("name")
+        if name:
+            hit = match_index(str(name))
+            if hit:
+                return hit
+        return match_index(str(row.get("Scheme_Name", "")))
+    return match_index(str(row.get("Scheme_Name", "")))
 
 
 def _try_read(path):

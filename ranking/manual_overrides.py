@@ -6,7 +6,9 @@ in data/manual_etf_overrides.csv. These win over Trendlyne/Tickertape/Groww, and
 because the enrichment cache marks them resolved they are never re-fetched or
 overwritten by later runs.
 
-CSV columns: symbol, aum_cr, ter_pct, name (note is optional/ignored).
+CSV columns: symbol, aum_cr, ter_pct, name, note, isin.
+ETFs are keyed by NSE symbol; index funds (no symbol) by ISIN of the
+Direct-Growth plan, stored under the key "ISIN:<isin>".
 A row with no numeric aum_cr is skipped (AUM is required to filter/rank).
 """
 import csv
@@ -29,10 +31,12 @@ def load_manual_etf_overrides(path):
     with open(path, newline="") as f:
         for row in csv.DictReader(f):
             symbol = (row.get("symbol") or "").strip().upper()
+            isin = (row.get("isin") or "").strip().upper()
             aum = _num(row.get("aum_cr"))
-            if not symbol or aum is None:
+            key = symbol or (f"ISIN:{isin}" if isin else "")
+            if not key or aum is None:
                 continue
-            overrides[symbol] = {
+            overrides[key] = {
                 "aum_cr": aum,
                 "ter_pct": _num(row.get("ter_pct")),
                 "name": (row.get("name") or "").strip() or None,

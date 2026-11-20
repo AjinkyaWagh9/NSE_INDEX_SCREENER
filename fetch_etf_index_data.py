@@ -410,7 +410,7 @@ INDEX_NAME_PATTERNS = {
     r"NIFTY\s*ENERGY": "NIFTY ENERGY",
     r"NIFTY\s*INFRASTRUCTURE(?!\s*&)": "NIFTY INFRASTRUCTURE",
     r"NIFTY\s*MNC": "NIFTY MNC",
-    r"NIFTY\s*PSE(?!\s)": "NIFTY PSE",
+    r"NIFTY\s*PSE\b": "NIFTY PSE",
     r"NIFTY\s*INDIA\s*DEFENCE": "NIFTY INDIA DEFENCE",
     r"NIFTY\s*INDIA\s*MANUFACTUR": "NIFTY INDIA MANUFACTURING",
     r"NIFTY\s*INDIA\s*DIGITAL": "NIFTY INDIA DIGITAL",
@@ -433,7 +433,7 @@ INDEX_NAME_PATTERNS = {
     r"NIFTY\s*500\s*EQUAL\s*WEIGHT": "NIFTY500 EQUAL WEIGHT",
     r"NIFTY\s*50\s*VALUE\s*20": "NIFTY50 VALUE 20",
     r"NIFTY\s*100\s*QUALITY\s*30": "NIFTY100 QUALITY 30",
-    r"NIFTY\s*100\s*LOW\s*VOLAT": "NIFTY100 LOW VOLATILITY 30",
+    r"NIFTY\s*100\s*LOW\s*VOL": "NIFTY100 LOW VOLATILITY 30",
     r"NIFTY\s*200\s*QUALITY\s*30": "NIFTY200 QUALITY 30",
     r"NIFTY\s*200\s*MOMENTUM\s*30": "NIFTY200 MOMENTUM 30",
     r"NIFTY\s*200\s*ALPHA\s*30": "NIFTY200 ALPHA 30",
@@ -441,7 +441,7 @@ INDEX_NAME_PATTERNS = {
     r"NIFTY\s*500\s*MOMENTUM\s*50": "NIFTY500 MOMENTUM 50",
     r"NIFTY\s*500\s*VALUE\s*50": "NIFTY500 VALUE 50",
     r"NIFTY\s*500\s*QUALITY\s*50": "NIFTY500 QUALITY 50",
-    r"NIFTY\s*500\s*LOW\s*VOLAT": "NIFTY500 LOW VOLATILITY 50",
+    r"NIFTY\s*500\s*LOW\s*VOL": "NIFTY500 LOW VOLATILITY 50",
     r"NIFTY\s*ALPHA\s*50": "NIFTY ALPHA 50",
     r"NIFTY\s*ALPHA\s*LOW.?VOLAT": "NIFTY ALPHA LOW-VOLATILITY 30",
     r"NIFTY\s*LOW\s*VOLATILITY\s*50": "NIFTY LOW VOLATILITY 50",
@@ -536,6 +536,45 @@ INDEX_NAME_PATTERNS = {
     r"CRISIL\s*BROAD\s*BASED\s*GILT": "CRISIL BROAD BASED GILT",
     r"CRISIL\s*OVERNIGHT": "CRISIL LIQUID/OVERNIGHT",
 
+    # Added 2026-11-20: patterns that were missing (funds fell into a parent index or were dropped)
+    r"(?<!BSE )(?<!BSE)\bSENSEX\b": "S&P BSE SENSEX",
+    r"\bCPSE\s*ETF": "NIFTY CPSE",
+    r"BHARAT\s*22": "S&P BSE BHARAT 22",
+    r"BHARAT\s*BOND.*2030": "NIFTY BHARAT BOND INDEX - APRIL 2030",
+    r"BHARAT\s*BOND.*2031": "NIFTY BHARAT BOND INDEX - APRIL 2031",
+    r"BHARAT\s*BOND.*2032": "NIFTY BHARAT BOND INDEX - APRIL 2032",
+    r"BHARAT\s*BOND.*2033": "NIFTY BHARAT BOND INDEX - APRIL 2033",
+    r"NIFTY\s*INFRA(?!STRUCTURE\s*&)": "NIFTY INFRASTRUCTURE",
+    r"NIFTY\s*CAPITAL\s*MARKET": "NIFTY CAPITAL MARKETS",
+    r"NIFTY\s*INDIA\s*NEW\s*AGE\s*CONSUMPTION": "NIFTY INDIA NEW AGE CONSUMPTION",
+    r"NIFTY\s*NEXT\s*100": "NIFTY NEXT 100",
+    r"NIFTY\s*50\s*SHARIAH|NIFTY50\s*SHARIAH": "NIFTY50 SHARIAH",
+    r"NIFTY\s*1D\s*RATE\s*LIQUID": "NIFTY 1D RATE",
+    r"NIFTY\s*200\s*EQUAL\s*WEIGHT": "NIFTY200 EQUAL WEIGHT",
+    r"NIFTY\s*100\s*ESG\s*SECTOR\s*LEADERS": "NIFTY100 ESG SECTOR LEADERS",
+    r"NIFTY\s*500\s*MULTICAP\s*50.?25.?25": "NIFTY500 MULTICAP 50:25:25",
+    r"NIFTY\s*500\s*FLEXICAP\s*QUALITY": "NIFTY500 FLEXICAP QUALITY 30",
+    r"NIFTY\s*500\s*MULTICAP\s*INDIA\s*MANUFACTUR": "NIFTY500 MULTICAP INDIA MANUFACTURING 50:30:20",
+    r"NIFTY\s*500\s*MULTICAP\s*INFRASTR": "NIFTY500 MULTICAP INFRASTRUCTURE 50:30:20",
+    r"NIFTY\s*500\s*SHARIAH": "NIFTY500 SHARIAH",
+    r"NIFTY\s*MIDSMALLCAP\s*400\s*50.?50": "NIFTY MIDSMALLCAP400 50:50",
+    r"NIFTY\s*MIDSMALLCAP\s*400\s*MOMENTUM\s*QUALITY": "NIFTY MIDSMALLCAP400 MOMENTUM QUALITY 100",
+    r"NIFTY\s*SMALLCAP\s*250\s*MOMENTUM\s*QUALITY": "NIFTY SMALLCAP250 MOMENTUM QUALITY 100",
+    r"NIFTY\s*MIDCAP\s*150\s*MOMENTUM\s*50": "NIFTY MIDCAP150 MOMENTUM 50",
+    r"BSE\s*SENSEX\s*NEXT\s*50|SENSEX\s*NEXT\s*50": "S&P BSE SENSEX NEXT 50",
+    r"BSE\s*SENSEX\s*NEXT\s*30|SENSEX\s*NEXT\s*30": "S&P BSE SENSEX NEXT 30",
+    r"BSE\s*(MIDCAP\s*)?150\s*(MIDCAP\s*)?MOMENTUM": "BSE 150 MIDCAP MOMENTUM 30",
+    r"BSE\s*200\s*EQUAL\s*WEIGHT": "BSE 200 EQUAL WEIGHT",
+    r"BSE\s*LOW\s*VOLATILITY": "BSE LOW VOLATILITY",
+    r"BSE\s*ENHANCED\s*VALUE": "BSE ENHANCED VALUE",
+    r"BSE\s*QUALITY": "BSE QUALITY",
+    r"BSE\s*HEALTHCARE": "BSE HEALTHCARE",
+    r"BSE\s*MIDCAP\s*SELECT": "BSE MIDCAP SELECT",
+    r"BSE\s*500\s*DIVIDEND": "BSE 500 DIVIDEND LEADERS",
+    r"BSE\s*500\s*MOMENTUM\s*50": "BSE 500 MOMENTUM 50",
+    r"BSE\s*HOUSING": "BSE HOUSING",
+    r"BSE\s*500\s*QUALITY\s*50": "BSE 500 QUALITY 50",
+
     # International
     r"HANG\s*SENG\s*TECH": "HANG SENG TECH",
     r"HANG\s*SENG": "HANG SENG",
@@ -547,19 +586,45 @@ INDEX_NAME_PATTERNS = {
 
 
 def match_index(scheme_name):
-    """Try to match a scheme name to a canonical Nifty/BSE index name."""
+    """Match a scheme name to a canonical Nifty/BSE index name.
+
+    All patterns are tried and the one with the LONGEST matched text wins, so a
+    specific index ("NIFTY 200 MOMENTUM 30") beats its parent ("NIFTY 200")
+    regardless of dict order. (Previously first-match-wins put factor/strategy
+    funds into their parent broad index.)
+    """
     name_upper = scheme_name.upper()
 
     # Skip pure commodity ETFs (physical gold/silver)
-    if any(k in name_upper for k in ["GOLD ETF", "SILVER ETF", "GOLD FUND", "SILVER FUND"]):
+    if any(k in name_upper for k in ["GOLD ETF", "SILVER ETF", "GOLD FUND", "SILVER FUND",
+                                     "GOLD EXCHANGE", "SILVER EXCHANGE"]):
         if not any(k in name_upper for k in ["NIFTY", "BSE", "SENSEX", "CRISIL"]):
             return "COMMODITY (Gold/Silver)"
 
+    best, best_len = "", 0
     for pattern, index_name in INDEX_NAME_PATTERNS.items():
-        if re.search(pattern, name_upper):
-            return index_name
+        m = re.search(pattern, name_upper)
+        if m and len(m.group(0)) > best_len:
+            best, best_len = index_name, len(m.group(0))
 
-    return ""
+    # Target-maturity debt funds: each maturity date is a different index, so
+    # keep "Apr 2027" and "Apr 2032" apart instead of pooling them.
+    if best.endswith("(Target Maturity)"):
+        d = re.search(r"\b(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[A-Z]*\s*(20\d\d)", name_upper)
+        ratio = re.search(r"\b(\d{2})\s*:\s*(\d{2})\b", name_upper)
+        base = best.replace(" (Target Maturity)", "")
+        if "PLUS" in name_upper and "SDL" in name_upper and "SDL" not in base:
+            base += " PLUS SDL"
+        elif "PLUS" in name_upper and "PSU" in name_upper and "PSU" not in base:
+            base += " PLUS PSU BOND"
+        if d:
+            return f"{base} {d.group(1)} {d.group(2)}" + (f" {ratio.group(1)}:{ratio.group(2)}" if ratio else "")
+        return best
+
+    # Equity + G-Sec hybrid index funds track a blended index, not the equity one.
+    if best and re.search(r"PLUS\s*8.?13\s*(YR|YEAR)?\s*G.?SEC", name_upper):
+        return f"{best} + 8-13 YR G-SEC (HYBRID)"
+    return best
 
 
 def map_funds_to_indices(df_amfi, df_nse_etfs, df_nse_indices):

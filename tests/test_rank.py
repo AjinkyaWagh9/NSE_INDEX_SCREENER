@@ -58,3 +58,15 @@ def test_top_n_per_index():
     top = top_n_per_index(r, n=2, rank_col="rank_aum")
     nifty = top[top.matched_index=="NIFTY 50"]
     assert set(nifty.fund_id) == {"A","C"}   # top 2 by AUM
+
+
+def test_implausible_ter_is_ignored_in_composite():
+    import pandas as pd
+    from ranking.rank import rank_composite
+    df = pd.DataFrame({
+        "matched_index": ["X", "X"], "aum_cr": [100.0, 100.0],
+        "ter_pct": [0.20, 3.6], "liquidity": [float("nan")] * 2,
+    })
+    out = rank_composite(df)
+    bad = out[out.ter_pct == 3.6].iloc[0]
+    assert pd.isna(bad["ter_norm"])
