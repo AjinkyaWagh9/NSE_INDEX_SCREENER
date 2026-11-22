@@ -118,6 +118,25 @@ def _is_fixed_nav(nav, as_of):
     return len(last_year) > 20 and last_year.max() / last_year.min() < 1.001
 
 
+def month_returns(nav, as_of, months=(1, 3, 6, 12, 24, 36, 60)):
+    """{months: return} -- up to 12 months absolute, longer periods CAGR (same
+    convention as NSE's dashboards). NaN when the fund is younger than the period."""
+    out = {m: np.nan for m in months}
+    end_dt, end_nav = _nav_on_or_before(nav, as_of)
+    if end_dt is None:
+        return out
+    for m in months:
+        start = (pd.Timestamp(as_of) - pd.DateOffset(months=m)).date()
+        if nav.index[0] > pd.Timestamp(start):
+            continue
+        s_dt, s_nav = _nav_on_or_before(nav, start)
+        if s_dt is None or (pd.Timestamp(start) - s_dt).days > MAX_START_GAP_DAYS:
+            continue
+        growth = end_nav / s_nav
+        out[m] = growth - 1 if m <= 12 else growth ** (12 / m) - 1
+    return out
+
+
 def compute_fund_returns(funds, isin_to_code, etf_isins, cache_dir, as_of: date):
     """funds: DataFrame with fund_id, kind, symbol, isin. Returns one row per fund."""
     session = requests.Session()

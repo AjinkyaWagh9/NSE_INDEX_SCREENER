@@ -31,3 +31,14 @@ def test_split_is_not_a_crash():
     adj = adjust_for_splits(nav)
     # split day itself is treated as flat; other days keep their real moves
     assert abs(adj.iloc[-1] / adj.iloc[0] - 1.01 * 10.3 / 10.2) < 1e-9
+
+
+def test_month_returns_short_absolute_long_cagr():
+    from ranking.returns import month_returns
+    idx = pd.to_datetime(["2024-10-31", "2026-04-30", "2026-07-31", "2026-10-31"])
+    nav = pd.Series([100, 110, 115, 121], index=idx, dtype=float)
+    r = month_returns(nav, date(2026, 10, 31), months=(3, 6, 24, 60))
+    assert abs(r[3] - (121 / 115 - 1)) < 1e-9
+    assert abs(r[6] - (121 / 110 - 1)) < 1e-9
+    assert abs(r[24] - 0.10) < 1e-9          # 1.21 over 2y -> 10% CAGR
+    assert np.isnan(r[60])

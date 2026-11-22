@@ -17,11 +17,15 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
+from fetch_etf_index_data import match_index
+from ranking.index_dashboard import load_index_returns
+from ranking.returns import fetch_nav_history, month_returns
 from ranking.rank import AUM_THRESHOLD, COMPOSITE_WEIGHTS, TER_MAX_PLAUSIBLE
 
 DATA = Path(__file__).parent / "data"
 SRC = DATA / "07_final_shortlist.xlsx"
 RETURNS = DATA / "10_fund_returns.csv"
+DASHBOARDS = DATA / "index_dashboards"
 RET_COLS = [("ret_1y", "1Y Return"), ("ret_2y", "2Y CAGR"), ("ret_3y", "3Y CAGR"), ("ret_5y", "5Y CAGR")]
 OUT = DATA / "ETF_Index_Shortlist.xlsx"
 
@@ -41,9 +45,7 @@ BROAD = {"NIFTY 50", "NIFTY NEXT 50", "NIFTY 100", "NIFTY 200", "NIFTY 500", "NI
          "NIFTY MIDCAP 50", "NIFTY MIDCAP 100", "NIFTY MIDCAP 150", "NIFTY MIDCAP SELECT",
          "NIFTY SMALLCAP 50", "NIFTY SMALLCAP 100", "NIFTY SMALLCAP 250", "NIFTY SMALLCAP 500",
          "NIFTY MIDSMALLCAP 400", "NIFTY LARGEMIDCAP 250", "NIFTY TOTAL MARKET",
-         "NIFTY MICROCAP 250", "S&P BSE SENSEX", "S&P BSE SENSEX NEXT 30",
-         "S&P BSE SENSEX NEXT 50", "S&P BSE 500", "S&P BSE 200", "BSE TOTAL MARKET",
-         "BSE MIDCAP 150", "BSE MIDCAP SELECT"}
+         "NIFTY MICROCAP 250"}
 SECTOR = ("BANK", "NIFTY IT", "PHARMA", "AUTO", "FMCG", "METAL", "REALTY", "FINANCIAL",
           "HEALTHCARE", "HOSPITALS", "OIL & GAS", "ENERGY", "CHEMICALS", "MEDIA", "INSURANCE",
           "CAPITAL MARKETS", "POWER", "CEMENT", "COMMODITIES")
@@ -67,7 +69,7 @@ def category(ix: str) -> str:
     return "Thematic"
 
 
-KEEP_UPPER = {"ETF", "BSE", "NSE", "SDL", "IT", "PSU", "AAA", "UTI", "SBI", "HDFC", "ICICI",
+KEEP_UPPER = {"ETF", "NSE", "SDL", "IT", "PSU", "AAA", "UTI", "SBI", "HDFC", "ICICI",
               "DSP", "LIC", "MF", "HSBC", "ELSS", "IDCW", "FMCG", "EV", "MNC", "CPSE", "PSE",
               "REITS", "IPO", "ESG", "BNP", "CASE", "MQ", "TER", "ONE", "G-SEC", "1D"}
 
@@ -80,15 +82,15 @@ def tidy_name(n: str) -> str:
     words = []
     for w in n.split(" "):
         words.append(w if w in KEEP_UPPER or any(c.isdigit() for c in w) else w.capitalize())
-    return " ".join(words).replace("Nifty", "Nifty")
+    return " ".join(words)
 
 
-INDEX_UPPER = {"BSE", "IT", "PSU", "FMCG", "EV", "MNC", "CPSE", "PSE", "IPO", "G-SEC", "SDL",
+INDEX_UPPER = {"IT", "PSU", "FMCG", "EV", "MNC", "CPSE", "PSE", "IPO", "G-SEC", "SDL",
                "AAA", "ESG", "1D", "YR", "MQ", "(HYBRID)"}
 
 
 def display_index(ix: str) -> str:
-    ix = ix.replace("S&P BSE", "BSE").replace(" (Target Maturity)", "").replace(" INDEX", "")
+    ix = ix.replace(" (Target Maturity)", "").replace(" INDEX", "")
     out = []
     for w in ix.split(" "):
         if w in ("G-SEC",):
@@ -280,6 +282,104 @@ def sheet_top3(wb, df, name, rank_col, title, subtitle, with_score):
     return len(rows)
 
 
+IDX_MONTHS = {"r1m": 1, "r3m": 3, "r6m": 6, "r1y": 12, "r2y": 24, "r3y": 36, "r5y": 60}
+IDX_RET_COLS = [("r1m", "1M"), ("r3m", "3M"), ("r6m", "6M"), ("r1y", "1Y"),
+                ("r2y", "2Y CAGR"), ("r3y", "3Y CAGR"), ("r5y", "5Y CAGR")]
+
+
+def _largest(sub, kind, n=3):
+    """'1. Fund (₹x cr)' lines for the n largest funds of one type, or an em dash."""
+    top = sub[sub.Type == kind].sort_values("aum_cr", ascending=False).head(n)
+    return "\n".join(f"{i}. {r.Fund} (₹{r.aum_cr:,.0f} cr)"
+                     for i, r in enumerate(top.itertuples(), 1)) or "—"
+
+
+def _proxy_fund(ix, df, fund_rets):
+    """Ranked fund for this index with the longest usable NAV history (ties ->
+    larger AUM). Skips fixed-NAV liquid ETFs, whose NAV doesn't show returns."""
+    g = df[(df.matched_index == ix) & ((df.rank_aum <= 3) | (df.rank_composite <= 3))]
+    fr = fund_rets[fund_rets.scheme_code.notna() & fund_rets.returns_note.fillna("").eq("")]
+    g = g.merge(fr[["fund_id", "scheme_code", "first_nav_date"]], on="fund_id")
+    if g.empty:
+        return None
+    best = g.sort_values(["first_nav_date", "aum_cr"], ascending=[True, False]).iloc[0]
+    return best.Fund, int(best.scheme_code)
+
+
+def sheet_index_returns(wb, df):
+    """One row per index: the index's own returns (NSE Index Dashboard, Total
+    Return Index) beside the 3 largest ETFs and 3 largest index funds tracking it."""
+    ws = wb.create_sheet("Index Returns")
+    idx_ret, as_of = load_index_returns(DASHBOARDS, match_index)
+    headers = (["Category", "Index", "Largest ETFs (AUM)", "Largest Index Funds (AUM)"]
+               + [h for _, h in IDX_RET_COLS] + ["Data as of"])
+    rows, n_proxy = [], 0
+    fund_rets = pd.read_csv(RETURNS)
+    pending = [p for c, p in (("r6m", "6M (needs the dashboard 3 months earlier)"),
+                              ("r2y", "2Y (needs the dashboard 12 months earlier)"))
+               if not len(idx_ret) or idx_ret[c].isna().all()]
+    for ix in df.sort_values(["_cat", "_top", "matched_index"]).matched_index.unique():
+        sub = df[df.matched_index == ix]
+        first = sub.iloc[0]
+        row = {"Category": first.Category, "Index": first.Index,
+               "Largest ETFs (AUM)": _largest(sub, "ETF"),
+               "Largest Index Funds (AUM)": _largest(sub, "Index Fund")}
+        if ix in idx_ret.index:
+            rec = idx_ret.loc[ix]
+            for c, h in IDX_RET_COLS:
+                row[h] = None if pd.isna(rec[c]) else float(rec[c])
+            row["Data as of"] = pd.Timestamp(rec["as_of"]).strftime("%d %b %Y")
+        else:
+            proxy = _proxy_fund(ix, df, fund_rets)
+            if proxy is None:
+                row["Data as of"] = "No data (not in NSE dashboard; no fund NAV)"
+            else:
+                name, code = proxy
+                nav = fetch_nav_history(code, DATA / "nav_cache", max_age_days=10 ** 6)
+                mr = month_returns(nav, as_of, tuple(IDX_MONTHS.values()))
+                for c, h in IDX_RET_COLS:
+                    v = mr[IDX_MONTHS[c]]
+                    row[h] = None if pd.isna(v) else float(v)
+                row["Data as of"] = f"{as_of:%d %b %Y}\nProxy: {name} NAV"
+                row["_proxy"] = True
+                n_proxy += 1
+        row["_lines"] = max(row["Largest ETFs (AUM)"].count("\n"),
+                            row["Largest Index Funds (AUM)"].count("\n"),
+                            row["Data as of"].count("\n") + (1 if row.get("_proxy") else 0)) + 1
+        rows.append(row)
+    sub = ("Returns are of the INDEX itself (NSE Indices' Index Dashboard, Total Return Index): "
+           "1M–1Y absolute, 2Y/3Y/5Y annualised (CAGR). ETFs and index funds track these closely, "
+           "less their fees. Fund columns = the 3 largest ETFs and the 3 largest index funds tracking the "
+           f"index (AUM ≥ ₹{AUM_THRESHOLD:g} cr), each ranked by AUM.")
+    if n_proxy:
+        sub += (f" {n_proxy} debt/hybrid indices aren't in NSE's equity dashboard: their returns (italic) "
+                "come from the NAV of the ranked fund tracking them with the longest history, so they "
+                "are slightly lower than the index by roughly that fund's fee.")
+    if pending:
+        sub += " Blank until added to data/index_dashboards/: " + "; ".join(pending) + "."
+    title_block(ws, f"Index Returns vs Largest Funds — as of {as_of:%d %b %Y}", sub, len(headers))
+    ws.row_dimensions[2].height = 40
+    fmts = {h: FMT["ret"] for _, h in IDX_RET_COLS}
+    write_table(ws, 4, headers, rows, fmts, [16, 32, 56, 56] + [8] * len(IDX_RET_COLS) + [30],
+                group_key=None)
+    for i, r in enumerate(rows, 5):
+        ws.row_dimensions[i].height = 13.5 * r["_lines"] + 2
+        for col in (3, 4):
+            ws.cell(row=i, column=col).alignment = Alignment(wrap_text=True, vertical="top")
+        for col in (1, 2):
+            ws.cell(row=i, column=col).alignment = Alignment(vertical="top")
+        for col in range(5, 5 + len(IDX_RET_COLS)):
+            ws.cell(row=i, column=col).alignment = Alignment(horizontal="right", vertical="top")
+        ws.cell(row=i, column=len(headers)).alignment = Alignment(horizontal="center", vertical="top",
+                                                                   wrap_text=True)
+        if r.get("_proxy"):
+            for col in list(range(5, 5 + len(IDX_RET_COLS))) + [len(headers)]:
+                c = ws.cell(row=i, column=col)
+                neg = isinstance(c.value, float) and c.value < 0
+                c.font = Font(name=FONT, size=10, italic=True, color="C00000" if neg else "595959")
+    return as_of
+
+
 def sheet_overview(wb, df, x, n_idx):
     ws = wb.active
     ws.title = "Overview"
@@ -341,6 +441,8 @@ def sheet_overview(wb, df, x, n_idx):
                          "usually tighter trading for ETFs. Includes 1/2/3/5-year returns."),
         ("Top 3 Best Value", "The three best funds per index on a blended score of size, cost and tradability. "
                              "'Rank by AUM' shows where the same fund sits on pure size."),
+        ("Index Returns", "The index's own returns (1M to 5Y, from NSE's Index Dashboard) next to the ETFs and "
+                          "3 largest ETFs and 3 largest index funds tracking it (by AUM). Debt / target-maturity indices aren't in that dashboard."),
         ("Categories", "Broad Market · Sector · Thematic · Strategy / Factor · Debt. Use the filter "
                        "arrows on the Category column to focus (e.g. hide Debt for an equity-only view)."),
     ]:
@@ -396,6 +498,7 @@ def main():
     n_idx = df.matched_index.nunique()
     sheet_overview(wb, df, x, n_idx)
     sheet_glance(wb, df)
+    sheet_index_returns(wb, df)
     sheet_top3(wb, df, "Top 3 by AUM", "rank_aum", "Top 3 Funds per Index — by Size (AUM)",
                "Ranked by Assets Under Management. 'Rank by Value' = the same fund's position on the "
                "composite (best value) ranking. Red italic TER = implausible, ignored in scoring.", False)
