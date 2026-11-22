@@ -1,0 +1,2189 @@
+[
+ {
+  "id": "NIFTY 50",
+  "display_name": "Nifty 50",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY 50",
+  "kite_instrument_token": 256265,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "SBI Nifty 50 ETF",
+   "UTI Nifty 50 ETF",
+   "Nippon India ETF Nifty 50 BeES"
+  ],
+  "index_funds": [
+   "UTI Nifty 50 Index Fund",
+   "HDFC Nifty 50 Index Fund",
+   "Navi Nifty 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY NEXT 50",
+  "display_name": "Nifty Next 50",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY NEXT 50",
+  "kite_instrument_token": 270857,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty Next 50 Junior BeES",
+   "SBI Nifty Next 50 ETF",
+   "ICICI Prudential Nifty Next 50 ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty Next 50 Index Fund",
+   "UTI - Nifty Next 50 Index Fund",
+   "HDFC NIFTY Next 50 index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDCAP 150",
+  "display_name": "Nifty Midcap 150",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDCAP 150",
+  "kite_instrument_token": 266249,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty Midcap 150",
+   "Mirae Asset Nifty Midcap 150 ETF",
+   "ICICI Prudential Nifty Midcap 150 ETF"
+  ],
+  "index_funds": [
+   "Motilal Oswal Nifty Midcap 150 Index Fund",
+   "Nippon India Nifty Midcap 150 Index Fund",
+   "SBI Nifty Midcap 150 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SMALLCAP 250",
+  "display_name": "Nifty Smallcap 250",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY SMLCAP 250",
+  "kite_instrument_token": 267273,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "HDFC NIFTY Smallcap 250 ETF",
+   "Motilal Oswal Nifty Smallcap 250 ETF",
+   "Mirae Asset Nifty Smallcap 250 ETF"
+  ],
+  "index_funds": [
+   "Nippon India Nifty Smallcap 250 Index Fund",
+   "SBI Nifty Smallcap 250 Index Fund",
+   "Motilal Oswal Nifty Smallcap 250 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY 500",
+  "display_name": "Nifty 500",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY 500",
+  "kite_instrument_token": 268041,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty 500 ETF"
+  ],
+  "index_funds": [
+   "Motilal Oswal Nifty 500 Index Fund",
+   "SBI Nifty 500 Index Fund",
+   "Axis Nifty 500 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MICROCAP 250",
+  "display_name": "Nifty Microcap 250",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY MICROCAP250",
+  "kite_instrument_token": 290569,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Motilal Oswal Nifty Microcap 250 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY 100",
+  "display_name": "Nifty 100",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY 100",
+  "kite_instrument_token": 260617,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "LIC MF Exchange Traded Fund - Nifty 100",
+   "Nippon India ETF Nifty 100",
+   "Zerodha Nifty 100 ETF"
+  ],
+  "index_funds": [
+   "Axis Nifty 100 Index Fund",
+   "HDFC NIFTY 100 Index Fund",
+   "Bandhan Nifty 100 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY LARGEMIDCAP 250",
+  "display_name": "Nifty Largemidcap 250",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY LARGEMID250",
+  "kite_instrument_token": 289545,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Edelweiss Nifty LargeMidcap 250 ETF"
+  ],
+  "index_funds": [
+   "Zerodha CASE Nifty LargeMidcap 250 Index Fund",
+   "HDFC NIFTY LargeMidcap 250 Index Fund",
+   "ICICI Prudential Nifty LargeMidcap 250 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDCAP 100",
+  "display_name": "Nifty Midcap 100",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDCAP 100",
+  "kite_instrument_token": 256777,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Midcap 100 ETF",
+   "LIC MF Nifty Midcap 100 ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY SMALLCAP 50",
+  "display_name": "Nifty Smallcap 50",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY SMLCAP 50",
+  "kite_instrument_token": 266761,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Axis Nifty Smallcap 50 Index Fund",
+   "Aditya Birla Sun Life Nifty Smallcap 50 Index Fund",
+   "Kotak Nifty Smallcap 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDCAP 50",
+  "display_name": "Nifty Midcap 50",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDCAP 50",
+  "kite_instrument_token": 260873,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Kotak Nifty Midcap 50 ETF"
+  ],
+  "index_funds": [
+   "Axis Nifty Midcap 50 Index Fund",
+   "Kotak Nifty Midcap 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY TOTAL MARKET",
+  "display_name": "Nifty Total Market",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY TOTAL MKT",
+  "kite_instrument_token": 290313,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Angel One Nifty Total Market ETF"
+  ],
+  "index_funds": [
+   "Groww Nifty Total Market Index Fund",
+   "Angel ONE Nifty Total Market Index Fund",
+   "Bandhan Nifty Total Market Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SMALLCAP 100",
+  "display_name": "Nifty Smallcap 100",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY SMLCAP 100",
+  "kite_instrument_token": 267017,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Zerodha Nifty Smallcap 100 ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY 200",
+  "display_name": "Nifty 200",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY 200",
+  "kite_instrument_token": 264457,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Groww Nifty 200 ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY MIDSMALLCAP 400",
+  "display_name": "Nifty Midsmallcap 400",
+  "tab": "equity",
+  "category": "Broad Market",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDSML 400",
+  "kite_instrument_token": 266505,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Navi Nifty Midsmallcap 400 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY BANK",
+  "display_name": "Nifty Bank",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY BANK",
+  "kite_instrument_token": 260105,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty Bank BeES",
+   "Kotak Nifty Bank ETF",
+   "SBI Nifty Bank ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty Bank Index Fund",
+   "Motilal Oswal Nifty Bank Index Fund",
+   "Navi Nifty Bank Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY PRIVATE BANK",
+  "display_name": "Nifty Private Bank",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY PVT BANK",
+  "kite_instrument_token": 271113,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Private Bank ETF",
+   "SBI Nifty Private Bank ETF",
+   "DSP Nifty Private Bank ETF"
+  ],
+  "index_funds": [
+   "UTI Nifty Private Bank Index Fund",
+   "DSP Nifty Private Bank Index Fund",
+   "ICICI Prudential Nifty Private Bank Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY PSU BANK",
+  "display_name": "Nifty PSU Bank",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY PSU BANK",
+  "kite_instrument_token": 262921,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty PSU Bank BeES",
+   "Kotak Nifty PSU Bank ETF",
+   "DSP Nifty PSU Bank ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY IT",
+  "display_name": "Nifty IT",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY IT",
+  "kite_instrument_token": 259849,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty IT",
+   "ICICI Prudential Nifty IT ETF",
+   "Kotak Nifty IT ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty IT Index Fund",
+   "Nippon India Nifty IT Index Fund",
+   "Axis Nifty IT Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY PHARMA",
+  "display_name": "Nifty Pharma",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY PHARMA",
+  "kite_instrument_token": 262409,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India Nifty Pharma ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty Pharma Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY CAPITAL MARKETS",
+  "display_name": "Nifty Capital Markets",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY CAPITAL MKT",
+  "kite_instrument_token": 414473,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty Capital Market ETF",
+   "Groww Nifty Capital Markets ETF"
+  ],
+  "index_funds": [
+   "Tata Nifty Capital Markets Index Fund",
+   "Motilal Oswal Nifty Capital Market Index Fund",
+   "Axis Nifty Capital Markets Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY METAL",
+  "display_name": "Nifty Metal",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY METAL",
+  "kite_instrument_token": 263689,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Metal ETF",
+   "Mirae Asset Nifty Metal ETF",
+   "HDFC Nifty Metal ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY FMCG",
+  "display_name": "Nifty FMCG",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY FMCG",
+  "kite_instrument_token": 261897,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty FMCG ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY AUTO",
+  "display_name": "Nifty Auto",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY AUTO",
+  "kite_instrument_token": 263433,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India Nifty Auto ETF",
+   "ICICI Prudential Nifty Auto ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty Auto Index Fund",
+   "HDFC Nifty Auto Index Fund",
+   "Tata Nifty Auto Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY FINANCIAL SERVICES",
+  "display_name": "Nifty Financial Services",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY FINSEREXBNK",
+  "kite_instrument_token": 410633,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty Financial Services ETF"
+  ],
+  "index_funds": [
+   "Tata Nifty Financial Services Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY COMMODITIES",
+  "display_name": "Nifty Commodities",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY COMMODITIES",
+  "kite_instrument_token": 257289,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Commodities ETF"
+  ],
+  "index_funds": [
+   "Kotak Nifty Commodities Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY OIL & GAS",
+  "display_name": "Nifty Oil & Gas",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY OIL AND GAS",
+  "kite_instrument_token": 289033,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Oil & Gas ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY ENERGY",
+  "display_name": "Nifty Energy",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY ENERGY",
+  "kite_instrument_token": 261641,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty Energy ETF",
+   "Motilal Oswal Nifty Energy ETF"
+  ],
+  "index_funds": [
+   "Axis Nifty Energy Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDSMALL HEALTHCARE",
+  "display_name": "Nifty Midsmall Healthcare",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDSML HLTH",
+  "kite_instrument_token": 295689,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Tata Nifty MidSmall Healthcare Index Fund",
+   "Motilal Oswal Nifty MidSmall Healthcare Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY HEALTHCARE INDEX",
+  "display_name": "Nifty Healthcare",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY HEALTHCARE",
+  "kite_instrument_token": 288521,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Healthcare ETF",
+   "Aditya Birla Sun Life Nifty Healthcare ETF",
+   "Axis NIFTY Healthcare ETF"
+  ],
+  "index_funds": [
+   "DSP Nifty Healthcare Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY REALTY",
+  "display_name": "Nifty Realty",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY REALTY",
+  "kite_instrument_token": 261129,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty Realty ETF",
+   "Groww Nifty Realty ETF"
+  ],
+  "index_funds": [
+   "HDFC NIFTY Realty Index Fund",
+   "Tata Nifty Realty Index Fund",
+   "Nippon India Nifty Realty Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY FINANCIAL SERVICES EX-BANK",
+  "display_name": "Nifty Financial Services ex-Bank",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY FINSEREXBNK",
+  "kite_instrument_token": 410633,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Financial Services Ex-BaNk ETF"
+  ],
+  "index_funds": [
+   "Kotak Nifty Financial Services Ex-Bank Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY REITS & REALTY",
+  "display_name": "Nifty REITs & Realty",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY REITS REALTY",
+  "kite_instrument_token": 424457,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Edelweiss Nifty REITs & Realty Index Fund",
+   "Navi Nifty Reits & Realty Index fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDSMALL FINANCIAL SERVICES",
+  "display_name": "Nifty Midsmall Financial Services",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY MS FIN SERV",
+  "kite_instrument_token": 411401,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Motilal Oswal Nifty MidSmall Financial Services Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY CHEMICALS",
+  "display_name": "Nifty Chemicals",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY CHEMICALS",
+  "kite_instrument_token": 420105,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Kotak Nifty Chemicals ETF",
+   "Groww Nifty Chemicals ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY MIDSMALL IT & TELECOM",
+  "display_name": "Nifty Midsmall IT & Telecom",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY MS IT TELCM",
+  "kite_instrument_token": 411913,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Motilal Oswal Nifty MidSmall IT and Telecom Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 HEALTHCARE",
+  "display_name": "Nifty500 Healthcare",
+  "tab": "equity",
+  "category": "Sector",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 HEALTH",
+  "kite_instrument_token": 420873,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty 500 Healthcare ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY CPSE",
+  "display_name": "Nifty CPSE",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY CPSE",
+  "kite_instrument_token": 268297,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty CPSE"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY INDIA DEFENCE",
+  "display_name": "Nifty India Defence",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY IND DEFENCE",
+  "kite_instrument_token": 413961,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty India Defence ETF",
+   "Groww Nifty India Defence ETF"
+  ],
+  "index_funds": [
+   "Motilal Oswal Nifty India Defence Index Fund",
+   "Aditya Birla Sun Life Nifty India Defence Index Fund",
+   "Axis Nifty India Defence Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY EV & NEW AGE AUTOMOTIVE",
+  "display_name": "Nifty EV & New Age Automotive",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY EV",
+  "kite_instrument_token": 405513,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Groww Nifty EV & New Age Automotive ETF",
+   "Mirae Asset Nifty EV and New Age Automotive ETF",
+   "ICICI Prudential Nifty EV & New Age Automotive ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY INDIA TOURISM",
+  "display_name": "Nifty India Tourism",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY IND TOURISM",
+  "kite_instrument_token": 414217,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty India Tourism ETF"
+  ],
+  "index_funds": [
+   "Tata Nifty India Tourism Index Fund",
+   "Kotak Nifty India Tourism Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY INFRASTRUCTURE",
+  "display_name": "Nifty Infrastructure",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY INFRA",
+  "kite_instrument_token": 261385,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Infrastructure ETF",
+   "Nippon India ETF Nifty Infrastructure BeES"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY INDIA MANUFACTURING",
+  "display_name": "Nifty India Manufacturing",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY INDIA MFG",
+  "kite_instrument_token": 291081,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty India Manufacturing ETF",
+   "Nippon India Nifty India Manufacturing ETF"
+  ],
+  "index_funds": [
+   "Navi Nifty India Manufacturing Index Fund",
+   "Nippon India Nifty India Manufacturing Index Fund",
+   "UTI Nifty India Manufacturing Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY INDIA CONSUMPTION",
+  "display_name": "Nifty India Consumption",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY CONSUMPTION",
+  "kite_instrument_token": 257545,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty India Consumption",
+   "ICICI Prudential Nifty India Consumption ETF",
+   "Kotak Nifty India Consumption ETF"
+  ],
+  "index_funds": [
+   "SBI Nifty India Consumption Index Fund",
+   "HDFC Nifty India Consumption Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY INDIA DIGITAL",
+  "display_name": "Nifty India Digital",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY IND DIGITAL",
+  "kite_instrument_token": 291337,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Tata Nifty India Digital Exchange Traded Fund"
+  ],
+  "index_funds": [
+   "HDFC Nifty India Digital Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY INDIA RAILWAYS PSU",
+  "display_name": "Nifty India Railways PSU",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY RAILWAYS PSU",
+  "kite_instrument_token": 421129,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Groww Nifty India Railways PSU ETF"
+  ],
+  "index_funds": [
+   "Groww Nifty India Railways PSU Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY INDIA NEW AGE CONSUMPTION",
+  "display_name": "Nifty India New Age Consumption",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY NEW CONSUMP",
+  "kite_instrument_token": 406793,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty India New Age Consumption ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY MNC",
+  "display_name": "Nifty MNC",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY MNC",
+  "kite_instrument_token": 262153,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Kotak Nifty MNC ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY INDIA INTERNET",
+  "display_name": "Nifty India Internet",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY INTERNET",
+  "kite_instrument_token": 419849,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Groww Nifty India Internet ETF",
+   "Mirae Asset Nifty India Internet ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY NON-CYCLICAL CONSUMER",
+  "display_name": "Nifty Non-Cyclical Consumer",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY NONCYC CONS",
+  "kite_instrument_token": 412169,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Groww Nifty Non-Cyclical Consumer Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDSMALL INDIA CONSUMPTION",
+  "display_name": "Nifty Midsmall India Consumption",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY MS IND CONS",
+  "kite_instrument_token": 411657,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Motilal Oswal Nifty MidSmall India Consumption Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY PSE",
+  "display_name": "Nifty PSE",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY PSE",
+  "kite_instrument_token": 262665,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Aditya Birla Sun Life Nifty PSE ETF",
+   "Groww Nifty PSE ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY INDIA INFRASTRUCTURE & LOGISTICS",
+  "display_name": "Nifty India Infrastructure & Logistics",
+  "tab": "equity",
+  "category": "Thematic",
+  "source": "kite",
+  "kite_symbol": "NIFTY INFRALOG",
+  "kite_instrument_token": 420617,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty India Infrastructure & Logistics ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY200 MOMENTUM 30",
+  "display_name": "Nifty200 Momentum 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY200MOMENTM30",
+  "kite_instrument_token": 290057,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty 200 Momentum 30 ETF",
+   "Motilal Oswal Nifty 200 Momentum 30 ETF",
+   "HDFC Nifty200 Momentum 30 ETF"
+  ],
+  "index_funds": [
+   "UTI Nifty 200 Momentum 30 Index Fund",
+   "Motilal Oswal Nifty 200 Momentum 30 Index Fund",
+   "Kotak Nifty 200 Momentum 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY100 LOW VOLATILITY 30",
+  "display_name": "Nifty100 Low Volatility 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY100 LOWVOL30",
+  "kite_instrument_token": 272137,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty 100 Low Vol 30 ETF",
+   "Kotak Nifty 100 Low Volatility 30 ETF",
+   "Mirae Asset Nifty 100 Low Volatility 30 ETF"
+  ],
+  "index_funds": [
+   "BANDHAN Nifty100 Low Volatility 30 Index Fund",
+   "HDFC NIFTY100 Low Volatility 30 Index Fund",
+   "Kotak NIFTY 100 Low Volatility 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY50 EQUAL WEIGHT",
+  "display_name": "Nifty50 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY50 EQL WGT",
+  "kite_instrument_token": 271625,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "DSP Nifty 50 Equal Weight ETF",
+   "Mirae Asset Nifty50 Equal Weight ETF",
+   "Motilal Oswal Nifty 50 Equal Weight ETF"
+  ],
+  "index_funds": [
+   "DSP Nifty 50 Equal Weight Index Fund",
+   "HDFC NIFTY50 Equal Weight Index Fund",
+   "SBI Nifty50 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDCAP150 MOMENTUM 50",
+  "display_name": "Nifty Midcap150 Momentum 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTYM150MOMNTM50",
+  "kite_instrument_token": 294665,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "SBI Nifty Midcap 150 Momentum 50 ETF",
+   "Motilal Oswal Nifty Midcap150 Momentum 50 ETF"
+  ],
+  "index_funds": [
+   "Edelweiss Nifty Midcap150 Momentum 50 Index Fund",
+   "Tata Nifty Midcap 150 Momentum 50 Index Fund",
+   "Kotak Nifty Midcap 150 Momentum 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY ALPHA LOW-VOLATILITY 30",
+  "display_name": "Nifty Alpha Low-Volatility 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY ALPHALOWVOL",
+  "kite_instrument_token": 273673,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Alpha Low Volatility 30 ETF"
+  ],
+  "index_funds": [
+   "Nippon India Nifty Alpha Low Volatility 30 Index Fund",
+   "Edelweiss Nifty Alpha Low Volatility 30 Index Fund",
+   "UTI Nifty Alpha Low-Volatility 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 MOMENTUM 50",
+  "display_name": "Nifty500 Momentum 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500MOMENTM50",
+  "kite_instrument_token": 409609,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Motilal Oswal Nifty 500 Momentum 50 ETF",
+   "Groww Nifty 500 Momentum 50 ETF"
+  ],
+  "index_funds": [
+   "Nippon India Nifty 500 Momentum 50 Index Fund",
+   "Motilal Oswal Nifty 500 Momentum 50 Index Fund",
+   "Axis Nifty500 Momentum 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY TOP 10 EQUAL WEIGHT",
+  "display_name": "Nifty Top 10 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY TOP 10 EW",
+  "kite_instrument_token": 407561,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "DSP Nifty Top 10 Equal Weight ETF"
+  ],
+  "index_funds": [
+   "DSP Nifty Top 10 Equal Weight Index Fund",
+   "Kotak Nifty Top 10 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SMALLCAP250 MOMENTUM QUALITY 100",
+  "display_name": "Nifty Smallcap250 Momentum Quality 100",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTYSML250MQ 100",
+  "kite_instrument_token": 410121,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty Smallcap 250 Momentum Quality 100 ETF"
+  ],
+  "index_funds": [
+   "Navi Nifty Smallcap250 Momentum Quality 100 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY ALPHA 50",
+  "display_name": "Nifty Alpha 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY ALPHA 50",
+  "kite_instrument_token": 265993,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Kotak Nifty Alpha 50 ETF"
+  ],
+  "index_funds": [
+   "Bandhan Nifty Alpha 50 Index Fund",
+   "Kotak Nifty Alpha 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 VALUE 50",
+  "display_name": "Nifty500 Value 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 VALUE 50",
+  "kite_instrument_token": 409353,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Axis Nifty500 Value 50 ETF",
+   "Mirae Asset Nifty 500 Value 50 ETF"
+  ],
+  "index_funds": [
+   "UTI Nifty 500 Value 50 Index Fund",
+   "Axis Nifty500 Value 50 Index Fund",
+   "Bandhan Nifty 500 Value 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY50 VALUE 20",
+  "display_name": "Nifty50 Value 20",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY50 VALUE 20",
+  "kite_instrument_token": 267529,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty50 Value 20 ETF",
+   "Nippon India ETF Nifty 50 Value 20",
+   "Kotak Nifty 50 value 20 ETF"
+  ],
+  "index_funds": [
+   "Nippon India Nifty 50 Value 20 Index Fund",
+   "ICICI Prudential Nifty50 Value 20 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 MULTICAP MOMENTUM QUALITY 50",
+  "display_name": "Nifty500 Multicap Momentum Quality 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY MULTI MQ 50",
+  "kite_instrument_token": 406537,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Edelweiss Nifty500 Multicap Momentum Quality 50 ETF"
+  ],
+  "index_funds": [
+   "Edelweiss Nifty500 Multicap Momentum Quality 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 MULTICAP 50:25:25",
+  "display_name": "Nifty500 Multicap 50:25:25",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 MULTICAP",
+  "kite_instrument_token": 289289,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty500 Multicap 50 25 25 ETF"
+  ],
+  "index_funds": [
+   "HDFC NIFTY500 Multicap 50:25:25 Index Fund",
+   "Navi Nifty 500 Multicap 50:25:25 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY200 QUALITY 30",
+  "display_name": "Nifty200 Quality 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY200 QUALTY30",
+  "kite_instrument_token": 265737,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty 200 Quality 30 ETF",
+   "SBI Nifty 200 Quality 30 ETF",
+   "Aditya Birla Sun Life Nifty 200 Quality 30 ETF"
+  ],
+  "index_funds": [
+   "UTI Nifty 200 Quality 30 Index Fund",
+   "SBI Nifty200 Quality 30 Index Fund",
+   "ICICI Prudential Nifty200 Quality 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY100 EQUAL WEIGHT",
+  "display_name": "Nifty100 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY100 EQL WGT",
+  "kite_instrument_token": 271881,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Kotak Nifty 100 Equal Weight ETF"
+  ],
+  "index_funds": [
+   "HDFC NIFTY 100 Equal Weight Index Fund",
+   "Sundaram Nifty 100 Equal Weight Fund (Formerly Known as Principal Nifty 100 Equal Weight Fund)",
+   "Kotak Nifty 100 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDSMALLCAP400 MOMENTUM QUALITY 100",
+  "display_name": "Nifty Midsmallcap400 Momentum Quality 100",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTYMS400 MQ 100",
+  "kite_instrument_token": 409865,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty MidSmallcap400 Momentum Quality 100 ETF"
+  ],
+  "index_funds": [
+   "UTI Nifty Midsmallcap 400 Momentum Quality 100 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 EQUAL WEIGHT",
+  "display_name": "Nifty500 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 EQUAL WEIGHT",
+  "kite_instrument_token": 409097,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty 500 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY MIDCAP150 QUALITY 50",
+  "display_name": "Nifty Midcap150 Quality 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY M150 QLTY50",
+  "kite_instrument_token": 290825,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "DSP Nifty Midcap 150 Quality 50 ETF"
+  ],
+  "index_funds": [
+   "DSP Nifty Midcap 150 Quality 50 Index Fund",
+   "UTI Nifty Midcap 150 Quality 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY200 ALPHA 30",
+  "display_name": "Nifty200 Alpha 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY200 ALPHA 30",
+  "kite_instrument_token": 294409,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty 200 Alpha 30 ETF"
+  ],
+  "index_funds": [
+   "Tata Nifty200 Alpha 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SMALLCAP250 QUALITY 50",
+  "display_name": "Nifty Smallcap250 Quality 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY SML250 Q50",
+  "kite_instrument_token": 407305,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "DSP Nifty Smallcap250 Quality 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 FLEXICAP QUALITY 30",
+  "display_name": "Nifty500 Flexicap Quality 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 FLEXICAP",
+  "kite_instrument_token": 419081,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "DSP Nifty500 Flexicap Quality 30 ETF"
+  ],
+  "index_funds": [
+   "DSP Nifty500 Flexicap Quality 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY200 VALUE 30",
+  "display_name": "Nifty200 Value 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY200 VALUE 30",
+  "kite_instrument_token": 408841,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "SBI Nifty200 Value 30 ETF",
+   "ICICI Prudential Nifty200 Value 30 ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty200 Value 30 Index Fund",
+   "Kotak Nifty200 Value 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 MULTICAP INDIA MANUFACTURING 50:30:20",
+  "display_name": "Nifty500 Multicap India Manufacturing 50:30:20",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY MULTI MFG",
+  "kite_instrument_token": 295177,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Tata Nifty500 Multicap India Manufacturing 50:30:20 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY100 QUALITY 30",
+  "display_name": "Nifty100 Quality 30",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY100 QUALTY30",
+  "kite_instrument_token": 272393,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "HDFC NIFTY100 Quality 30 ETF"
+  ],
+  "index_funds": [
+   "HDFC Nifty100 Quality 30 Index Fund",
+   "Edelweiss Nifty 100 Quality 30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY TOP 20 EQUAL WEIGHT",
+  "display_name": "Nifty Top 20 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY TOP 20 EW",
+  "kite_instrument_token": 408073,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty Top 20 Equal Weight ETF"
+  ],
+  "index_funds": [
+   "HDFC Nifty Top 20 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 SHARIAH",
+  "display_name": "Nifty500 Shariah",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 SHARIAH",
+  "kite_instrument_token": 413705,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "UTI Nifty500 Shariah Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY100 ESG SECTOR LEADERS",
+  "display_name": "Nifty100 ESG Sector Leaders",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY100ESGSECLDR",
+  "kite_instrument_token": 289801,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Mirae Asset Nifty 100 ESG Sector Leaders ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY500 QUALITY 50",
+  "display_name": "Nifty500 Quality 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 QLTY50",
+  "kite_instrument_token": 418313,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Axis Nifty500 Quality 50 Index Fund",
+   "Nippon India Nifty 500 Quality 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY DIVIDEND OPPORTUNITIES 50",
+  "display_name": "Nifty Dividend Opportunities 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY DIV OPPS 50",
+  "kite_instrument_token": 257033,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty Dividend Opportunities 50"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY500 MULTICAP INFRASTRUCTURE 50:30:20",
+  "display_name": "Nifty500 Multicap Infrastructure 50:30:20",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY MULTI INFRA",
+  "kite_instrument_token": 295433,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Tata Nifty500 Multicap Infrastructure 50:30:20 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY50 SHARIAH",
+  "display_name": "Nifty50 Shariah",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY50 SHARIAH",
+  "kite_instrument_token": 413193,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty 50 Shariah BeES"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY TOP 15 EQUAL WEIGHT",
+  "display_name": "Nifty Top 15 Equal Weight",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY TOP 15 EW",
+  "kite_instrument_token": 407817,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "ICICI Prudential Nifty Top 15 Equal Weight ETF"
+  ],
+  "index_funds": [
+   "ICICI Prudential Nifty Top 15 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY TOTAL MARKET MOMENTUM QUALITY 50",
+  "display_name": "Nifty Total Market Momentum Quality 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY TMMQ 50",
+  "kite_instrument_token": 419337,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Angel One Nifty Total Market Momentum Quality 50 ETF"
+  ],
+  "index_funds": [
+   "Angel ONE Nifty Total Market Momentum Quality 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY500 LOW VOLATILITY 50",
+  "display_name": "Nifty500 Low Volatility 50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY500 LOWVOL50",
+  "kite_instrument_token": 417801,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty 500 Low Volatility 50 Index Fund",
+   "Axis Nifty500 Low Volatility 50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY GROWTH SECTORS 15",
+  "display_name": "Nifty Growth Sectors 15",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY GROWSECT 15",
+  "kite_instrument_token": 270345,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "HDFC NIFTY Growth Sectors 15 ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY MIDSMALLCAP400 50:50",
+  "display_name": "Nifty Midsmallcap400 50:50",
+  "tab": "equity",
+  "category": "Strategy / Factor",
+  "source": "kite",
+  "kite_symbol": "NIFTY MIDSMALL 50 50",
+  "kite_instrument_token": 424713,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [],
+  "index_funds": [
+   "Zerodha CASE Nifty MidSmallcap400 50:50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY BHARAT BOND INDEX - APRIL 2030",
+  "display_name": "Nifty Bharat Bond - April 2030",
+  "tab": "debt",
+  "category": "Bharat Bond",
+  "source": "kite",
+  "kite_symbol": "BHARATBOND-APR30",
+  "kite_instrument_token": 417545,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Bharat Bond ETF - April 2030"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY BHARAT BOND INDEX - APRIL 2031",
+  "display_name": "Nifty Bharat Bond - April 2031",
+  "tab": "debt",
+  "category": "Bharat Bond",
+  "source": "kite",
+  "kite_symbol": "BHARATBOND-APR31",
+  "kite_instrument_token": 417289,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Bharat Bond ETF - April 2031"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY 1D RATE",
+  "display_name": "Nifty 1D Rate",
+  "tab": "debt",
+  "category": "Liquid / Overnight",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151358,
+  "nav_fund_name": "Kotak Nifty 1D Rate Liquid ETF",
+  "etfs": [
+   "Zerodha Nifty 1D Rate Liquid ETF",
+   "Nippon India ETF Nifty 1D Rate Liquid BeES",
+   "Kotak Nifty 1D Rate Liquid ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY BHARAT BOND INDEX - APRIL 2032",
+  "display_name": "Nifty Bharat Bond - April 2032",
+  "tab": "debt",
+  "category": "Bharat Bond",
+  "source": "kite",
+  "kite_symbol": "BHARATBOND-APR32",
+  "kite_instrument_token": 417033,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Bharat Bond ETF - April 2032"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY PSU BOND PLUS SDL SEP 2027 40:60",
+  "display_name": "Nifty PSU Bond Plus SDL Sep 2027 40:60",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149210,
+  "nav_fund_name": "ICICI Prudential Nifty PSU Bond Plus SDL Sep 2027 40:60 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "ICICI Prudential Nifty PSU Bond Plus SDL Sep 2027 40:60 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY BHARAT BOND INDEX - APRIL 2033",
+  "display_name": "Nifty Bharat Bond - April 2033",
+  "tab": "debt",
+  "category": "Bharat Bond",
+  "source": "kite",
+  "kite_symbol": "BHARATBOND-APR33",
+  "kite_instrument_token": 416777,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Bharat Bond ETF - April 2033"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY SDL APR 2027",
+  "display_name": "Nifty SDL Apr 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149794,
+  "nav_fund_name": "Aditya Birla Sun Life Nifty SDL Apr 2027 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty SDL Apr 2027 Top 12 Equal Weight Index Fund",
+   "Aditya Birla Sun Life Nifty SDL Apr 2027 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY 10 YR BENCHMARK G-SEC",
+  "display_name": "Nifty 10 YR Benchmark G-Sec",
+  "tab": "debt",
+  "category": "G-Sec Benchmark",
+  "source": "kite",
+  "kite_symbol": "NIFTY GS 10YR",
+  "kite_instrument_token": 269065,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "SBI Nifty 10yr Benchmark G-Sec ETF",
+   "ICICI Prudential Nifty 10 yr Benchmark G-sec ETF",
+   "UTI Nifty 10 Year Benchmark G-Sec ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY SDL APR 2032",
+  "display_name": "Nifty SDL Apr 2032",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149865,
+  "nav_fund_name": "Kotak Nifty SDL Apr 2032 Top 12 Equal Weight Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty SDL Apr 2032 Top 12 Equal Weight Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY AAA BOND PLUS SDL APR 2027 60:40",
+  "display_name": "Nifty AAA Bond Plus SDL Apr 2027 60:40",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150012,
+  "nav_fund_name": "Nippon India Nifty AAA CPSE Bond Plus SDL - Apr 2027 Maturity 60:40 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty AAA CPSE Bond Plus SDL - Apr 2027 Maturity 60:40 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY 8-13 YR G-SEC",
+  "display_name": "Nifty 8-13 YR G-Sec",
+  "tab": "debt",
+  "category": "G-Sec Benchmark",
+  "source": "kite",
+  "kite_symbol": "NIFTY GS 8 13YR",
+  "kite_instrument_token": 268809,
+  "nav_scheme_code": null,
+  "nav_fund_name": null,
+  "etfs": [
+   "Nippon India ETF Nifty 8-13 yr G-Sec Long Term Gilt",
+   "LIC NOMURA MF G-Sec Long Term ETF - Growth Option",
+   "Zerodha Nifty 8-13 Yr G-Sec ETF"
+  ],
+  "index_funds": [
+   "JioBlackRock Nifty 8-13 yr G-Sec Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY PSU BOND PLUS SDL APR 2027 50:50",
+  "display_name": "Nifty PSU Bond Plus SDL Apr 2027 50:50",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149247,
+  "nav_fund_name": "Edelweiss NIFTY PSU Bond Plus SDL Apr 2027 50:50 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Edelweiss NIFTY PSU Bond Plus SDL Apr 2027 50:50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2028 30:70",
+  "display_name": "Nifty SDL Jun 2028 30:70",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149970,
+  "nav_fund_name": "DSP Nifty SDL Plus G-Sec Jun 2028 30:70 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "DSP Nifty SDL Plus G-Sec Jun 2028 30:70 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL SEP 2027",
+  "display_name": "Nifty SDL Sep 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 149999,
+  "nav_fund_name": "ICICI Prudential Nifty SDL Sep 2027 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "ICICI Prudential Nifty SDL Sep 2027 Index Fund",
+   "Aditya Birla Sun Life Nifty SDL SEP 2027 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC JUN 2036",
+  "display_name": "Nifty G-Sec Jun 2036",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150920,
+  "nav_fund_name": "Nippon India Nifty G-Sec Jun 2036 Maturity Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC Nifty G-Sec Jun 2036 Index Fund",
+   "Nippon India Nifty G-Sec Jun 2036 Maturity Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL DEC 2028",
+  "display_name": "Nifty SDL Dec 2028",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150729,
+  "nav_fund_name": "ICICI Prudential Nifty SDL Dec 2028 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "ICICI Prudential Nifty SDL Dec 2028 Index Fund",
+   "Baroda BNP Paribas NIFTY SDL December 2028 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC DEC 2030",
+  "display_name": "Nifty G-Sec Dec 2030",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150733,
+  "nav_fund_name": "ICICI Prudential Nifty G-Sec Dec 2030 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "ICICI Prudential Nifty G-Sec Dec 2030 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL PLUS PSU BOND DEC 2027",
+  "display_name": "Nifty SDL Plus PSU Bond Dec 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150326,
+  "nav_fund_name": "Tata Nifty SDL Plus AAA PSU Bond Dec 2027 60 40 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Tata Nifty SDL Plus AAA PSU Bond Dec 2027 60 40 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC JUL 2031",
+  "display_name": "Nifty G-Sec Jul 2031",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150847,
+  "nav_fund_name": "HDFC Nifty G-Sec July 2031 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC Nifty G-Sec July 2031 Index Fund",
+   "SBI Nifty G-sec Jul 2031 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC SEP 2032",
+  "display_name": "Nifty G-Sec Sep 2032",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151183,
+  "nav_fund_name": "HDFC Nifty G-Sec Sep 2032 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC Nifty G-Sec Sep 2032 Index Fund",
+   "Invesco India Nifty G-sec Sep 2032 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC JUN 2027",
+  "display_name": "Nifty G-Sec Jun 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151181,
+  "nav_fund_name": "HDFC Nifty G-Sec Jun 2027 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC Nifty G-Sec Jun 2027 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL PLUS PSU BOND JUL 2028",
+  "display_name": "Nifty SDL Plus PSU Bond Jul 2028",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150725,
+  "nav_fund_name": "Kotak Nifty SDL Plus AAA PSU Bond Jul 2028 60 - 40 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty SDL Plus AAA PSU Bond Jul 2028 60 - 40 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2027",
+  "display_name": "Nifty SDL Jun 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150358,
+  "nav_fund_name": "Mirae Asset Nifty SDL Jun 2027 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Mirae Asset Nifty SDL Jun 2027 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC SEP 2027",
+  "display_name": "Nifty G-Sec Sep 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150906,
+  "nav_fund_name": "Nippon India Nifty G-Sec Sep 2027 Maturity Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty G-Sec Sep 2027 Maturity Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2028 70:30",
+  "display_name": "Nifty SDL Jun 2028 70:30",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 150824,
+  "nav_fund_name": "Nippon India Nifty SDL Plus G-Sec - Jun 2028 Maturity 70:30 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty SDL Plus G-Sec - Jun 2028 Maturity 70:30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2029 70:30",
+  "display_name": "Nifty SDL Jun 2029 70:30",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151390,
+  "nav_fund_name": "Nippon India Nifty SDL Plus G-Sec - Jun 2029 Maturity 70:30 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty SDL Plus G-Sec - Jun 2029 Maturity 70:30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY AAA BOND MAR 2028",
+  "display_name": "Nifty AAA Bond Mar 2028",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 153680,
+  "nav_fund_name": "Kotak Nifty AAA Bond Financial Services Mar 2028 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty AAA Bond Financial Services Mar 2028 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY 5 YR BENCHMARK G-SEC",
+  "display_name": "Nifty 5 YR Benchmark G-Sec",
+  "tab": "debt",
+  "category": "G-Sec Benchmark",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 148620,
+  "nav_fund_name": "Motilal Oswal 5 Year G-Sec ETF",
+  "etfs": [
+   "Nippon India ETF Nifty 5 yr Benchmark GSec",
+   "Motilal Oswal 5 Year G-Sec ETF",
+   "UTI Nifty 5 Year Benchmark G-Sec ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY SDL JUL 2033",
+  "display_name": "Nifty SDL Jul 2033",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151420,
+  "nav_fund_name": "Kotak Nifty SDL Jul 2033 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty SDL Jul 2033 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC APR 2029",
+  "display_name": "Nifty G-Sec Apr 2029",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151495,
+  "nav_fund_name": "HDFC Nifty G-Sec Apr 2029 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC Nifty G-Sec Apr 2029 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC DEC 2029",
+  "display_name": "Nifty G-Sec Dec 2029",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151273,
+  "nav_fund_name": "Tata Nifty G-Sec Dec 2029 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Tata Nifty G-Sec Dec 2029 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC OCT 2028",
+  "display_name": "Nifty G-Sec Oct 2028",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151440,
+  "nav_fund_name": "Nippon India Nifty G-Sec Oct 2028 Maturity Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Nippon India Nifty G-Sec Oct 2028 Maturity Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL SEP 2027 50:50",
+  "display_name": "Nifty SDL Sep 2027 50:50",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151373,
+  "nav_fund_name": "DSP Nifty SDL Plus G-Sec Sep 2027 50:50 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "DSP Nifty SDL Plus G-Sec Sep 2027 50:50 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC JUL 2027",
+  "display_name": "Nifty G-Sec Jul 2027",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151593,
+  "nav_fund_name": "Invesco India Nifty G-sec Jul 2027 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Invesco India Nifty G-sec Jul 2027 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2028",
+  "display_name": "Nifty SDL Jun 2028",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151691,
+  "nav_fund_name": "Mirae Asset Nifty SDL June 2028 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Mirae Asset Nifty SDL June 2028 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY LARGEMIDCAP 250 + 8-13 YR G-SEC (HYBRID)",
+  "display_name": "Nifty Largemidcap 250 + 8-13 YR G-Sec (Hybrid)",
+  "tab": "debt",
+  "category": "Hybrid",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 154310,
+  "nav_fund_name": "Edelweiss Nifty LargeMidcap250 Plus 8-13yr G-Sec 70:30 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Edelweiss Nifty LargeMidcap250 Plus 8-13yr G-Sec 70:30 Index Fund",
+   "HDFC Nifty LargeMidcap250 Plus 8-13 yr G-sec 70:30 Index Fund",
+   "Zerodha CASE Nifty LargeMidcap250 Plus 8-13 Yr G-Sec 70:30 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL JUN 2027 40:60",
+  "display_name": "Nifty SDL Jun 2027 40:60",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151570,
+  "nav_fund_name": "HDFC NIFTY SDL Plus G-Sec Jun 2027 40:60 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "HDFC NIFTY SDL Plus G-Sec Jun 2027 40:60 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY SDL PLUS PSU BOND APR 2028 75:25",
+  "display_name": "Nifty SDL Plus PSU Bond Apr 2028 75:25",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 151487,
+  "nav_fund_name": "UTI NIFTY SDL Plus AAA PSU Bond Apr 2028- 75:25 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "UTI NIFTY SDL Plus AAA PSU Bond Apr 2028- 75:25 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY G-SEC JUL 2033",
+  "display_name": "Nifty G-Sec Jul 2033",
+  "tab": "debt",
+  "category": "Target Maturity",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 152098,
+  "nav_fund_name": "Kotak Nifty G-Sec July 2033 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Kotak Nifty G-Sec July 2033 Index Fund"
+  ]
+ },
+ {
+  "id": "NIFTY200 MOMENTUM 30 + 8-13 YR G-SEC (HYBRID)",
+  "display_name": "Nifty200 Momentum 30 + 8-13 YR G-Sec (Hybrid)",
+  "tab": "debt",
+  "category": "Hybrid",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 154497,
+  "nav_fund_name": "Mirae Asset Nifty200 Momentum 30 Plus 8-13 yr G-Sec 50 50 ETF",
+  "etfs": [
+   "Mirae Asset Nifty200 Momentum 30 Plus 8-13 yr G-Sec 50 50 ETF"
+  ],
+  "index_funds": []
+ },
+ {
+  "id": "NIFTY MIDCAP 150 + 8-13 YR G-SEC (HYBRID)",
+  "display_name": "Nifty Midcap 150 + 8-13 YR G-Sec (Hybrid)",
+  "tab": "debt",
+  "category": "Hybrid",
+  "source": "amfi",
+  "kite_symbol": null,
+  "kite_instrument_token": null,
+  "nav_scheme_code": 154795,
+  "nav_fund_name": "Motilal Oswal Nifty Midcap150 Plus 8-13 yr G-Sec 70:30 Index Fund",
+  "etfs": [],
+  "index_funds": [
+   "Motilal Oswal Nifty Midcap150 Plus 8-13 yr G-Sec 70:30 Index Fund"
+  ]
+ }
+]
