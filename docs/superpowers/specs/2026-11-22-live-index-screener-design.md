@@ -63,6 +63,14 @@ One window (PySide6).
 
 Each unit has one job and a narrow interface.
 
+**Web-portability rule:** code lives in two packages. `screener/core/` (config, returns
+engine, storage, universe, Kite and AMFI clients, service) has no Qt imports and is copied
+unchanged into the future web app. `screener/desktop/` (Qt controller, UI, entry point) is
+replaced by a web backend. Storage sits behind a `BarRepository` interface so the web app can
+use its own database. Rows serialise with `RowData.to_dict()`. The API key can also come from
+the `KITE_API_KEY` environment variable, and the data folder from `SCREENER_DATA_DIR`.
+A test fails if anything in core imports Qt or desktop code.
+
 | Unit | Responsibility | Depends on |
 |---|---|---|
 | `universe.json` + `build_universe.py` | Fixed list of indices and their metadata (§4.1). Generated from this repo's pipeline outputs. | `data/07_final_shortlist.xlsx`, Kite instrument list |

@@ -4,7 +4,7 @@
 
 **Goal:** A PySide6 desktop app with Equity and Debt tabs that shows Gap %, Day %, 7D … 5Y returns for every shortlisted NSE index, live from Zerodha Kite during market hours, backed by a local SQLite store of daily closes.
 
-**Architecture:** A pure returns engine and a SQLite bar store sit at the core. Thin clients fetch Kite daily history and live ticks, and AMFI NAVs for the debt indices. A Qt-free `ScreenerService` turns stored bars plus live quotes into table rows. A Qt `Controller` runs network work on a thread pool and marshals ticker callbacks to the UI thread. The UI is one window with two `QTableView`s over a sortable, filterable proxy model.
+**Architecture:** Two packages with a hard boundary. `screener/core/` holds everything that will move to the future web app unchanged (pure returns engine, storage, Kite and AMFI clients, the Qt-free `ScreenerService`, JSON-ready rows); `screener/desktop/` holds the PySide6 window and controller, which a web backend replaces. Inside core, a pure returns engine and a SQLite bar store sit at the core. Thin clients fetch Kite daily history and live ticks, and AMFI NAVs for the debt indices. A Qt-free `ScreenerService` turns stored bars plus live quotes into table rows. A Qt `Controller` runs network work on a thread pool and marshals ticker callbacks to the UI thread. The UI is one window with two `QTableView`s over a sortable, filterable proxy model.
 
 **Tech Stack:** Python 3.13, PySide6 ≥ 6.6, kiteconnect ≥ 5.0 (official Zerodha SDK), SQLite (stdlib), pandas + requests (AMFI reuse and universe build), pytest, PyInstaller ≥ 6.
 
@@ -20,50 +20,61 @@
 - A past date that isn't a trading day uses the last close on or before it. No close within 7 days before the target, or a series starting after the target, gives a blank value (shown "—").
 - Equity values are Kite **price** indices (excluding dividends). Debt rows not on Kite use the proxy fund's AMFI NAV.
 - Automated tests never touch the network (the probe script in Task 9 is the only live check).
+- `screener/core/` must never import PySide6 or anything from `screener/desktop/` (enforced by `tests/screener/test_core_is_portable.py`). Desktop-only code goes in `screener/desktop/`; dev scripts go in `screener/tools/`.
+- The API key is read from the `KITE_API_KEY` environment variable first (the web deployment's way), then from `screener/secrets_local.py` (the desktop way).
 - Run everything from the repo root: `/Users/ajinkyawagh/Desktop/STARTUP/ETF_Indices`.
 
 ## File Structure
 
 ```
 screener/
-  __init__.py                 package marker
-  config.py                   IST helpers, constants, paths, API-key loader
-  secrets_local.example.py    template for the git-ignored secrets_local.py
-  returns.py                  Bar, ReturnSet, compute_returns (pure)
-  db.py                       BarStore (SQLite daily bars)
-  universe.py                 IndexInfo + load_universe()
-  build_universe.py           dev-time generator for universe.json
-  universe.json               generated, committed, bundled
-  amfi_client.py              fetch_nav_bars() (reuses ranking.returns)
-  kite_client.py              KiteClient (history), LiveFeed (ticker), Quote, TokenError
-  service.py                  ScreenerService + RowData (Qt-free orchestration)
-  controller.py               Qt Controller (threads, signals)
-  ui/__init__.py
-  ui/table_model.py           ScreenerTableModel, ScreenerProxy
-  ui/main_window.py           TabView, MainWindow
-  app.py                      entry point (+ --selftest)
-  probe_kite.py               manual live check with the user's token
+  __init__.py
+  secrets_local.example.py    template for the git-ignored secrets_local.py (desktop only)
+  core/                       <- copy this folder into the web app later; no Qt allowed
+    __init__.py
+    config.py                 IST helpers, constants, paths, API-key loader (env var first)
+    returns.py                Bar, ReturnSet, compute_returns (pure)
+    db.py                     BarRepository protocol + BarStore (SQLite) implementation
+    universe.py               IndexInfo + load_universe()
+    universe.json             generated, committed, bundled
+    amfi_client.py            fetch_nav_bars() (reuses ranking.returns)
+    kite_client.py            KiteClient (history), LiveFeed (ticker), Quote, TokenError
+    service.py                ScreenerService + RowData (with to_dict() for JSON/web)
+  desktop/                    <- PySide6 only; a web backend replaces this folder
+    __init__.py
+    controller.py             Qt Controller (threads, signals)
+    app.py                    entry point (+ --selftest)
+    ui/__init__.py
+    ui/table_model.py         ScreenerTableModel, ScreenerProxy
+    ui/main_window.py         TabView, MainWindow
+  tools/                      <- developer scripts, never bundled
+    __init__.py
+    build_universe.py         generator for core/universe.json
+    probe_kite.py             manual live check with the user's token
   NSEScreener.spec            PyInstaller spec
   BUILD.md                    build + first-run instructions
 tests/screener/
   __init__.py, conftest.py, helpers.py
   test_engine.py, test_db.py, test_build_universe.py, test_amfi_client.py,
-  test_kite_client.py, test_service.py, test_table_model.py, test_app_smoke.py
+  test_kite_client.py, test_service.py, test_core_is_portable.py,
+  test_table_model.py, test_app_smoke.py
 ```
+
+**Moving to the web app later:** copy `screener/core/` (plus `ranking/returns.py`, which `amfi_client` reuses) into the backend. Swap `BarStore` for a database-backed class with the same four `BarRepository` methods, serve `ScreenerService.rows()` as JSON via `RowData.to_dict()`, and push `apply_quotes` updates over a WebSocket.
 
 ---
 
 ### Task 1: Package scaffold, config and returns engine
 
 **Files:**
-- Create: `screener/__init__.py`, `screener/config.py`, `screener/secrets_local.example.py`, `screener/returns.py`
+- Create: `screener/__init__.py`, `screener/core/__init__.py`, `screener/core/config.py`, `screener/secrets_local.example.py`, `screener/core/returns.py`
 - Create: `tests/screener/__init__.py`, `tests/screener/conftest.py`, `tests/screener/test_engine.py`
 - Modify: `.gitignore`, `requirements.txt`
 
 **Interfaces:**
 - Produces:
-  - `screener.config`: `IST`, `MARKET_OPEN`, `MARKET_CLOSE`, `HISTORY_MONTHS=60`, `HISTORY_PAD_DAYS=7`, `MAX_ANCHOR_GAP_DAYS=7`, `HIST_MIN_INTERVAL_S=1/3`, `now_ist() -> datetime`, `today_ist() -> date`, `app_dir() -> Path`, `resource_path(name: str) -> Path`, `load_api_key() -> str`
-  - `screener.returns`: `PERIODS: tuple[str,...]`, `Bar(date, open: float|None, close: float)` (frozen dataclass), `ReturnSet(as_of, latest, gap, day, periods: dict[str, float|None], live: bool)`, `months_back(d: date, months: int) -> date`, `compute_returns(bars, today, live_price=None, live_open=None) -> ReturnSet`
+  - `screener.core.config`: `IST`, `MARKET_OPEN`, `MARKET_CLOSE`, `HISTORY_MONTHS=60`, `HISTORY_PAD_DAYS=7`, `MAX_ANCHOR_GAP_DAYS=7`, `HIST_MIN_INTERVAL_S=1/3`, `now_ist() -> datetime`, `today_ist() -> date`, `app_dir() -> Path`, `resource_path(name: str) -> Path`, `load_api_key() -> str`
+  - `screener.core.returns`: `PERIODS: tuple[str,...]`, `Bar(date, open: float|None, close: float)` (frozen dataclass), `ReturnSet(as_of, latest, gap, day, periods: dict[str, float|None], live: bool)`, `months_back(d: date, months: int) -> date`, `compute_returns(bars, today, live_price=None, live_open=None) -> ReturnSet`
 
 - [ ] **Step 1: Add ignore rules and dependencies**
 
@@ -99,10 +110,17 @@ pyinstaller>=6.0
 """Live NSE index screener (PySide6 + Zerodha Kite Connect)."""
 ```
 
-`screener/config.py`:
+`screener/core/__init__.py`:
+
+```python
+"""Portable core: no Qt, no desktop code. This folder moves to the web app unchanged."""
+```
+
+`screener/core/config.py`:
 
 ```python
 """App-wide constants, IST time helpers and file locations."""
+import os
 import sys
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
@@ -114,7 +132,8 @@ HISTORY_MONTHS = 60          # 5 years of daily history
 HISTORY_PAD_DAYS = 7         # so the 5Y anchor has a close on or before it
 MAX_ANCHOR_GAP_DAYS = 7      # a past close older than this before the target -> blank
 HIST_MIN_INTERVAL_S = 1 / 3  # Kite historical API allows ~3 requests/second
-PACKAGE_DIR = Path(__file__).resolve().parent
+CORE_DIR = Path(__file__).resolve().parent          # screener/core
+SCREENER_DIR = CORE_DIR.parent                       # screener/
 
 
 def now_ist() -> datetime:
@@ -126,21 +145,26 @@ def today_ist() -> date:
 
 
 def app_dir() -> Path:
-    """Folder for screener.db, screener.log and nav_cache: next to the executable
-    when frozen by PyInstaller, otherwise the package folder."""
+    """Writable folder for screener.db, screener.log and nav_cache: SCREENER_DATA_DIR if
+    set (web/server), next to the executable when frozen by PyInstaller, else screener/."""
+    if os.environ.get("SCREENER_DATA_DIR"):
+        return Path(os.environ["SCREENER_DATA_DIR"])
     if getattr(sys, "frozen", False):
         return Path(sys.executable).resolve().parent
-    return PACKAGE_DIR
+    return SCREENER_DIR
 
 
 def resource_path(name: str) -> Path:
-    """Read-only files bundled with the app (e.g. universe.json)."""
+    """Read-only files shipped with core (e.g. universe.json)."""
     base = getattr(sys, "_MEIPASS", None)
-    return Path(base) / "screener" / name if base else PACKAGE_DIR / name
+    return Path(base) / "screener" / "core" / name if base else CORE_DIR / name
 
 
 def load_api_key() -> str:
-    """Kite API key from the git-ignored screener/secrets_local.py ('' if missing)."""
+    """Kite API key: KITE_API_KEY env var first (web), else the git-ignored
+    screener/secrets_local.py (desktop). '' if neither is set."""
+    if os.environ.get("KITE_API_KEY"):
+        return os.environ["KITE_API_KEY"].strip()
     try:
         from screener.secrets_local import KITE_API_KEY
     except ImportError:
@@ -183,7 +207,7 @@ from datetime import date, timedelta
 
 import pytest
 
-from screener.returns import Bar, compute_returns, months_back
+from screener.core.returns import Bar, compute_returns, months_back
 
 
 def daily(start, n, f):
@@ -255,11 +279,11 @@ def test_no_data_gives_blank_set():
 - [ ] **Step 4: Run the tests to verify they fail**
 
 Run: `python3 -m pytest tests/screener/test_engine.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.returns'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.core.returns'`
 
 - [ ] **Step 5: Implement the engine**
 
-`screener/returns.py`:
+`screener/core/returns.py`:
 
 ```python
 """Pure return calculations. No I/O, no Qt."""
@@ -269,7 +293,7 @@ from dataclasses import dataclass, field
 from datetime import date, timedelta
 from typing import Optional, Sequence
 
-from screener.config import MAX_ANCHOR_GAP_DAYS
+from screener.core.config import MAX_ANCHOR_GAP_DAYS
 
 PERIODS = ("7D", "15D", "1M", "3M", "6M", "1Y", "2Y", "3Y", "5Y")
 _SPEC = {"7D": ("d", 7), "15D": ("d", 15), "1M": ("m", 1), "3M": ("m", 3), "6M": ("m", 6),
@@ -351,7 +375,7 @@ Expected: `9 passed`
 - [ ] **Step 7: Commit**
 
 ```bash
-git add .gitignore requirements.txt screener/__init__.py screener/config.py screener/secrets_local.example.py screener/returns.py tests/screener/__init__.py tests/screener/conftest.py tests/screener/test_engine.py
+git add .gitignore requirements.txt screener/__init__.py screener/core/__init__.py screener/core/config.py screener/secrets_local.example.py screener/core/returns.py tests/screener/__init__.py tests/screener/conftest.py tests/screener/test_engine.py
 git commit -m "feat(screener): package scaffold, IST config and pure returns engine"
 ```
 
@@ -360,11 +384,11 @@ git commit -m "feat(screener): package scaffold, IST config and pure returns eng
 ### Task 2: SQLite bar store
 
 **Files:**
-- Create: `screener/db.py`, `tests/screener/test_db.py`
+- Create: `screener/core/db.py`, `tests/screener/test_db.py`
 
 **Interfaces:**
-- Consumes: `screener.returns.Bar`
-- Produces: `screener.db.BarStore(path: Path)` with `upsert_bars(index_id: str, bars: Iterable[Bar], source: str) -> int`, `bars(index_id: str) -> list[Bar]` (ascending), `last_date(index_id: str) -> date | None`, `close() -> None`. Safe to call from several threads.
+- Consumes: `screener.core.returns.Bar`
+- Produces: `screener.core.db.BarRepository` (typing.Protocol with the four methods below; the web app implements it on its own database) and `screener.core.db.BarStore(path: Path)` (SQLite implementation) with `upsert_bars(index_id: str, bars: Iterable[Bar], source: str) -> int`, `bars(index_id: str) -> list[Bar]` (ascending), `last_date(index_id: str) -> date | None`, `close() -> None`. Safe to call from several threads.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -373,8 +397,8 @@ git commit -m "feat(screener): package scaffold, IST config and pure returns eng
 ```python
 from datetime import date
 
-from screener.db import BarStore
-from screener.returns import Bar
+from screener.core.db import BarStore
+from screener.core.returns import Bar
 
 
 def test_upsert_and_read_sorted(tmp_path):
@@ -405,21 +429,30 @@ def test_last_date_and_persistence(tmp_path):
 - [ ] **Step 2: Run the tests to verify they fail**
 
 Run: `python3 -m pytest tests/screener/test_db.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.db'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.core.db'`
 
 - [ ] **Step 3: Implement the store**
 
-`screener/db.py`:
+`screener/core/db.py`:
 
 ```python
-"""SQLite store of daily bars: one row per index per trading day."""
+"""Daily-bar storage. BarRepository is the interface the service depends on;
+BarStore is the SQLite implementation used by the desktop app. A web app can supply
+its own BarRepository (e.g. PostgreSQL) without touching the rest of core."""
 import sqlite3
 import threading
 from datetime import date
 from pathlib import Path
-from typing import Iterable, Optional
+from typing import Iterable, Optional, Protocol
 
-from screener.returns import Bar
+from screener.core.returns import Bar
+
+
+class BarRepository(Protocol):
+    def upsert_bars(self, index_id: str, bars: Iterable[Bar], source: str) -> int: ...
+    def bars(self, index_id: str) -> list[Bar]: ...
+    def last_date(self, index_id: str) -> Optional[date]: ...
+    def close(self) -> None: ...
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS daily_bar (
@@ -475,7 +508,7 @@ Expected: `3 passed`
 - [ ] **Step 5: Commit**
 
 ```bash
-git add screener/db.py tests/screener/test_db.py
+git add screener/core/db.py tests/screener/test_db.py
 git commit -m "feat(screener): SQLite daily bar store"
 ```
 
@@ -484,22 +517,22 @@ git commit -m "feat(screener): SQLite daily bar store"
 ### Task 3: Universe model, generator and universe.json
 
 **Files:**
-- Create: `screener/universe.py`, `screener/build_universe.py`, `screener/universe.json` (generated)
+- Create: `screener/core/universe.py`, `screener/tools/__init__.py` (empty), `screener/tools/build_universe.py`, `screener/core/universe.json` (generated)
 - Create: `tests/screener/helpers.py`, `tests/screener/test_build_universe.py`
 
 **Interfaces:**
 - Consumes: `build_presentation.load() -> (df, sheets)` (columns used: `matched_index, Index, Category, Fund, Type, aum_cr, rank_aum, rank_composite, fund_id, _cat, _top`), `build_presentation._proxy_fund(ix, df, fund_rets) -> (fund_name, scheme_code) | None`, `build_presentation.RETURNS` (path of `data/10_fund_returns.csv`)
 - Produces:
-  - `screener.universe.IndexInfo` (frozen dataclass): `id, display_name, tab ("equity"|"debt"), category, source ("kite"|"amfi"|"none"), kite_symbol, kite_instrument_token, nav_scheme_code, nav_fund_name, etfs: tuple[str,...], index_funds: tuple[str,...]`
-  - `screener.universe.load_universe(path: Path | None = None) -> list[IndexInfo]`
-  - `screener.build_universe`: `KITE_ALIASES`, `norm(s)`, `kite_index_table(csv_text) -> DataFrame`, `resolve_kite(index_id, display_name, tab, kite) -> (symbol|None, token|None)`, `debt_category(index_id) -> str`, `build_records(df, fund_rets, kite) -> list[dict]`, `UniverseError`
+  - `screener.core.universe.IndexInfo` (frozen dataclass): `id, display_name, tab ("equity"|"debt"), category, source ("kite"|"amfi"|"none"), kite_symbol, kite_instrument_token, nav_scheme_code, nav_fund_name, etfs: tuple[str,...], index_funds: tuple[str,...]`
+  - `screener.core.universe.load_universe(path: Path | None = None) -> list[IndexInfo]`
+  - `screener.tools.build_universe`: `KITE_ALIASES`, `norm(s)`, `kite_index_table(csv_text) -> DataFrame`, `resolve_kite(index_id, display_name, tab, kite) -> (symbol|None, token|None)`, `debt_category(index_id) -> str`, `build_records(df, fund_rets, kite) -> list[dict]`, `UniverseError`
   - `tests/screener/helpers.py`: `make_info(...) -> IndexInfo` used by later tests
 
 Note: `nav_fund_name` extends spec §4.1 so the UI tooltip can name the proxy fund.
 
 - [ ] **Step 1: Create the universe model and test helper**
 
-`screener/universe.py`:
+`screener/core/universe.py`:
 
 ```python
 """The fixed list of indices the screener shows (generated by build_universe.py)."""
@@ -508,7 +541,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from screener.config import resource_path
+from screener.core.config import resource_path
 
 
 @dataclass(frozen=True)
@@ -535,7 +568,7 @@ def load_universe(path: Optional[Path] = None) -> list[IndexInfo]:
 `tests/screener/helpers.py`:
 
 ```python
-from screener.universe import IndexInfo
+from screener.core.universe import IndexInfo
 
 
 def make_info(id="NIFTY 50", tab="equity", category="Broad Market", source="kite", token=1,
@@ -557,9 +590,9 @@ import json
 import pandas as pd
 import pytest
 
-from screener.build_universe import (UniverseError, build_records, debt_category,
+from screener.tools.build_universe import (UniverseError, build_records, debt_category,
                                      kite_index_table, resolve_kite)
-from screener.universe import load_universe
+from screener.core.universe import load_universe
 
 KITE_CSV = (
     "instrument_token,exchange_token,tradingsymbol,name,last_price,expiry,strike,tick_size,lot_size,instrument_type,segment,exchange\n"
@@ -635,19 +668,19 @@ def test_load_universe_roundtrip(tmp_path):
 - [ ] **Step 3: Run the tests to verify they fail**
 
 Run: `python3 -m pytest tests/screener/test_build_universe.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.build_universe'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.tools.build_universe'`
 
 - [ ] **Step 4: Implement the generator**
 
-`screener/build_universe.py`:
+`screener/tools/build_universe.py`:
 
 ```python
 #!/usr/bin/env python3
-"""Generate screener/universe.json from this project's shortlist + Kite's instrument list.
+"""Generate screener/core/universe.json from this project's shortlist + Kite's instrument list.
 
 Run from the repo root after run_ranking.py and compute_returns.py:
-    python3 -m screener.build_universe            # downloads Kite's public instrument list
-    python3 -m screener.build_universe --instruments path/to/instruments.csv
+    python3 -m screener.tools.build_universe            # downloads Kite's public instrument list
+    python3 -m screener.tools.build_universe --instruments path/to/instruments.csv
 """
 import argparse
 import io
@@ -661,7 +694,7 @@ import requests
 import build_presentation as bp
 
 KITE_INSTRUMENTS_URL = "https://api.kite.trade/instruments"
-OUT = Path(__file__).resolve().parent / "universe.json"
+OUT = Path(__file__).resolve().parent.parent / "core" / "universe.json"
 
 # Our canonical index id -> Kite tradingsymbol, where names differ after normalisation.
 KITE_ALIASES = {
@@ -821,15 +854,15 @@ Expected: `6 passed`
 
 - [ ] **Step 6: Generate the real universe.json**
 
-Run: `python3 -m screener.build_universe`
-Expected output: `Wrote …/screener/universe.json: equity kite=89 | debt kite=6 amfi=35 none=0`
+Run: `python3 -m screener.tools.build_universe`
+Expected output: `Wrote …/screener/core/universe.json: equity kite=89 | debt kite=6 amfi=35 none=0`
 
 If it raises `UniverseError`, add the listed index ids to `KITE_ALIASES`, using the exact tradingsymbol from Kite's list, and re-run.
 
 - [ ] **Step 7: Commit**
 
 ```bash
-git add screener/universe.py screener/build_universe.py screener/universe.json tests/screener/helpers.py tests/screener/test_build_universe.py
+git add screener/core/universe.py screener/tools/__init__.py screener/tools/build_universe.py screener/core/universe.json tests/screener/helpers.py tests/screener/test_build_universe.py
 git commit -m "feat(screener): index universe model, generator and universe.json"
 ```
 
@@ -838,11 +871,11 @@ git commit -m "feat(screener): index universe model, generator and universe.json
 ### Task 4: AMFI NAV client
 
 **Files:**
-- Create: `screener/amfi_client.py`, `tests/screener/test_amfi_client.py`
+- Create: `screener/core/amfi_client.py`, `tests/screener/test_amfi_client.py`
 
 **Interfaces:**
 - Consumes: `ranking.returns.fetch_nav_history(code, cache_dir, max_age_days=1, session=None) -> pd.Series` (date-indexed, ascending, split-adjusted; already in the repo)
-- Produces: `screener.amfi_client.fetch_nav_bars(scheme_code: int, cache_dir: Path, max_age_days: float = 0.5, session=None) -> list[Bar]` (ascending, `open=None`)
+- Produces: `screener.core.amfi_client.fetch_nav_bars(scheme_code: int, cache_dir: Path, max_age_days: float = 0.5, session=None) -> list[Bar]` (ascending, `open=None`)
 
 - [ ] **Step 1: Write the failing test**
 
@@ -851,7 +884,7 @@ git commit -m "feat(screener): index universe model, generator and universe.json
 ```python
 from datetime import date
 
-from screener.amfi_client import fetch_nav_bars
+from screener.core.amfi_client import fetch_nav_bars
 
 
 class FakeResp:
@@ -889,18 +922,18 @@ def test_bars_ascending_and_zero_navs_skipped(tmp_path):
 - [ ] **Step 2: Run the test to verify it fails**
 
 Run: `python3 -m pytest tests/screener/test_amfi_client.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.amfi_client'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.core.amfi_client'`
 
 - [ ] **Step 3: Implement the client**
 
-`screener/amfi_client.py`:
+`screener/core/amfi_client.py`:
 
 ```python
 """Debt-row NAV history from AMFI (via mfapi.in), reusing the pipeline's cached fetcher."""
 from pathlib import Path
 
 from ranking.returns import fetch_nav_history
-from screener.returns import Bar
+from screener.core.returns import Bar
 
 
 def fetch_nav_bars(scheme_code: int, cache_dir: Path, max_age_days: float = 0.5,
@@ -917,7 +950,7 @@ Expected: `1 passed`
 - [ ] **Step 5: Commit**
 
 ```bash
-git add screener/amfi_client.py tests/screener/test_amfi_client.py
+git add screener/core/amfi_client.py tests/screener/test_amfi_client.py
 git commit -m "feat(screener): AMFI NAV client for debt rows"
 ```
 
@@ -926,10 +959,10 @@ git commit -m "feat(screener): AMFI NAV client for debt rows"
 ### Task 5: Kite client (history + live feed)
 
 **Files:**
-- Create: `screener/kite_client.py`, `tests/screener/test_kite_client.py`
+- Create: `screener/core/kite_client.py`, `tests/screener/test_kite_client.py`
 
 **Interfaces:**
-- Consumes: `screener.returns.Bar`, `screener.config.HIST_MIN_INTERVAL_S`, `kiteconnect.KiteConnect`, `kiteconnect.KiteTicker`, `kiteconnect.exceptions`
+- Consumes: `screener.core.returns.Bar`, `screener.core.config.HIST_MIN_INTERVAL_S`, `kiteconnect.KiteConnect`, `kiteconnect.KiteTicker`, `kiteconnect.exceptions`
 - Produces:
   - `TokenError(Exception)`
   - `Quote(instrument_token: int, last_price: float, open: float|None, prev_close: float|None, timestamp: datetime|None)` with `Quote.from_tick(tick: dict) -> Quote`
@@ -946,7 +979,7 @@ from datetime import date, datetime
 import pytest
 from kiteconnect import exceptions as kex
 
-from screener.kite_client import KiteClient, LiveFeed, Quote, TokenError
+from screener.core.kite_client import KiteClient, LiveFeed, Quote, TokenError
 
 
 class FakeKite:
@@ -1067,11 +1100,11 @@ def test_live_feed_subscribes_and_forwards_ticks():
 - [ ] **Step 2: Run the tests to verify they fail**
 
 Run: `python3 -m pytest tests/screener/test_kite_client.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.kite_client'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.core.kite_client'`
 
 - [ ] **Step 3: Implement the client**
 
-`screener/kite_client.py`:
+`screener/core/kite_client.py`:
 
 ```python
 """Thin wrapper over the official kiteconnect SDK: token check, daily history, live feed.
@@ -1085,8 +1118,8 @@ from typing import Callable, Iterable, Optional
 from kiteconnect import KiteConnect, KiteTicker
 from kiteconnect import exceptions as kex
 
-from screener.config import HIST_MIN_INTERVAL_S
-from screener.returns import Bar
+from screener.core.config import HIST_MIN_INTERVAL_S
+from screener.core.returns import Bar
 
 log = logging.getLogger(__name__)
 
@@ -1194,7 +1227,7 @@ Expected: `7 passed`
 - [ ] **Step 5: Commit**
 
 ```bash
-git add screener/kite_client.py tests/screener/test_kite_client.py
+git add screener/core/kite_client.py tests/screener/test_kite_client.py
 git commit -m "feat(screener): Kite client for daily history and live quote feed"
 ```
 
@@ -1203,13 +1236,13 @@ git commit -m "feat(screener): Kite client for daily history and live quote feed
 ### Task 6: Screener service (Qt-free orchestration)
 
 **Files:**
-- Create: `screener/service.py`, `tests/screener/test_service.py`
+- Create: `screener/core/service.py`, `tests/screener/test_service.py`, `tests/screener/test_core_is_portable.py`
 
 **Interfaces:**
 - Consumes: `BarStore`, `IndexInfo`, `compute_returns`, `months_back`, `Bar`, `ReturnSet`, `Quote`, `TokenError`, config constants
 - Produces:
-  - `RowData(info: IndexInfo, result: ReturnSet, note: str)`
-  - `ScreenerService(universe: list[IndexInfo], store: BarStore)` with:
+  - `RowData(info: IndexInfo, result: ReturnSet, note: str)` with `to_dict() -> dict` (JSON-serialisable: ISO dates, returns as fractions or None)
+  - `ScreenerService(universe: list[IndexInfo], store: BarRepository)` with:
     - `kite_tokens() -> list[int]`
     - `backfill_kite(client, today: date, progress=lambda done, total: None) -> list[str]` (failed ids; `TokenError` propagates)
     - `refresh_amfi(fetch: Callable[[int], list[Bar]]) -> list[str]`
@@ -1226,11 +1259,11 @@ from datetime import date, datetime, timedelta
 
 import pytest
 
-from screener.config import IST
-from screener.db import BarStore
-from screener.kite_client import Quote, TokenError
-from screener.returns import Bar, months_back
-from screener.service import ScreenerService
+from screener.core.config import IST
+from screener.core.db import BarStore
+from screener.core.kite_client import Quote, TokenError
+from screener.core.returns import Bar, months_back
+from screener.core.service import ScreenerService
 from tests.screener.helpers import make_info
 
 TODAY = date(2026, 11, 23)
@@ -1306,20 +1339,50 @@ def test_capture_closes_only_after_market_close(svc):
     assert svc.store.bars("NIFTY 50") == [Bar(TODAY, 101.0, 102.0)]
 
 
+def test_row_to_dict_is_json_ready(svc):
+    import json
+    svc.store.upsert_bars("NIFTY 50", [Bar(date(2026, 11, 19), 99.0, 100.0),
+                                       Bar(date(2026, 11, 20), 100.0, 101.0)], "kite")
+    d = svc.row("NIFTY 50", TODAY).to_dict()
+    json.dumps(d)                                            # must not raise
+    assert d["id"] == "NIFTY 50" and d["as_of"] == "2026-11-20" and d["live"] is False
+    assert d["returns"]["day"] == pytest.approx(0.01) and d["returns"]["5Y"] is None
+    assert d["etfs"] == ["A ETF"] and d["source"] == "kite"
+
+
 def test_rows_cover_universe_and_kite_tokens(svc):
     assert [r.info.id for r in svc.rows(TODAY)] == ["NIFTY 50", "NIFTY BANK", "NIFTY SDL APR 2027"]
     assert svc.kite_tokens() == [1, 2]
     assert svc.row("NIFTY BANK", TODAY).result.as_of is None
 ```
 
+`tests/screener/test_core_is_portable.py`:
+
+```python
+"""screener/core must stay free of Qt and desktop code so it can move to the web app."""
+import subprocess
+import sys
+
+CORE = ["config", "returns", "db", "universe", "amfi_client", "kite_client", "service"]
+
+
+def test_core_imports_no_qt_or_desktop():
+    code = ("import sys\n"
+            + "".join(f"import screener.core.{m}\n" for m in CORE)
+            + "bad = [m for m in sys.modules if m.startswith(('PySide6', 'screener.desktop'))]\n"
+            + "assert not bad, bad\n")
+    result = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+```
+
 - [ ] **Step 2: Run the tests to verify they fail**
 
-Run: `python3 -m pytest tests/screener/test_service.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.service'`
+Run: `python3 -m pytest tests/screener/test_service.py tests/screener/test_core_is_portable.py -q`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.core.service'`
 
 - [ ] **Step 3: Implement the service**
 
-`screener/service.py`:
+`screener/core/service.py`:
 
 ```python
 """Qt-free orchestration: history fill-in, AMFI refresh, live quotes -> table rows."""
@@ -1328,11 +1391,11 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from typing import Callable, Iterable, Optional
 
-from screener.config import HISTORY_MONTHS, HISTORY_PAD_DAYS, IST, MARKET_CLOSE
-from screener.db import BarStore
-from screener.kite_client import Quote, TokenError
-from screener.returns import Bar, ReturnSet, compute_returns, months_back
-from screener.universe import IndexInfo
+from screener.core.config import HISTORY_MONTHS, HISTORY_PAD_DAYS, IST, MARKET_CLOSE
+from screener.core.db import BarRepository
+from screener.core.kite_client import Quote, TokenError
+from screener.core.returns import PERIODS, Bar, ReturnSet, compute_returns, months_back
+from screener.core.universe import IndexInfo
 
 log = logging.getLogger(__name__)
 
@@ -1343,6 +1406,17 @@ class RowData:
     result: ReturnSet
     note: str          # source description shown as a tooltip
 
+    def to_dict(self) -> dict:
+        """JSON-ready row for a web API (dates as ISO strings, returns as fractions)."""
+        i, r = self.info, self.result
+        return {
+            "id": i.id, "name": i.display_name, "tab": i.tab, "category": i.category,
+            "source": i.source, "etfs": list(i.etfs), "index_funds": list(i.index_funds),
+            "as_of": r.as_of.isoformat() if r.as_of else None, "live": r.live,
+            "latest": r.latest, "note": self.note,
+            "returns": {"gap": r.gap, "day": r.day, **{p: r.periods[p] for p in PERIODS}},
+        }
+
 
 def _quote_date(q: Quote) -> Optional[date]:
     ts = q.timestamp
@@ -1352,7 +1426,7 @@ def _quote_date(q: Quote) -> Optional[date]:
 
 
 class ScreenerService:
-    def __init__(self, universe: list[IndexInfo], store: BarStore):
+    def __init__(self, universe: list[IndexInfo], store: BarRepository):
         self.universe = universe
         self.store = store
         self._by_id = {i.id: i for i in universe}
@@ -1449,13 +1523,13 @@ class ScreenerService:
 
 - [ ] **Step 4: Run the tests to verify they pass**
 
-Run: `python3 -m pytest tests/screener/test_service.py -q`
-Expected: `7 passed`
+Run: `python3 -m pytest tests/screener/test_service.py tests/screener/test_core_is_portable.py -q`
+Expected: `9 passed`
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add screener/service.py tests/screener/test_service.py
+git add screener/core/service.py tests/screener/test_service.py tests/screener/test_core_is_portable.py
 git commit -m "feat(screener): Qt-free service for backfill, NAVs, live quotes and rows"
 ```
 
@@ -1464,7 +1538,7 @@ git commit -m "feat(screener): Qt-free service for backfill, NAVs, live quotes a
 ### Task 7: Table model and sort/filter proxy
 
 **Files:**
-- Create: `screener/ui/__init__.py`, `screener/ui/table_model.py`, `tests/screener/test_table_model.py`
+- Create: `screener/desktop/__init__.py`, `screener/desktop/ui/__init__.py`, `screener/desktop/ui/table_model.py`, `tests/screener/test_table_model.py`
 
 **Interfaces:**
 - Consumes: `RowData`, `PERIODS`
@@ -1482,9 +1556,9 @@ from datetime import date
 
 from PySide6.QtCore import Qt
 
-from screener.returns import ReturnSet
-from screener.service import RowData
-from screener.ui.table_model import COLUMNS, ScreenerProxy, ScreenerTableModel, fmt_pct
+from screener.core.returns import ReturnSet
+from screener.core.service import RowData
+from screener.desktop.ui.table_model import COLUMNS, ScreenerProxy, ScreenerTableModel, fmt_pct
 from tests.screener.helpers import make_info
 
 
@@ -1550,13 +1624,19 @@ def test_update_rows_changes_values_and_flashes(qapp):
 - [ ] **Step 2: Run the tests to verify they fail**
 
 Run: `python3 -m pytest tests/screener/test_table_model.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.ui'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.desktop.ui'`
 
 - [ ] **Step 3: Implement the model and proxy**
 
-`screener/ui/__init__.py`: empty file.
+`screener/desktop/__init__.py`:
 
-`screener/ui/table_model.py`:
+```python
+"""PySide6 desktop front end. Not used by the web app."""
+```
+
+`screener/desktop/ui/__init__.py`: empty file.
+
+`screener/desktop/ui/table_model.py`:
 
 ```python
 """Qt table model + sort/filter proxy for one screener tab."""
@@ -1565,8 +1645,8 @@ import time
 from PySide6.QtCore import QAbstractTableModel, QModelIndex, QSortFilterProxyModel, Qt
 from PySide6.QtGui import QColor
 
-from screener.returns import PERIODS
-from screener.service import RowData
+from screener.core.returns import PERIODS
+from screener.core.service import RowData
 
 COLUMNS = ["Category", "Index", "ETFs", "Index Funds", "Gap %", "Day %", *PERIODS]
 NUM_START = 4
@@ -1731,7 +1811,7 @@ Expected: `5 passed`
 - [ ] **Step 5: Commit**
 
 ```bash
-git add screener/ui/__init__.py screener/ui/table_model.py tests/screener/test_table_model.py
+git add screener/desktop/__init__.py screener/desktop/ui/__init__.py screener/desktop/ui/table_model.py tests/screener/test_table_model.py
 git commit -m "feat(screener): sortable, filterable table model with blanks-last sorting"
 ```
 
@@ -1740,14 +1820,14 @@ git commit -m "feat(screener): sortable, filterable table model with blanks-last
 ### Task 8: Controller, main window and app entry
 
 **Files:**
-- Create: `screener/controller.py`, `screener/ui/main_window.py`, `screener/app.py`, `tests/screener/test_app_smoke.py`
+- Create: `screener/desktop/controller.py`, `screener/desktop/ui/main_window.py`, `screener/desktop/app.py`, `tests/screener/test_app_smoke.py`
 
 **Interfaces:**
 - Consumes: `ScreenerService`, `KiteClient`, `LiveFeed`, `TokenError`, `fetch_nav_bars`, `ScreenerTableModel`, `ScreenerProxy`, `COLUMNS`, config helpers
 - Produces:
   - `Controller(service, api_key=None, feed_factory=LiveFeed, client_factory=KiteClient, nav_fetch=None, pool=None)` with signals `status(str state, str msg)` (state ∈ `live|offline|busy|error`), `progress(int done, int total)` (0,0 hides), `rows_reset(list)`, `rows_updated(list)`, `updated_at(str)`, `message(str)`; methods `start()`, `connect_kite(token: str)`, `refresh_history()`, `shutdown()`
   - `MainWindow(controller, universe)` with attributes `token`, `connect_btn`, `refresh_btn`, `status_lbl`, `updated_lbl`, `equity: TabView`, `debt: TabView`; `TabView.model`, `TabView.proxy`, `TabView.table`
-  - `screener.app.main(argv=None) -> int` (supports `--selftest`)
+  - `screener.desktop.app.main(argv=None) -> int` (supports `--selftest`)
 
 - [ ] **Step 1: Write the failing smoke test**
 
@@ -1759,13 +1839,13 @@ from datetime import datetime
 from PySide6.QtCore import QThreadPool
 from PySide6.QtWidgets import QApplication
 
-from screener.config import IST
-from screener.controller import Controller
-from screener.db import BarStore
-from screener.kite_client import Quote
-from screener.returns import Bar
-from screener.service import ScreenerService
-from screener.ui.main_window import MainWindow
+from screener.core.config import IST
+from screener.desktop.controller import Controller
+from screener.core.db import BarStore
+from screener.core.kite_client import Quote
+from screener.core.returns import Bar
+from screener.core.service import ScreenerService
+from screener.desktop.ui.main_window import MainWindow
 from tests.screener.helpers import make_info
 
 
@@ -1838,7 +1918,7 @@ def test_window_offline_then_live(qapp, tmp_path):
 
 
 def test_selftest_runs_without_window(capsys):
-    from screener.app import main
+    from screener.desktop.app import main
     assert main(["--selftest"]) == 0
     assert "selftest ok" in capsys.readouterr().out
 ```
@@ -1846,11 +1926,11 @@ def test_selftest_runs_without_window(capsys):
 - [ ] **Step 2: Run the test to verify it fails**
 
 Run: `python3 -m pytest tests/screener/test_app_smoke.py -q`
-Expected: FAIL with `ModuleNotFoundError: No module named 'screener.controller'`
+Expected: FAIL with `ModuleNotFoundError: No module named 'screener.desktop.controller'`
 
 - [ ] **Step 3: Implement the controller**
 
-`screener/controller.py`:
+`screener/desktop/controller.py`:
 
 ```python
 """Bridges the Qt UI and ScreenerService: runs network work on a thread pool and
@@ -1859,10 +1939,10 @@ import logging
 
 from PySide6.QtCore import QObject, QRunnable, QThreadPool, QTimer, Signal
 
-from screener.amfi_client import fetch_nav_bars
-from screener.config import app_dir, load_api_key, now_ist, today_ist
-from screener.kite_client import KiteClient, LiveFeed, TokenError
-from screener.service import ScreenerService
+from screener.core.amfi_client import fetch_nav_bars
+from screener.core.config import app_dir, load_api_key, now_ist, today_ist
+from screener.core.kite_client import KiteClient, LiveFeed, TokenError
+from screener.core.service import ScreenerService
 
 log = logging.getLogger(__name__)
 
@@ -2012,7 +2092,7 @@ class Controller(QObject):
 
 - [ ] **Step 4: Implement the main window**
 
-`screener/ui/main_window.py`:
+`screener/desktop/ui/main_window.py`:
 
 ```python
 """Main window: token bar, Equity/Debt tabs, progress and messages."""
@@ -2021,7 +2101,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QComboBox, QHBoxLayout, QLabel
                                QMainWindow, QProgressBar, QPushButton, QTableView, QTabWidget,
                                QVBoxLayout, QWidget)
 
-from screener.ui.table_model import COLUMNS, ScreenerProxy, ScreenerTableModel
+from screener.desktop.ui.table_model import COLUMNS, ScreenerProxy, ScreenerTableModel
 
 EQUITY_FOOTER = ("Price index returns from Kite (excluding dividends). 1Y and shorter are plain "
                  "returns; 2Y, 3Y and 5Y are annualised (CAGR). Hover a cell to see its source.")
@@ -2182,10 +2262,10 @@ class MainWindow(QMainWindow):
 
 - [ ] **Step 5: Implement the entry point**
 
-`screener/app.py`:
+`screener/desktop/app.py`:
 
 ```python
-"""Entry point:  python3 -m screener.app   (or the packaged NSEScreener executable).
+"""Entry point:  python3 -m screener.desktop.app   (or the packaged NSEScreener executable).
 --selftest loads the bundled universe and core modules without opening a window."""
 import argparse
 import logging
@@ -2195,11 +2275,11 @@ from pathlib import Path
 
 
 def _selftest() -> int:
-    import screener.controller  # noqa: F401 - proves Qt + kiteconnect are bundled
-    from screener.config import app_dir, load_api_key, today_ist
-    from screener.db import BarStore
-    from screener.service import ScreenerService
-    from screener.universe import load_universe
+    import screener.desktop.controller  # noqa: F401 - proves Qt + kiteconnect are bundled
+    from screener.core.config import app_dir, load_api_key, today_ist
+    from screener.core.db import BarStore
+    from screener.core.service import ScreenerService
+    from screener.core.universe import load_universe
 
     universe = load_universe()
     with tempfile.TemporaryDirectory() as d:
@@ -2226,12 +2306,12 @@ def main(argv=None) -> int:
 
     from PySide6.QtWidgets import QApplication
 
-    from screener.config import app_dir
-    from screener.controller import Controller
-    from screener.db import BarStore
-    from screener.service import ScreenerService
-    from screener.ui.main_window import MainWindow
-    from screener.universe import load_universe
+    from screener.core.config import app_dir
+    from screener.desktop.controller import Controller
+    from screener.core.db import BarStore
+    from screener.core.service import ScreenerService
+    from screener.desktop.ui.main_window import MainWindow
+    from screener.core.universe import load_universe
 
     logging.basicConfig(filename=str(app_dir() / "screener.log"), level=logging.INFO,
                         format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -2261,17 +2341,17 @@ Expected: `2 passed`
 - [ ] **Step 7: Run the whole screener suite**
 
 Run: `python3 -m pytest tests/screener -q`
-Expected: `40 passed`
+Expected: `42 passed`
 
 - [ ] **Step 8: Launch the app manually (no token)**
 
-Run: `python3 -m screener.app`
+Run: `python3 -m screener.desktop.app`
 Expected: the window opens with the Equity tab (89 rows) and the Debt tab (41 rows) and a 🟡 status. Debt rows fill in after a few seconds from AMFI; equity rows stay "—" until you connect. Close the window.
 
 - [ ] **Step 9: Commit**
 
 ```bash
-git add screener/controller.py screener/ui/main_window.py screener/app.py tests/screener/test_app_smoke.py
+git add screener/desktop/controller.py screener/desktop/ui/main_window.py screener/desktop/app.py tests/screener/test_app_smoke.py
 git commit -m "feat(screener): Qt controller, main window and app entry point"
 ```
 
@@ -2280,29 +2360,29 @@ git commit -m "feat(screener): Qt controller, main window and app entry point"
 ### Task 9: Live probe script (run with the user's token)
 
 **Files:**
-- Create: `screener/probe_kite.py`
+- Create: `screener/tools/probe_kite.py`
 
 **Interfaces:**
 - Consumes: `KiteClient`, `TokenError`, `compute_returns`, `months_back`, `load_universe`, `ranking.index_dashboard.load_index_returns(folder, match_index) -> (DataFrame indexed by canonical id with r1m/r3m columns, as_of: date)`, `fetch_etf_index_data.match_index`
-- Produces: `python3 -m screener.probe_kite` (interactive; the token is read with `getpass`, so it's never echoed or stored)
+- Produces: `python3 -m screener.tools.probe_kite` (interactive; the token is read with `getpass`, so it's never echoed or stored)
 
 - [ ] **Step 1: Write the probe**
 
-`screener/probe_kite.py`:
+`screener/tools/probe_kite.py`:
 
 ```python
 """One-off check of your Kite access. Run from the repo root:
-    python3 -m screener.probe_kite
+    python3 -m screener.tools.probe_kite
 It asks for today's access token (not echoed), confirms historical-data access, reports how far
 back daily history goes for every Kite index, and compares 1M/3M with NSE's latest Index Dashboard
 (TRI, so small differences of a few tenths of a percent are expected)."""
 import getpass
 from datetime import timedelta
 
-from screener.config import HISTORY_MONTHS, HISTORY_PAD_DAYS, load_api_key, today_ist
-from screener.kite_client import KiteClient, TokenError
-from screener.returns import compute_returns, months_back
-from screener.universe import load_universe
+from screener.core.config import HISTORY_MONTHS, HISTORY_PAD_DAYS, load_api_key, today_ist
+from screener.core.kite_client import KiteClient, TokenError
+from screener.core.returns import compute_returns, months_back
+from screener.core.universe import load_universe
 
 
 def _dashboard():
@@ -2357,19 +2437,19 @@ if __name__ == "__main__":
 
 - [ ] **Step 2: Check it imports cleanly**
 
-Run: `python3 -c "import screener.probe_kite; print('ok')"`
+Run: `python3 -c "import screener.tools.probe_kite; print('ok')"`
 Expected: `ok`
 
 - [ ] **Step 3: User runs the probe with a live token** (manual; done by the user, not an agent)
 
 Prerequisite: create `screener/secrets_local.py` from the example with the real API key.
-Run: `python3 -m screener.probe_kite` and paste today's access token at the prompt.
+Run: `python3 -m screener.tools.probe_kite` and paste today's access token at the prompt.
 Expected: "Connected as …", one line per index (95 in all) with day counts, 1M/3M within ~0.5% of NSE for most indices, and a list of indices with short history. Any `ERROR` lines or a permission error mean historical data isn't enabled on the Kite plan.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-git add screener/probe_kite.py
+git add screener/tools/probe_kite.py
 git commit -m "feat(screener): live probe script for Kite access and history depth"
 ```
 
@@ -2381,7 +2461,7 @@ git commit -m "feat(screener): live probe script for Kite access and history dep
 - Create: `screener/NSEScreener.spec`, `screener/BUILD.md`
 
 **Interfaces:**
-- Consumes: `screener/app.py` (`--selftest`), `screener/universe.json`, `screener/secrets_local.py` (must exist at build time)
+- Consumes: `screener/desktop/app.py` (`--selftest`), `screener/core/universe.json`, `screener/secrets_local.py` (must exist at build time)
 - Produces: `dist/NSEScreener` (macOS) / `dist/NSEScreener.exe` (Windows)
 
 - [ ] **Step 1: Write the PyInstaller spec**
@@ -2396,9 +2476,9 @@ from pathlib import Path
 root = Path(SPECPATH).parent  # noqa: F821 - SPECPATH is provided by PyInstaller
 
 a = Analysis(
-    [str(root / "screener" / "app.py")],
+    [str(root / "screener" / "desktop" / "app.py")],
     pathex=[str(root)],
-    datas=[(str(root / "screener" / "universe.json"), "screener")],
+    datas=[(str(root / "screener" / "core" / "universe.json"), "screener/core")],
     hiddenimports=["screener.secrets_local", "autobahn.twisted.websocket", "twisted.internet.reactor"],
     excludes=["matplotlib", "tkinter", "IPython"],
 )
@@ -2454,7 +2534,7 @@ The self-test prints (and writes to `selftest.txt` next to the executable)
 
 After re-running the ranking pipeline (`run_ranking.py`, `compute_returns.py`):
 ```
-python -m screener.build_universe
+python -m screener.tools.build_universe
 ```
 then rebuild. Indices added this way start with empty history and fill in on the next Connect.
 ````
