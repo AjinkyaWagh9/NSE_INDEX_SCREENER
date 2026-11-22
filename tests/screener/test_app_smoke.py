@@ -85,3 +85,54 @@ def test_selftest_runs_without_window(capsys):
     from screener.desktop.app import main
     assert main(["--selftest"]) == 0
     assert "selftest ok" in capsys.readouterr().out
+
+
+def _window(tmp_path, monkeypatch, exchange):
+    universe = [make_info("NIFTY 50", token=1)]
+    store = BarStore(tmp_path / "t.db")
+    pool = QThreadPool()
+    c = Controller(ScreenerService(universe, store), api_key="key", api_secret="sec",
+                   feed_factory=FakeFeed, client_factory=FakeClient, pool=pool,
+                   nav_fetch=lambda code: [], exchange=exchange)
+    return MainWindow(c, universe), c, pool, store
+
+
+def test_login_button_opens_zerodha_login(qapp, tmp_path, monkeypatch):
+    opened = []
+    monkeypatch.setattr("screener.desktop.ui.main_window.open_in_browser", opened.append)
+    w, c, pool, store = _window(tmp_path, monkeypatch, exchange=None)
+    w.login_btn.click()
+    assert opened == ["https://kite.zerodha.com/connect/login?api_key=key&v=3"]
+    c.shutdown(); store.close()
+
+
+def test_pasting_redirect_url_logs_in_and_goes_live(qapp, tmp_path, monkeypatch):
+    calls = []
+
+    def fake_exchange(api_key, api_secret, text):
+        calls.append((api_key, api_secret, text))
+        return "access-xyz"
+
+    w, c, pool, store = _window(tmp_path, monkeypatch, fake_exchange)
+    c.start(); settle(pool)
+    w.token.setText("http://127.0.0.1/?status=success&request_token=REQ9")
+    w.connect_btn.click()
+    settle(pool); settle(pool)
+    assert calls == [("key", "sec", "http://127.0.0.1/?status=success&request_token=REQ9")]
+    assert FakeFeed.instances[-1].args[1] == "access-xyz"       # feed got the exchanged token
+    assert "🟢" in w.status_lbl.text()
+    c.shutdown(); store.close()
+
+
+def test_failed_login_shows_reason(qapp, tmp_path, monkeypatch):
+    from screener.core.kite_client import TokenError
+
+    def bad_exchange(api_key, api_secret, text):
+        raise TokenError("Login expired or already used - log in again")
+
+    w, c, pool, store = _window(tmp_path, monkeypatch, bad_exchange)
+    w.token.setText("request_token=OLD")
+    w.connect_btn.click()
+    settle(pool)
+    assert "🔴" in w.status_lbl.text() and "already used" in w.status_lbl.text()
+    c.shutdown(); store.close()

@@ -1,6 +1,7 @@
 """Thin wrapper over the official kiteconnect SDK: token check, daily history, live feed.
 Read-only by design: no order APIs are used."""
 import logging
+import re
 import time
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -38,6 +39,36 @@ def _to_date(d) -> date:
     return d.date() if isinstance(d, datetime) else d
 
 
+# ---------- daily login (option B): request token -> access token ----------
+_REQUEST_TOKEN = re.compile(r"request_token=([A-Za-z0-9]+)")
+
+
+def login_url(api_key: str) -> str:
+    """Zerodha's login page for this app; after login it redirects with ?request_token=..."""
+    return KiteConnect(api_key=api_key).login_url()
+
+
+def extract_request_token(text: str) -> Optional[str]:
+    """Pull the request token out of the redirected address (None if it isn't there)."""
+    m = _REQUEST_TOKEN.search(text or "")
+    return m.group(1) if m else None
+
+
+def exchange_request_token(api_key: str, api_secret: str, redirect_text: str, kite=None) -> str:
+    """Swap the request token from Zerodha's redirect for today's access token."""
+    if not api_secret:
+        raise TokenError("No Kite API secret configured (screener/secrets_local.py)")
+    request_token = extract_request_token(redirect_text)
+    if not request_token:
+        raise TokenError("No request_token found - paste the whole address you landed on after login")
+    kite = kite or KiteConnect(api_key=api_key)
+    try:
+        session = kite.generate_session(request_token, api_secret=api_secret)
+    except kex.TokenException as e:
+        raise TokenError(f"Login expired or already used - log in again ({e})") from e
+    return session["access_token"]
+
+
 class KiteClient:
     RETRIES = 3
 
@@ -55,7 +86,7 @@ class KiteClient:
         try:
             return self.kite.profile().get("user_name", "")
         except kex.TokenException as e:
-            raise TokenError(str(e)) from e
+            raise TokenError(f"Token invalid or expired - log in again or paste today's token ({e})") from e
 
     def _throttle(self) -> None:
         if self._last_call is not None:

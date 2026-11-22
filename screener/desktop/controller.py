@@ -6,8 +6,9 @@ import logging
 from PySide6.QtCore import QObject, QRunnable, QThreadPool, QTimer, Signal
 
 from screener.core.amfi_client import fetch_nav_bars
-from screener.core.config import app_dir, load_api_key, now_ist, today_ist
-from screener.core.kite_client import KiteClient, LiveFeed, TokenError
+from screener.core.config import app_dir, load_api_key, load_api_secret, now_ist, today_ist
+from screener.core.kite_client import (KiteClient, LiveFeed, TokenError, exchange_request_token,
+                                       extract_request_token, login_url)
 from screener.core.service import ScreenerService
 
 log = logging.getLogger(__name__)
@@ -44,10 +45,13 @@ class Controller(QObject):
     _status_in = Signal(str, str)
 
     def __init__(self, service: ScreenerService, api_key=None, feed_factory=LiveFeed,
-                 client_factory=KiteClient, nav_fetch=None, pool=None):
+                 client_factory=KiteClient, nav_fetch=None, pool=None, api_secret=None,
+                 exchange=None):
         super().__init__()
         self.service = service
         self.api_key = load_api_key() if api_key is None else api_key
+        self.api_secret = load_api_secret() if api_secret is None else api_secret
+        self._exchange = exchange or exchange_request_token
         self._feed_factory, self._client_factory = feed_factory, client_factory
         self._nav_fetch = nav_fetch or (lambda code: fetch_nav_bars(code, app_dir() / "nav_cache"))
         self._pool = pool or QThreadPool.globalInstance()
@@ -92,10 +96,24 @@ class Controller(QObject):
 
         self._run(work, self._after_history)
 
-    def connect_kite(self, token: str) -> None:
+    def zerodha_login_url(self):
+        """Zerodha's login page for this app, or None if no API key is configured."""
+        return login_url(self.api_key) if self.api_key else None
+
+    def connect_kite(self, text: str) -> None:
+        """Accepts today's access token, or the whole address Zerodha redirected to after
+        login (contains request_token=...), which is first swapped for an access token."""
         if self._feed is not None:
             self.status.emit("error", "Already connected - restart the app to use a new token")
             return
+        if extract_request_token(text):
+            self.status.emit("busy", "Logging in to Zerodha…")
+            self._run(lambda: self._exchange(self.api_key, self.api_secret, text),
+                      self._connect_with_access_token)
+            return
+        self._connect_with_access_token(text)
+
+    def _connect_with_access_token(self, token: str) -> None:
         try:
             client = self._client_factory(self.api_key, token)
         except TokenError as e:
@@ -147,7 +165,7 @@ class Controller(QObject):
     def _on_job_error(self, exc) -> None:
         self.progress.emit(0, 0)
         if isinstance(exc, TokenError):
-            self.status.emit("error", "Token invalid or expired - paste today's token")
+            self.status.emit("error", str(exc) or "Token invalid or expired - paste today's token")
         else:
             self.status.emit("error", f"{type(exc).__name__}: {exc}")
 

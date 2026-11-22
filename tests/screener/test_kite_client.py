@@ -119,3 +119,46 @@ def test_live_feed_subscribes_and_forwards_ticks():
     assert status[-1] == "error"
     feed.stop()
     assert kt.closed
+
+
+# ---------- option B: log in inside the app ----------
+from screener.core.kite_client import exchange_request_token, extract_request_token, login_url
+
+
+class FakeSessionKite:
+    def __init__(self, result=None, error=None):
+        self.result, self.error, self.calls = result, error, []
+
+    def generate_session(self, request_token, api_secret):
+        self.calls.append((request_token, api_secret))
+        if self.error:
+            raise self.error
+        return self.result
+
+
+def test_extract_request_token_from_redirect_url_or_text():
+    url = "http://127.0.0.1/?action=login&type=login&status=success&request_token=AbC123xyz"
+    assert extract_request_token(url) == "AbC123xyz"
+    assert extract_request_token("  request_token=Zz9&status=success ") == "Zz9"
+    assert extract_request_token("Gqls1qM6r1qfOngZL2kQKMaxiYWM5I8J") is None   # plain access token
+
+
+def test_login_url_uses_api_key():
+    assert login_url("mykey") == "https://kite.zerodha.com/connect/login?api_key=mykey&v=3"
+
+
+def test_exchange_returns_access_token():
+    kite = FakeSessionKite(result={"access_token": "ACCESS1", "user_name": "T"})
+    url = "http://127.0.0.1/?status=success&request_token=REQ1"
+    assert exchange_request_token("key", "secret", url, kite=kite) == "ACCESS1"
+    assert kite.calls == [("REQ1", "secret")]
+
+
+def test_exchange_errors_are_token_errors():
+    with pytest.raises(TokenError, match="secret"):
+        exchange_request_token("key", "", "request_token=R", kite=FakeSessionKite())
+    with pytest.raises(TokenError, match="request_token"):
+        exchange_request_token("key", "secret", "no token here", kite=FakeSessionKite())
+    with pytest.raises(TokenError):
+        exchange_request_token("key", "secret", "request_token=R",
+                               kite=FakeSessionKite(error=kex.TokenException("used or expired")))

@@ -1,5 +1,6 @@
 """Main window: token bar, Equity/Debt tabs, progress and messages."""
-from PySide6.QtCore import Qt, QTimer
+from PySide6.QtCore import Qt, QTimer, QUrl
+from PySide6.QtGui import QDesktopServices
 from PySide6.QtWidgets import (QAbstractItemView, QComboBox, QHBoxLayout, QLabel, QLineEdit,
                                QMainWindow, QProgressBar, QPushButton, QTableView, QTabWidget,
                                QVBoxLayout, QWidget)
@@ -12,6 +13,10 @@ DEBT_FOOTER = ("Rows marked '· NAV' use the tracking fund's NAV (previous busin
                "no Gap %. Bharat Bond, 10 Yr and 8-13 Yr G-Sec rows are live from Kite.")
 STATUS_ICON = {"live": "🟢", "offline": "🟡", "busy": "🟡", "error": "🔴"}
 COL_WIDTHS = [120, 230, 260, 260] + [72] * (len(COLUMNS) - 4)
+
+
+def open_in_browser(url: str) -> None:
+    QDesktopServices.openUrl(QUrl(url))
 
 
 class TabView(QWidget):
@@ -85,15 +90,16 @@ class MainWindow(QMainWindow):
 
         self.token = QLineEdit()
         self.token.setEchoMode(QLineEdit.EchoMode.Password)
-        self.token.setPlaceholderText("Paste today's Kite access token")
-        self.token.setMinimumWidth(320)
+        self.token.setPlaceholderText("Paste the address after login (or an access token)")
+        self.token.setMinimumWidth(360)
+        self.login_btn = QPushButton("Login with Zerodha")
         self.connect_btn = QPushButton("Connect")
         self.refresh_btn = QPushButton("Refresh history")
         self.status_lbl = QLabel()
         self.updated_lbl = QLabel("Last updated —")
 
         top = QHBoxLayout()
-        top.addWidget(QLabel("Access token"))
+        top.addWidget(self.login_btn)
         top.addWidget(self.token)
         top.addWidget(self.connect_btn)
         top.addSpacing(16)
@@ -121,6 +127,7 @@ class MainWindow(QMainWindow):
         self.progress.setVisible(False)
         self.statusBar().addPermanentWidget(self.progress)
 
+        self.login_btn.clicked.connect(self._on_login)
         self.connect_btn.clicked.connect(self._on_connect)
         self.token.returnPressed.connect(self._on_connect)
         self.refresh_btn.clicked.connect(controller.refresh_history)
@@ -136,6 +143,15 @@ class MainWindow(QMainWindow):
         self._flash_timer.timeout.connect(self._expire_flash)
         self._flash_timer.start()
         self._on_status("offline", "Not connected")
+
+    def _on_login(self) -> None:
+        url = self.c.zerodha_login_url()
+        if not url:
+            self._on_status("error", "No Kite API key configured (screener/secrets_local.py)")
+            return
+        open_in_browser(url)
+        self._on_status("busy", "Log in on Zerodha's page, then paste the address you land on here")
+        self.token.setFocus()
 
     def _on_connect(self) -> None:
         token = self.token.text()

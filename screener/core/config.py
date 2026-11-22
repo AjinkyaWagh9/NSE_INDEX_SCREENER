@@ -39,13 +39,22 @@ def resource_path(name: str) -> Path:
     return Path(base) / "screener" / "core" / name if base else CORE_DIR / name
 
 
-def load_api_key() -> str:
-    """Kite API key: KITE_API_KEY env var first (web), else the git-ignored
-    screener/secrets_local.py (desktop). '' if neither is set."""
-    if os.environ.get("KITE_API_KEY"):
-        return os.environ["KITE_API_KEY"].strip()
+def _secret(name: str) -> str:
+    """Env var first (web), else the git-ignored screener/secrets_local.py (desktop)."""
+    if os.environ.get(name):
+        return os.environ[name].strip()
     try:
-        from screener.secrets_local import KITE_API_KEY
+        import screener.secrets_local as local
     except ImportError:
         return ""
-    return KITE_API_KEY.strip()
+    return str(getattr(local, name, "") or "").strip()
+
+
+def load_api_key() -> str:
+    """Kite API key ('' if not configured)."""
+    return _secret("KITE_API_KEY")
+
+
+def load_api_secret() -> str:
+    """Kite API secret, only needed to log in inside the app ('' if not configured)."""
+    return _secret("KITE_API_SECRET")

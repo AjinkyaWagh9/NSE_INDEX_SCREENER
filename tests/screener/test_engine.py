@@ -69,3 +69,9 @@ def test_no_data_gives_blank_set():
     r = compute_returns([], date(2026, 11, 20))
     assert r.as_of is None and r.day is None
     assert all(v is None for v in r.periods.values())
+
+
+def test_api_secret_prefers_env(monkeypatch):
+    from screener.core.config import load_api_secret
+    monkeypatch.setenv("KITE_API_SECRET", " s3cret ")
+    assert load_api_secret() == "s3cret"

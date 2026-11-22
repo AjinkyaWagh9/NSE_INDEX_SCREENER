@@ -193,10 +193,16 @@ All dates and times are IST (Asia/Kolkata), regardless of the computer's time zo
 
 ## 8. Secrets and token
 
-- **API key** lives in `screener/secrets_local.py` (git-ignored), bundled into the build.
+- **API key and API secret** live in `screener/secrets_local.py` (git-ignored), bundled into
+  the build; `KITE_API_KEY` / `KITE_API_SECRET` environment variables take precedence (web).
   A committed `secrets_local.example.py` shows the format.
-- **API secret is not used.** The user pastes an already-generated access token.
+- **Daily login (added 2026-11-22, "option B")**: *Login with Zerodha* opens Zerodha's login
+  page; the user pastes the redirected address into the token box and the app exchanges its
+  `request_token` for an access token (`exchange_request_token`, needs the secret). The same
+  box still accepts a ready-made access token, in which case the secret isn't needed.
 - The access token is held **in memory only** — never written to disk or logs.
+- Anyone with the built executable can extract the bundled key and secret. On their own they
+  don't grant account access (a token still needs the user's Zerodha login + 2FA).
 
 ## 9. Testing
 

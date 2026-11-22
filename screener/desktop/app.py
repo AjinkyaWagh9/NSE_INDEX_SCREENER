@@ -9,7 +9,7 @@ from pathlib import Path
 
 def _selftest() -> int:
     import screener.desktop.controller  # noqa: F401 - proves Qt + kiteconnect are bundled
-    from screener.core.config import app_dir, load_api_key, today_ist
+    from screener.core.config import app_dir, load_api_key, load_api_secret, today_ist
     from screener.core.db import BarStore
     from screener.core.service import ScreenerService
     from screener.core.universe import load_universe
@@ -21,7 +21,8 @@ def _selftest() -> int:
         store.close()
     equity = sum(i.tab == "equity" for i in universe)
     msg = (f"selftest ok: {len(universe)} indices ({equity} equity, {len(universe) - equity} debt), "
-           f"{len(rows)} rows, API key {'set' if load_api_key() else 'MISSING'}")
+           f"{len(rows)} rows, API key {'set' if load_api_key() else 'MISSING'}, "
+           f"API secret {'set' if load_api_secret() else 'not set (in-app login disabled)'}")
     print(msg)
     try:
         (app_dir() / "selftest.txt").write_text(msg + "\n", encoding="utf-8")
