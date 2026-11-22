@@ -29,6 +29,7 @@ def names(p):
 
 def test_formatting():
     assert fmt_pct(0.0123) == "+1.23%" and fmt_pct(-0.5) == "-50.00%" and fmt_pct(None) == "—"
+    assert fmt_pct(-0.00004) == "0.00%" and fmt_pct(0.00004) == "0.00%"   # no red "-0.00%"
 
 
 def test_sort_desc_and_asc_keep_blanks_last(qapp):

@@ -16,8 +16,13 @@ FLASH = QColor("#fff3bf")
 FLASH_SECONDS = 1.5
 
 
+ZERO = 0.00005   # anything that rounds to 0.00% is shown (and coloured) as zero
+
+
 def fmt_pct(v) -> str:
-    return "—" if v is None else f"{v * 100:+.2f}%"
+    if v is None:
+        return "—"
+    return "0.00%" if abs(v) < ZERO else f"{v * 100:+.2f}%"
 
 
 class ScreenerTableModel(QAbstractTableModel):
@@ -107,7 +112,7 @@ class ScreenerTableModel(QAbstractTableModel):
         if role == Qt.ForegroundRole:
             if v is None or (col == GAP_COL and not row.result.live):
                 return GREY
-            return GREEN if v > 0 else RED if v < 0 else None
+            return GREEN if v >= ZERO else RED if v <= -ZERO else None
         if role == Qt.BackgroundRole and col in (GAP_COL, DAY_COL) and row.info.id in self._flash:
             return FLASH
         if role == Qt.ToolTipRole:
