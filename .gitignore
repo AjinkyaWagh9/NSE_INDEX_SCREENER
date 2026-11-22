@@ -3,3 +3,10 @@ __pycache__/
 .pytest_cache/
 data/convergence.log
 data/nav_cache/
+build/
+dist/
+screener/secrets_local.py
+screener/screener.db
+screener/screener.log
+screener/selftest.txt
+screener/nav_cache/

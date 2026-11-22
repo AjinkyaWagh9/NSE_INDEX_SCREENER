@@ -1,0 +1,51 @@
+"""App-wide constants, IST time helpers and file locations."""
+import os
+import sys
+from datetime import date, datetime, time, timedelta, timezone
+from pathlib import Path
+
+IST = timezone(timedelta(hours=5, minutes=30), "IST")  # India has no DST
+MARKET_OPEN = time(9, 15)
+MARKET_CLOSE = time(15, 30)
+HISTORY_MONTHS = 60          # 5 years of daily history
+HISTORY_PAD_DAYS = 7         # so the 5Y anchor has a close on or before it
+MAX_ANCHOR_GAP_DAYS = 7      # a past close older than this before the target -> blank
+HIST_MIN_INTERVAL_S = 1 / 3  # Kite historical API allows ~3 requests/second
+CORE_DIR = Path(__file__).resolve().parent          # screener/core
+SCREENER_DIR = CORE_DIR.parent                       # screener/
+
+
+def now_ist() -> datetime:
+    return datetime.now(IST)
+
+
+def today_ist() -> date:
+    return now_ist().date()
+
+
+def app_dir() -> Path:
+    """Writable folder for screener.db, screener.log and nav_cache: SCREENER_DATA_DIR if
+    set (web/server), next to the executable when frozen by PyInstaller, else screener/."""
+    if os.environ.get("SCREENER_DATA_DIR"):
+        return Path(os.environ["SCREENER_DATA_DIR"])
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return SCREENER_DIR
+
+
+def resource_path(name: str) -> Path:
+    """Read-only files shipped with core (e.g. universe.json)."""
+    base = getattr(sys, "_MEIPASS", None)
+    return Path(base) / "screener" / "core" / name if base else CORE_DIR / name
+
+
+def load_api_key() -> str:
+    """Kite API key: KITE_API_KEY env var first (web), else the git-ignored
+    screener/secrets_local.py (desktop). '' if neither is set."""
+    if os.environ.get("KITE_API_KEY"):
+        return os.environ["KITE_API_KEY"].strip()
+    try:
+        from screener.secrets_local import KITE_API_KEY
+    except ImportError:
+        return ""
+    return KITE_API_KEY.strip()
