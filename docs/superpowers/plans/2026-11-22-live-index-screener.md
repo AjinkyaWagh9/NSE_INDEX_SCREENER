@@ -60,7 +60,7 @@ tests/screener/
   test_table_model.py, test_app_smoke.py
 ```
 
-**Moving to the web app later:** copy `screener/core/` (plus `ranking/returns.py`, which `amfi_client` reuses) into the backend. Swap `BarStore` for a database-backed class with the same four `BarRepository` methods, serve `ScreenerService.rows()` as JSON via `RowData.to_dict()`, and push `apply_quotes` updates over a WebSocket.
+**Moving to the web app later:** copy `screener/core/` into the backend (it needs only `requests` and `kiteconnect`; `amfi_client` was made pandas-free during Task 10 to keep the build at ~45 MB). Swap `BarStore` for a database-backed class with the same four `BarRepository` methods, serve `ScreenerService.rows()` as JSON via `RowData.to_dict()`, and push `apply_quotes` updates over a WebSocket.
 
 ---
 

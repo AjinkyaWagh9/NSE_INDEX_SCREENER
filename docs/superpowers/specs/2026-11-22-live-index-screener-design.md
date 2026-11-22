@@ -76,7 +76,7 @@ A test fails if anything in core imports Qt or desktop code.
 | `universe.json` + `build_universe.py` | Fixed list of indices and their metadata (§4.1). Generated from this repo's pipeline outputs. | `data/07_final_shortlist.xlsx`, Kite instrument list |
 | `config.py` / `secrets_local.py` | API key (bundled, git-ignored), paths, constants (throttle rate, market hours). | — |
 | `kite_client.py` | Kite Connect wrapper: validate token, fetch daily history, run KiteTicker live feed. | `kiteconnect` SDK |
-| `amfi_client.py` | Fetch latest NAVs (AMFI `NAVAll.txt`) and NAV history (mfapi.in) for debt proxy funds. Split/fixed-NAV handling reused from `ranking/returns.py`. | `requests` |
+| `amfi_client.py` | Fetch NAV history (mfapi.in) for debt proxy funds. Self-contained (no pandas) with the same cache format and split rule as `ranking/returns.py`, so the packaged app stays small and core needs only `requests` + `kiteconnect`. | `requests` |
 | `db.py` | SQLite access: upsert/read daily bars, last stored date per index. | `sqlite3` |
 | `returns.py` (engine) | Pure functions: given a series of daily closes, today's open, latest price → all return columns. No I/O. | — |
 | `controller.py` | Orchestrates connect → backfill → live; turns ticks into table updates; end-of-day close capture. Runs network work off the UI thread (`QThread`). | all of the above |
