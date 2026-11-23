@@ -6,7 +6,8 @@ import logging
 from PySide6.QtCore import QObject, QRunnable, QThreadPool, QTimer, Signal
 
 from screener.core.amfi_client import fetch_nav_bars
-from screener.core.config import app_dir, load_api_key, load_api_secret, now_ist, today_ist
+from screener.core.config import (app_dir, clear_cached_token, load_api_key, load_api_secret,
+                                  load_cached_token, now_ist, save_cached_token, today_ist)
 from screener.core.kite_client import (KiteClient, LiveFeed, TokenError, exchange_request_token,
                                        extract_request_token, login_url)
 from screener.core.service import ScreenerService
@@ -82,8 +83,13 @@ class Controller(QObject):
     # ----- public -----
     def start(self) -> None:
         self._emit_rows()
-        self.status.emit("offline", "Not connected - showing last stored closes")
-        self.refresh_history()
+        cached = load_cached_token(today_ist())
+        if cached:
+            self.status.emit("busy", "Restoring today's live session…")
+            self._connect_with_access_token(cached, is_auto=True)
+        else:
+            self.status.emit("offline", "Not connected - showing last stored closes")
+            self.refresh_history()
 
     def refresh_history(self) -> None:
         client = self._client
@@ -113,19 +119,46 @@ class Controller(QObject):
             return
         self._connect_with_access_token(text)
 
-    def _connect_with_access_token(self, token: str) -> None:
+    def _connect_with_access_token(self, token: str, is_auto: bool = False) -> None:
         try:
             client = self._client_factory(self.api_key, token)
         except TokenError as e:
-            self.status.emit("error", str(e))
+            if is_auto:
+                clear_cached_token()
+                self.status.emit("offline", "Not connected - showing last stored closes")
+                self.refresh_history()
+            else:
+                self.status.emit("error", str(e))
             return
         self.status.emit("busy", "Checking token and loading history…")
 
         def work():
-            client.validate()
-            return self.service.backfill_kite(client, today_ist(), progress=self.progress.emit)
+            clean = (token or "").strip()
+            try:
+                client.validate()
+                active_client, active_token = client, clean
+            except TokenError:
+                if self.api_secret and len(clean) == 32 and clean.isalnum():
+                    active_token = self._exchange(self.api_key, self.api_secret, f"request_token={clean}")
+                    active_client = self._client_factory(self.api_key, active_token)
+                    active_client.validate()
+                else:
+                    raise
+            failed = self.service.backfill_kite(active_client, today_ist(), progress=self.progress.emit)
+            return active_client, active_token, failed
 
-        self._run(work, lambda failed: self._go_live(client, token, failed))
+        def on_done(res):
+            self._go_live(res[0], res[1], res[2])
+
+        def on_err(exc):
+            if is_auto:
+                clear_cached_token()
+                self.status.emit("offline", "Session expired - log in with Zerodha")
+                self.refresh_history()
+            else:
+                self._on_job_error(exc)
+
+        self._run(work, on_done, on_err)
 
     def shutdown(self) -> None:
         self._timer.stop()
@@ -142,6 +175,7 @@ class Controller(QObject):
     def _go_live(self, client, token: str, failed) -> None:
         self._client = client
         self._after_history(failed)
+        save_cached_token(today_ist(), token)
         self._feed = self._feed_factory(self.api_key, token, self.service.kite_tokens(),
                                         on_quotes=self._quotes_in.emit, on_status=self._status_in.emit)
         self._feed.start()
@@ -158,6 +192,7 @@ class Controller(QObject):
         elif state == "reconnecting":
             self.status.emit("busy", f"Reconnecting… {msg}")
         elif state == "error" and "403" in msg:
+            clear_cached_token()
             self.status.emit("error", "Token expired - restart the app and paste today's token")
         else:
             self.status.emit("offline", f"Live feed {state}. Showing last data. {msg}".strip())

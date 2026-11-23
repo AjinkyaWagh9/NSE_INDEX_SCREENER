@@ -58,3 +58,37 @@ def load_api_key() -> str:
 def load_api_secret() -> str:
     """Kite API secret, only needed to log in inside the app ('' if not configured)."""
     return _secret("KITE_API_SECRET")
+
+
+def token_cache_file() -> Path:
+    return app_dir() / ".token_cache.json"
+
+
+def load_cached_token(today: date) -> str:
+    p = token_cache_file()
+    if not p.exists():
+        return ""
+    try:
+        import json
+        data = json.loads(p.read_text(encoding="utf-8"))
+        if data.get("date") == today.isoformat() and data.get("token"):
+            return str(data["token"]).strip()
+    except Exception:
+        pass
+    return ""
+
+
+def save_cached_token(today: date, token: str) -> None:
+    p = token_cache_file()
+    try:
+        import json
+        p.write_text(json.dumps({"date": today.isoformat(), "token": token.strip()}), encoding="utf-8")
+    except Exception:
+        pass
+
+
+def clear_cached_token() -> None:
+    try:
+        token_cache_file().unlink(missing_ok=True)
+    except Exception:
+        pass

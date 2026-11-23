@@ -11,9 +11,9 @@ COLUMNS = ["Category", "Index", "ETFs", "Index Funds", "Gap %", "Day %", *PERIOD
 NUM_START = 4
 GAP_COL, DAY_COL = 4, 5
 SORT_ROLE = Qt.UserRole + 1
-GREEN, RED, GREY = QColor("#1a7f37"), QColor("#c62828"), QColor("#8a8a8a")
-FLASH = QColor("#fff3bf")
-FLASH_SECONDS = 1.5
+GREEN, RED, GREY = QColor("#22c55e"), QColor("#ef4444"), QColor("#8b949e")
+FLASH = QColor("#2a3b52")
+FLASH_SECONDS = 0.5
 
 
 ZERO = 0.00005   # anything that rounds to 0.00% is shown (and coloured) as zero
@@ -57,8 +57,10 @@ class ScreenerTableModel(QAbstractTableModel):
             n = self._pos.get(r.info.id)
             if n is None:
                 continue
+            old_r = self._rows[n]
+            changed = (old_r.result != r.result)
             self._rows[n] = r
-            if flash:
+            if flash and (changed or old_r.result.as_of is None):
                 self._flash[r.info.id] = time.monotonic()
             self.dataChanged.emit(self.index(n, 0), self.index(n, len(COLUMNS) - 1))
 

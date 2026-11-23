@@ -30,9 +30,11 @@ class Quote:
 
     @classmethod
     def from_tick(cls, t: dict) -> "Quote":
+        from screener.core.config import now_ist
         ohlc = t.get("ohlc") or {}
+        ts = t.get("exchange_timestamp") or t.get("timestamp") or now_ist()
         return cls(int(t["instrument_token"]), float(t["last_price"]), ohlc.get("open"),
-                   ohlc.get("close"), t.get("exchange_timestamp") or t.get("timestamp"))
+                   ohlc.get("close"), ts)
 
 
 def _to_date(d) -> date:

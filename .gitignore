@@ -6,7 +6,10 @@ data/nav_cache/
 build/
 dist/
 screener/secrets_local.py
+*.db
 screener/screener.db
 screener/screener.log
 screener/selftest.txt
 screener/nav_cache/
+.token_cache.json
+screener/.token_cache.json

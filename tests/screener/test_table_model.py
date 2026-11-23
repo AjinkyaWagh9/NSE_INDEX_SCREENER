@@ -56,8 +56,8 @@ def test_category_and_search_filters(qapp):
 def test_colours_grey_gap_and_nav_marker(qapp):
     m, _ = build(qapp, [row("NIFTY A", -0.1, live=False), row("NIFTY SDL", 0.05, source="amfi")])
     one_year = COLUMNS.index("1Y")
-    assert m.index(0, one_year).data(Qt.ForegroundRole).name() == "#c62828"
-    assert m.index(0, COLUMNS.index("Gap %")).data(Qt.ForegroundRole).name() == "#8a8a8a"
+    assert m.index(0, one_year).data(Qt.ForegroundRole).name() == "#ef4444"
+    assert m.index(0, COLUMNS.index("Gap %")).data(Qt.ForegroundRole).name() == "#8b949e"
     assert m.index(1, 1).data() == "Nifty Sdl · NAV"
 
 

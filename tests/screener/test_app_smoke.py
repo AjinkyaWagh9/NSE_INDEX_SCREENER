@@ -136,3 +136,21 @@ def test_failed_login_shows_reason(qapp, tmp_path, monkeypatch):
     settle(pool)
     assert "🔴" in w.status_lbl.text() and "already used" in w.status_lbl.text()
     c.shutdown(); store.close()
+
+
+def test_auto_reconnect_with_cached_token(qapp, tmp_path, monkeypatch):
+    from screener.core.config import save_cached_token, today_ist
+    save_cached_token(today_ist(), "saved-today-token")
+
+    universe = [make_info("NIFTY 50", token=1)]
+    store = BarStore(tmp_path / "t.db")
+    pool = QThreadPool()
+    c = Controller(ScreenerService(universe, store), api_key="key", api_secret="sec",
+                   feed_factory=FakeFeed, client_factory=FakeClient, pool=pool,
+                   nav_fetch=lambda code: [])
+    w = MainWindow(c, universe)
+    c.start()
+    settle(pool)
+    assert "🟢" in w.status_lbl.text()
+    assert FakeFeed.instances[-1].args[1] == "saved-today-token"
+    c.shutdown(); store.close()

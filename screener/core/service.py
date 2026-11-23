@@ -94,8 +94,12 @@ class ScreenerService:
         for q in quotes:
             ix = self._by_token.get(q.instrument_token)
             if ix:
-                self._quotes[ix] = q
-                changed.add(ix)
+                old_q = self._quotes.get(ix)
+                if old_q is None or old_q.last_price != q.last_price:
+                    self._quotes[ix] = q
+                    changed.add(ix)
+                else:
+                    self._quotes[ix] = q
         return changed
 
     def capture_closes(self, now: datetime) -> int:

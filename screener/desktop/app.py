@@ -54,7 +54,7 @@ def main(argv=None) -> int:
     store = BarStore(app_dir() / "screener.db")
     controller = Controller(ScreenerService(universe, store))
     window = MainWindow(controller, universe)
-    window.resize(1500, 850)
+    window.resize(1550, 860)
     window.show()
     controller.start()
     code = app.exec()

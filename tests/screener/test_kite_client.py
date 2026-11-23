@@ -79,6 +79,15 @@ def test_quote_from_tick():
     assert (q.instrument_token, q.last_price, q.open, q.prev_close) == (256265, 101.5, 100.0, 99.0)
 
 
+def test_quote_from_tick_without_timestamp():
+    # KiteTicker ticks in MODE_QUOTE do not contain exchange_timestamp or timestamp
+    q = Quote.from_tick({"instrument_token": 262409, "last_price": 28478.95,
+                         "ohlc": {"open": 28478.95, "close": 28381.35}})
+    assert q.timestamp is not None
+    assert q.last_price == 28478.95
+    assert q.open == 28478.95
+
+
 class FakeWS:
     MODE_QUOTE = "quote"
 
