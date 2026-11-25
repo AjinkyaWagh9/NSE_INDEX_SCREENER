@@ -97,3 +97,10 @@ def test_rows_cover_universe_and_kite_tokens(svc):
     assert [r.info.id for r in svc.rows(TODAY)] == ["NIFTY 50", "NIFTY BANK", "NIFTY SDL APR 2027"]
     assert svc.kite_tokens() == [1, 2]
     assert svc.row("NIFTY BANK", TODAY).result.as_of is None
+
+
+def test_live_quote_uses_quote_prev_close_before_backfill(svc):
+    svc.store.upsert_bars("NIFTY 50", [Bar(date(2026, 11, 18), 90.0, 95.0)], "kite")
+    svc.apply_quotes([Quote(1, 102.0, 101.0, 100.0, datetime(2026, 11, 23, 10, 0))])
+    r = svc.row("NIFTY 50", TODAY).result
+    assert r.live and r.day == pytest.approx(0.02) and r.gap == pytest.approx(0.01)

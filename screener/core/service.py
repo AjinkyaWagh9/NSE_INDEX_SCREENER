@@ -123,7 +123,13 @@ class ScreenerService:
             bars = self._bars[index_id] = self.store.bars(index_id)
         q = self._quotes.get(index_id)
         live = q is not None and _quote_date(q) == today
-        res = compute_returns(bars, today, q.last_price if live else None, q.open if live else None)
+        res = compute_returns(
+            bars,
+            today,
+            q.last_price if live else None,
+            q.open if live else None,
+            q.prev_close if live else None,
+        )
         return RowData(info, res, self._note(info, res))
 
     def rows(self, today: date) -> list[RowData]:

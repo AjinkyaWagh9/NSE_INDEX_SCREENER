@@ -23,6 +23,15 @@ def test_day_and_gap_from_live_quote():
     assert r.gap == pytest.approx(0.01)
 
 
+def test_day_and_gap_prefer_live_prev_close_when_history_stale_or_empty():
+    r_empty = compute_returns([], date(2026, 11, 25), live_price=103.0, live_open=101.0, live_prev_close=100.0)
+    assert r_empty.live and r_empty.day == pytest.approx(0.03) and r_empty.gap == pytest.approx(0.01)
+
+    stale_bars = [Bar(date(2026, 11, 20), 90.0, 95.0)]
+    r_stale = compute_returns(stale_bars, date(2026, 11, 25), live_price=103.0, live_open=101.0, live_prev_close=100.0)
+    assert r_stale.day == pytest.approx(0.03) and r_stale.gap == pytest.approx(0.01)
+
+
 def test_without_live_uses_last_stored_session():
     bars = [Bar(date(2026, 11, 19), 99.0, 100.0), Bar(date(2026, 11, 20), 101.0, 102.0)]
     r = compute_returns(bars, date(2026, 11, 22))

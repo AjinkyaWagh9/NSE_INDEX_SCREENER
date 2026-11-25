@@ -152,10 +152,18 @@ def _do_connect(raw_token: str):
     import threading
 
     def _backfill_worker():
+        global last_updated
         try:
             log.info("Starting background history backfill…")
             service.backfill_kite(client, today_ist())
             log.info("Historical backfill completed in background")
+            today = today_ist()
+            last_updated = now_ist().strftime("%H:%M:%S")
+            _push_broadcast({
+                "type": "quotes",
+                "rows": [r.to_dict() for r in service.rows(today)],
+                "updated_at": last_updated,
+            })
         except Exception as e:
             log.warning("Background backfill failed: %s", e)
 

@@ -55,7 +55,8 @@ def _ratio(a: Optional[float], b: Optional[float]) -> Optional[float]:
 
 def compute_returns(bars: Sequence[Bar], today: date,
                     live_price: Optional[float] = None,
-                    live_open: Optional[float] = None) -> ReturnSet:
+                    live_open: Optional[float] = None,
+                    live_prev_close: Optional[float] = None) -> ReturnSet:
     """bars: daily bars sorted by date (may include today's stored close).
     With a live price the anchor is today; otherwise it is the last stored bar."""
     bars = list(bars)
@@ -67,7 +68,8 @@ def compute_returns(bars: Sequence[Bar], today: date,
         history = bars[:-1]
     else:
         return ReturnSet()
-    prev_close = history[-1].close if history else None
+    prev_close = (live_prev_close if (live and live_prev_close not in (None, 0))
+                  else (history[-1].close if history else None))
     out = ReturnSet(as_of=anchor, latest=latest, live=live,
                     gap=_ratio(open_, prev_close), day=_ratio(latest, prev_close))
     dates = [b.date for b in bars]
